@@ -18,10 +18,11 @@ type SentimentFilter = Sentiment | 'all';
 interface Props {
   ticker: string;
   stock?: TrendingStock;
+  window: string;
   onBack: () => void;
 }
 
-export default function StockDetail({ ticker, stock, onBack }: Props) {
+export default function StockDetail({ ticker, stock, window, onBack }: Props) {
   const [data, setData] = useState<StockPosts | null>(null);
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [sourceFilter, setSourceFilter] = useState<SourceFilter>('all');
@@ -76,7 +77,7 @@ export default function StockDetail({ ticker, stock, onBack }: Props) {
         All stocks
       </button>
 
-      <StockHeader name={name} stock={stock} data={data} />
+      <StockHeader name={name} stock={stock} data={data} window={window} />
 
       <div className="mt-7">
         <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -145,10 +146,12 @@ function StockHeader({
   name,
   stock,
   data,
+  window,
 }: {
   name: string;
   stock?: TrendingStock;
   data: StockPosts | null;
+  window: string;
 }) {
   const posts = data?.posts ?? [];
 
@@ -201,7 +204,7 @@ function StockHeader({
                 <CountUp value={mentions} />
               </div>
               <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                mentions · last 7d
+                mentions · last {window}
               </div>
             </div>
             {stock && (

@@ -28,7 +28,7 @@ async function main() {
   const now = new Date();
   console.log(`[scrape] start ${now.toISOString()}`);
 
-  const rawPosts = await fetchValuePickrPosts({ windowHours: 168 });
+  const rawPosts = await fetchValuePickrPosts({ windowHours: 720 });
   console.log(`[scrape] fetched ${rawPosts.length} posts total`);
 
   if (rawPosts.length === 0) {

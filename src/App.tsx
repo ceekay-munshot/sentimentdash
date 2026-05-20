@@ -62,6 +62,7 @@ export default function App() {
                 key={selectedTicker}
                 ticker={selectedTicker}
                 stock={data.stocks.find((s) => s.ticker === selectedTicker)}
+                window={data.window}
                 onBack={() => navigate('')}
               />
             ) : (

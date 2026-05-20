@@ -13,7 +13,7 @@
 import { scorePost } from './sentiment.mjs';
 import { prevCount, historySeries, appendRun } from './history.mjs';
 
-const WINDOW_HOURS = 168;
+const WINDOW_HOURS = 720;
 const WINDOW_LABEL = WINDOW_HOURS % 24 === 0 ? `${WINDOW_HOURS / 24}d` : `${WINDOW_HOURS}h`;
 const SPARK_POINTS = 12;
 const HOUR_MS = 3600 * 1000;
