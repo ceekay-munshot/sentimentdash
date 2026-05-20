@@ -15,8 +15,13 @@ const UA =
 
 const BASE = 'https://forum.valuepickr.com';
 
-// Discourse category names (case-insensitive) treated as company discussions.
-const STOCK_CATEGORY_PATTERN = /stock|investment|business analysis/i;
+// A ValuePickr category counts as company discussion if its name matches
+// STOCK_CATEGORY_PATTERN but not NON_COMPANY_PATTERN — the latter strips
+// learning / screener / conference / meta categories that hold non-company
+// threads (e.g. "Investment Learning", "VP at Investment Conferences").
+const STOCK_CATEGORY_PATTERN = /stock|sme|business analysis|investment/i;
+const NON_COMPANY_PATTERN =
+  /learning|screen|conference|webinar|tracking|lounge|feedback|wiki|portfolio management/i;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -71,7 +76,10 @@ async function fetchStockCategoryIds() {
     flat.push(c);
     for (const sub of c.subcategory_list || []) flat.push(sub);
   }
-  const selected = flat.filter((c) => STOCK_CATEGORY_PATTERN.test(c.name || ''));
+  const selected = flat.filter((c) => {
+    const name = c.name || '';
+    return STOCK_CATEGORY_PATTERN.test(name) && !NON_COMPANY_PATTERN.test(name);
+  });
   console.log(
     `[valuepickr] categories: ${flat.length} found, ${selected.length} selected` +
       (selected.length ? ` (${selected.map((c) => c.name).join(', ')})` : ''),
