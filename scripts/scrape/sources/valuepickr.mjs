@@ -149,7 +149,7 @@ async function fetchRecentPosts(windowMs, maxPages) {
  * company-discussion categories. If the category filter would drop everything
  * (e.g. category lookup failed), it degrades to returning all posts.
  */
-export async function fetchValuePickrPosts({ windowHours = 24, maxPages = 8 } = {}) {
+export async function fetchValuePickrPosts({ windowHours = 168, maxPages = 12 } = {}) {
   const windowMs = windowHours * 3600 * 1000;
 
   let categoryIds = new Set();

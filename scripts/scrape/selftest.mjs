@@ -49,8 +49,8 @@ const fixtures = [
   vpPost('sz2', 502, 'Suzlon Energy', 'Valuations stretched, would avoid at these levels.', 6),
   // Topic 503 — Reliance Industries: 1 neutral post
   vpPost('rl1', 503, 'Reliance Industries', 'Results were in line, nothing exciting either way.', 4),
-  // Excluded — outside the 24h window
-  vpPost('ow1', 504, 'Old Co', 'Strong buy, great quarter.', 30),
+  // Excluded — outside the window
+  vpPost('ow1', 504, 'Old Co', 'Strong buy, great quarter.', 200),
 ];
 // Excluded — a post with no topic id
 fixtures.push({ ...vpPost('nt1', 0, 'No Topic', 'Strong buy.', 1), topicId: undefined });

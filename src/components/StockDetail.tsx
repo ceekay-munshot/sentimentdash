@@ -201,7 +201,7 @@ function StockHeader({
                 <CountUp value={mentions} />
               </div>
               <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                mentions · last 24h
+                mentions · last 7d
               </div>
             </div>
             {stock && (
