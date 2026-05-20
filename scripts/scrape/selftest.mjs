@@ -8,6 +8,7 @@
  * broken pipeline fails fast without touching real data.
  */
 import { buildData } from './aggregate.mjs';
+import { matchTickers } from './stocks.mjs';
 
 let failures = 0;
 function check(label, condition) {
@@ -38,6 +39,27 @@ function post(id, text, ageHours, extra = {}) {
   };
 }
 
+// A ValuePickr post: the company is named only in the topic title, not the
+// body — `matchText` (title + body) is what must drive the ticker match.
+function vpPost(id, topicTitle, body, ageHours) {
+  return {
+    source: 'valuepickr',
+    id,
+    author: 'vptester',
+    handle: '@vptester',
+    community: topicTitle,
+    timestamp: hoursAgo(ageHours),
+    text: body,
+    matchText: `${topicTitle} ${body}`,
+    url: `https://forum.valuepickr.com/t/x/${id}`,
+    likes: 3,
+    comments: 0,
+  };
+}
+
+const VP_BODY =
+  'Renewables capacity addition is ahead of guidance and cash flows are improving. Accumulating on dips.';
+
 const fixtures = [
   post('a1', 'Loaded up more RELIANCE today, conviction multibagger buy 🚀', 1),
   post('a2', 'RELIANCE downside risk after the results. Avoid this one.', 3),
@@ -48,6 +70,7 @@ const fixtures = [
   post('e1', 'Zomato breakout confirmed, huge upside 📈', 2),
   post('f1', 'Suzlon is a value trap, exited fully. Falling knife.', 7),
   post('g1', 'IRCTC board meeting next week, could go either way.', 8),
+  vpPost('vp1', 'Tata Power', VP_BODY, 3),
   post('z1', 'Market looks toppy, booking some profits across the board.', 1), // no ticker
   post('z2', 'Old TCS news from yesterday, strong buy.', 30), // outside 24h window
   post('z3', 'Watchlist dump: RELIANCE INFY TCS ITC SBIN HAL ZOMATO all on radar', 1), // >5 tickers
@@ -119,6 +142,12 @@ check(
   'history counts match trending mentions',
   trending.stocks.every((s) => history.runs[0].counts[s.ticker] === s.mentions),
 );
+
+check('ValuePickr post matched TATAPOWER', byTicker.has('TATAPOWER'));
+check('TATAPOWER has 1 mention', byTicker.get('TATAPOWER')?.mentions === 1);
+check('TATAPOWER post is sourced from valuepickr', byTicker.get('TATAPOWER')?.sources.valuepickr === 1);
+check('matchText was required — post body alone names no ticker', matchTickers(VP_BODY).length === 0);
+check('TATAPOWER scored bullish', byTicker.get('TATAPOWER')?.sentiment.label === 'bullish');
 
 console.log('\nRun 2 (with run 1 as history)');
 const run2 = buildData(fixtures, history, new Date(NOW.getTime() + 12 * 3600 * 1000));

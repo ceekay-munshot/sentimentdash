@@ -11,6 +11,7 @@ import { writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchRedditPosts } from './sources/reddit.mjs';
+import { fetchValuePickrPosts } from './sources/valuepickr.mjs';
 import { loadHistory } from './history.mjs';
 import { buildData } from './aggregate.mjs';
 
@@ -25,7 +26,17 @@ async function main() {
   const now = new Date();
   console.log(`[scrape] start ${now.toISOString()}`);
 
-  const rawPosts = await fetchRedditPosts({ windowHours: 24 });
+  const rawPosts = [];
+  rawPosts.push(...(await fetchValuePickrPosts({ windowHours: 24 })));
+
+  // Reddit blocks anonymous datacenter traffic, so it only runs once OAuth
+  // credentials are configured as repo secrets.
+  if (process.env.REDDIT_CLIENT_ID && process.env.REDDIT_CLIENT_SECRET) {
+    rawPosts.push(...(await fetchRedditPosts({ windowHours: 24 })));
+  } else {
+    console.log('[scrape] Reddit credentials not set — skipping Reddit (ValuePickr only).');
+  }
+
   console.log(`[scrape] fetched ${rawPosts.length} posts total`);
 
   if (rawPosts.length === 0) {
