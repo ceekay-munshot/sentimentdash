@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "gen:data": "node scripts/generate-sample-data.mjs"
+    "gen:data": "node scripts/generate-sample-data.mjs",
+    "scrape": "node scripts/scrape/run.mjs",
+    "scrape:selftest": "node scripts/scrape/selftest.mjs"
   },
   "dependencies": {
     "framer-motion": "^11.11.0",
