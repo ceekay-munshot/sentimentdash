@@ -7,16 +7,16 @@
  * it to public/data. If scraping yields nothing it exits non-zero WITHOUT
  * writing, so a failed run never overwrites the last good data.
  *
- * ValuePickr discovers the companies (one forum topic ≈ one company). Substack
- * articles are free-text, so entities.mjs tags them onto those companies
- * before aggregation. Reddit stays parked: it blocks datacenter IPs (CI) on
- * every endpoint without an OAuth app.
+ * ValuePickr discovers the companies (one forum topic ≈ one company). Google
+ * News headlines are free-text, so entities.mjs tags them onto those companies
+ * before aggregation. Reddit and Substack stay parked: both block datacenter
+ * IPs (CI) behind bot-protection.
  */
 import { writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchValuePickrPosts } from './sources/valuepickr.mjs';
-import { fetchSubstackPosts } from './sources/substack.mjs';
+import { fetchGoogleNewsPosts } from './sources/googlenews.mjs';
 import { buildCompanyIndex, tagByEntities } from './entities.mjs';
 import { loadHistory } from './history.mjs';
 import { buildData } from './aggregate.mjs';
@@ -34,25 +34,25 @@ async function main() {
 
   const vpPosts = await fetchValuePickrPosts({ windowHours: 720 });
 
-  // Substack enriches the ValuePickr-discovered companies; a Substack-only
+  // Google News enriches the ValuePickr-discovered companies; a news-only
   // failure must not abort the run, so it is caught and skipped.
-  let substackPosts = [];
+  let newsPosts = [];
   try {
-    const articles = await fetchSubstackPosts({ windowHours: 720 });
+    const headlines = await fetchGoogleNewsPosts({ windowHours: 720 });
     const index = buildCompanyIndex(vpPosts);
-    substackPosts = tagByEntities(articles, index);
+    newsPosts = tagByEntities(headlines, index);
     console.log(
-      `[scrape] substack: ${articles.length} articles -> ` +
-        `${substackPosts.length} company-tagged posts across ${index.length} companies`,
+      `[scrape] news: ${headlines.length} headlines -> ` +
+        `${newsPosts.length} company-tagged posts across ${index.length} companies`,
     );
   } catch (err) {
-    console.error(`[scrape] substack source failed, continuing: ${err.message}`);
+    console.error(`[scrape] news source failed, continuing: ${err.message}`);
   }
 
-  const rawPosts = [...vpPosts, ...substackPosts];
+  const rawPosts = [...vpPosts, ...newsPosts];
   console.log(
     `[scrape] fetched ${rawPosts.length} posts total ` +
-      `(valuepickr ${vpPosts.length}, substack ${substackPosts.length})`,
+      `(valuepickr ${vpPosts.length}, news ${newsPosts.length})`,
   );
 
   if (rawPosts.length === 0) {

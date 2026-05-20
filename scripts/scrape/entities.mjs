@@ -1,14 +1,14 @@
 /**
- * Entity tagging — attaches free-text posts (Substack articles) to the
+ * Entity tagging — attaches free-text posts (Google News headlines) to the
  * companies ValuePickr is currently discussing.
  *
  * The aggregator groups posts by topicId (≈ a company). ValuePickr posts carry
- * one natively; Substack articles do not. This module derives a company name
+ * one natively; news headlines do not. This module derives a company name
  * index from the ValuePickr-discovered topics and, for every company a post
  * mentions, emits a copy of that post tagged with the company's topicId — so a
- * Substack article naming three stocks enriches three company cards.
+ * headline naming three stocks enriches three company cards.
  *
- * Companies are only ever introduced by ValuePickr; Substack enriches them.
+ * Companies are only ever introduced by ValuePickr; news enriches them.
  * A post mentioning no discovered company is dropped.
  */
 

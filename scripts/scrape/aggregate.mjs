@@ -89,7 +89,7 @@ export function buildData(rawPosts, prevHistory = { runs: [] }, now = new Date()
     posts.sort((a, b) => b.timestamp.localeCompare(a.timestamp));
 
     const sentiment = { bullish: 0, bearish: 0, neutral: 0 };
-    const sources = { reddit: 0, valuepickr: 0, substack: 0 };
+    const sources = { reddit: 0, valuepickr: 0, news: 0 };
     for (const p of posts) {
       sentiment[p.sentiment]++;
       if (sources[p.source] !== undefined) sources[p.source]++;
