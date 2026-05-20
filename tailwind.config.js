@@ -24,7 +24,7 @@ export default {
         },
         reddit: '#ff5414',
         valuepickr: '#27b3a8',
-        substack: '#ff8a3d',
+        news: '#ff8a3d',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],

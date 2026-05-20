@@ -172,7 +172,7 @@ function StockHeader({
         acc[s] = posts.filter((p) => p.source === s).length;
         return acc;
       },
-      { reddit: 0, valuepickr: 0, substack: 0 } as Record<Source, number>,
+      { reddit: 0, valuepickr: 0, news: 0 } as Record<Source, number>,
     );
 
   const mentions = stock?.mentions ?? posts.length;

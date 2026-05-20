@@ -1,6 +1,6 @@
 import type { Sentiment, Source } from '../types';
 
-export const SOURCE_ORDER: Source[] = ['reddit', 'valuepickr', 'substack'];
+export const SOURCE_ORDER: Source[] = ['reddit', 'valuepickr', 'news'];
 
 export const SOURCE_META: Record<
   Source,
@@ -8,7 +8,7 @@ export const SOURCE_META: Record<
 > = {
   reddit: { label: 'Reddit', color: 'text-reddit', dot: 'bg-reddit', soft: 'bg-reddit/15', hex: '#ff5414' },
   valuepickr: { label: 'ValuePickr', color: 'text-valuepickr', dot: 'bg-valuepickr', soft: 'bg-valuepickr/15', hex: '#27b3a8' },
-  substack: { label: 'Substack', color: 'text-substack', dot: 'bg-substack', soft: 'bg-substack/15', hex: '#ff8a3d' },
+  news: { label: 'Google News', color: 'text-news', dot: 'bg-news', soft: 'bg-news/15', hex: '#ff8a3d' },
 };
 
 export const SENTIMENT_ORDER: Sentiment[] = ['bullish', 'bearish', 'neutral'];

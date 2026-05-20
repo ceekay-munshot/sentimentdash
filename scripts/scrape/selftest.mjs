@@ -106,19 +106,19 @@ check('second-run sparkline uses history (>= 2 points)', run2.trending.stocks.ev
 check('mentionsPrev now reflects run 1', r2.get('501')?.mentionsPrev === 3);
 check('stable mentions => changePct 0 on run 2', r2.get('501')?.changePct === 0);
 
-console.log('\nEntity tagging (Substack articles -> ValuePickr companies)');
+console.log('\nEntity tagging (news headlines -> ValuePickr companies)');
 
-function ssPost(id, text, ageHours) {
+function newsPost(id, text, ageHours) {
   return {
-    source: 'substack',
+    source: 'news',
     id,
-    author: 'Newsletter',
-    handle: '@testnews',
-    community: 'Test Newsletter',
+    author: 'Test Wire',
+    handle: 'Test Wire',
+    community: 'Google News',
     timestamp: hoursAgo(ageHours),
     text,
     matchText: text,
-    url: `https://testnews.substack.com/p/${id}`,
+    url: `https://news.google.com/x/${id}`,
     likes: 0,
     comments: 0,
   };
@@ -129,9 +129,9 @@ const indexNames = new Set(index.map((c) => c.name));
 check('index covers ValuePickr companies', indexNames.has('Caplin Point Laboratories') && indexNames.has('Suzlon Energy'));
 
 const articles = [
-  ssPost('a1', 'Why I stay bullish on Caplin Point — a clear multibagger, strong buy.', 2),
-  ssPost('a2', 'Suzlon Energy and Reliance Industries both look interesting here.', 3),
-  ssPost('a3', 'A macro note on rate cuts — no single stock named today.', 4),
+  newsPost('a1', 'Why I stay bullish on Caplin Point — a clear multibagger, strong buy.', 2),
+  newsPost('a2', 'Suzlon Energy and Reliance Industries both look interesting here.', 3),
+  newsPost('a3', 'A macro note on rate cuts — no single stock named today.', 4),
 ];
 const tagged = tagByEntities(articles, index);
 
@@ -143,10 +143,10 @@ check('empty index yields no tagged posts', tagByEntities(articles, []).length =
 
 const merged = buildData([...fixtures, ...tagged], { runs: [] }, NOW);
 const mById = new Map(merged.trending.stocks.map((s) => [s.ticker, s]));
-check('merged Caplin counts the Substack post', mById.get('501')?.sources.substack === 1);
-check('merged Caplin mentions = ValuePickr 3 + Substack 1', mById.get('501')?.mentions === 4);
-check('merged Suzlon mentions = ValuePickr 2 + Substack 1', mById.get('502')?.mentions === 3);
-check('merged company keeps both sources counted', merged.trending.stocks.every((s) => s.sources.valuepickr + s.sources.substack === s.mentions));
+check('merged Caplin counts the news post', mById.get('501')?.sources.news === 1);
+check('merged Caplin mentions = ValuePickr 3 + news 1', mById.get('501')?.mentions === 4);
+check('merged Suzlon mentions = ValuePickr 2 + news 1', mById.get('502')?.mentions === 3);
+check('merged company keeps both sources counted', merged.trending.stocks.every((s) => s.sources.valuepickr + s.sources.news === s.mentions));
 
 if (failures > 0) {
   console.error(`\n${failures} check(s) failed.`);
