@@ -1,34 +1,45 @@
 /**
- * Google News source — pulls recent India-markets headlines from Google
- * News RSS search (news.google.com/rss/search).
+ * Google News source — pulls recent headlines for the companies ValuePickr
+ * is discussing, via Google News RSS search (news.google.com/rss/search).
  *
  * No login and no API key. Unlike Reddit and Substack — which block
  * datacenter IPs (GitHub Actions) behind bot-protection — Google News RSS is
  * built to be syndicated to feed readers and serves fine from CI.
  *
- * Headlines are free-text with no per-company structure, so these posts carry
- * NO topicId/topicTitle. entities.mjs tags them against the companies
- * ValuePickr is discussing before they reach the aggregator.
+ * One search is issued per ValuePickr-discovered company, so every headline
+ * is already about a known company: results are tagged with that company's
+ * topicId directly, no fuzzy entity matching required.
  */
 
 const UA =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) ' +
   'Chrome/124.0.0.0 Safari/537.36';
 
-// Broad India-markets searches that surface company-named headlines. The
-// entity tagger decides which ValuePickr companies each headline is about.
-const DEFAULT_QUERIES = [
-  'share price target',
-  'stock to buy India',
-  'Q4 results India',
-  'stock surges OR stock jumps India',
-  'stock falls OR stock slumps India',
-  'brokerage rating India',
-  'multibagger stock',
-  'Sensex Nifty stocks',
-];
-
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Reduces a ValuePickr topic title to the company name: forum titles often
+ * carry an editorial subtitle ("Afcom Holdings - Sky High Ambitions...",
+ * "X: the theme") — only the head, before the first separator, is the name.
+ */
+export function cleanCompanyName(title) {
+  let s = String(title || '').trim();
+  const cut = s.search(/\s[-–—]\s|:\s|\s\|\s|\s\(/);
+  if (cut > 0) s = s.slice(0, cut);
+  return s.replace(/[?.,!]+$/, '').trim();
+}
+
+/** Derives the search term: the cleaned name minus a trailing Ltd/Limited.
+ *  Returns null when the result is too short or too long to be a company. */
+function queryName(title) {
+  const cleaned = cleanCompanyName(title)
+    .replace(/\b(?:ltd\.?|limited)\b/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const words = cleaned.split(' ').filter(Boolean);
+  if (cleaned.length < 4 || words.length > 5) return null;
+  return cleaned;
+}
 
 /** GET text with retry + exponential backoff on rate-limit / transient errors. */
 async function fetchText(url) {
@@ -118,8 +129,6 @@ function parseFeed(xml, windowMs) {
       community: 'Google News',
       timestamp: new Date(ts).toISOString(),
       text: headline,
-      // Scanned by entities.mjs for company mentions (headline is the content).
-      matchText: headline,
       url: link,
       likes: 0,
       comments: 0,
@@ -129,29 +138,48 @@ function parseFeed(xml, windowMs) {
 }
 
 /**
- * Fetches recent India-markets headlines across the configured searches.
- * A failing query is logged and skipped rather than aborting the run.
+ * Fetches recent headlines for each ValuePickr-discovered company.
+ *
+ * @param {{topicId: string, topicTitle: string}[]} companies
+ * Returns posts already tagged with topicId/topicTitle, ready for aggregation.
+ * A failing search is logged and skipped rather than aborting the run.
  */
-export async function fetchGoogleNewsPosts({ queries = DEFAULT_QUERIES, windowHours = 720 } = {}) {
+export async function fetchGoogleNewsPosts({ companies = [], windowHours = 720, maxCompanies = 250 } = {}) {
   const windowMs = windowHours * 3600 * 1000;
 
   const all = [];
-  for (const query of queries) {
+  const seen = new Set();
+  let queried = 0;
+  let skipped = 0;
+
+  for (const { topicId, topicTitle } of companies.slice(0, maxCompanies)) {
+    const query = queryName(topicTitle);
+    if (!query) {
+      skipped++;
+      continue;
+    }
+    queried++;
+
     const url =
       'https://news.google.com/rss/search?q=' +
-      encodeURIComponent(query) +
+      encodeURIComponent(`"${query}"`) +
       '&hl=en-IN&gl=IN&ceid=IN:en';
     try {
       const xml = await fetchText(url);
-      const posts = parseFeed(xml, windowMs);
-      console.log(`[news] "${query}": ${posts.length} headlines`);
-      all.push(...posts);
+      for (const post of parseFeed(xml, windowMs)) {
+        const key = `${post.id}::${topicId}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        all.push({ ...post, topicId, topicTitle });
+      }
     } catch (err) {
       console.error(`[news] "${query}" failed: ${err.message}`);
     }
-    await sleep(1000);
+    await sleep(800);
   }
 
-  const seen = new Set();
-  return all.filter((p) => p.id && !seen.has(p.id) && seen.add(p.id));
+  console.log(
+    `[news] searched ${queried} companies (${skipped} skipped), ${all.length} tagged headlines`,
+  );
+  return all;
 }

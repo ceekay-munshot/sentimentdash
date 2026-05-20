@@ -8,7 +8,7 @@
  * scrape so a broken pipeline fails fast without touching real data.
  */
 import { buildData } from './aggregate.mjs';
-import { buildCompanyIndex, tagByEntities } from './entities.mjs';
+import { cleanCompanyName } from './sources/googlenews.mjs';
 
 let failures = 0;
 function check(label, condition) {
@@ -106,47 +106,49 @@ check('second-run sparkline uses history (>= 2 points)', run2.trending.stocks.ev
 check('mentionsPrev now reflects run 1', r2.get('501')?.mentionsPrev === 3);
 check('stable mentions => changePct 0 on run 2', r2.get('501')?.changePct === 0);
 
-console.log('\nEntity tagging (news headlines -> ValuePickr companies)');
+console.log('\nCompany-name cleaning + news merge');
 
-function newsPost(id, text, ageHours) {
-  return {
+check(
+  'strips an editorial subtitle after a dash',
+  cleanCompanyName('Afcom Holdings - Sky High Ambitions, Grounded in Reality?') === 'Afcom Holdings',
+);
+check(
+  'strips a theme after a colon',
+  cleanCompanyName('Data Center Value Chain in India: Investment Opportunities') ===
+    'Data Center Value Chain in India',
+);
+check(
+  'leaves a clean company name untouched',
+  cleanCompanyName('Piccadily Agro Industries Ltd') === 'Piccadily Agro Industries Ltd',
+);
+check('trims a trailing question mark', cleanCompanyName('Suzlon Energy?') === 'Suzlon Energy');
+
+// News posts arrive already tagged with a ValuePickr topicId; buildData must
+// merge them onto that company and count them under sources.news.
+const newsTagged = [
+  {
     source: 'news',
-    id,
+    id: 'gn-n1',
     author: 'Test Wire',
     handle: 'Test Wire',
     community: 'Google News',
-    timestamp: hoursAgo(ageHours),
-    text,
-    matchText: text,
-    url: `https://news.google.com/x/${id}`,
+    timestamp: hoursAgo(2),
+    text: 'Caplin Point Laboratories wins fresh US FDA approval',
+    url: 'https://news.google.com/x/n1',
     likes: 0,
     comments: 0,
-  };
-}
-
-const index = buildCompanyIndex(fixtures);
-const indexNames = new Set(index.map((c) => c.name));
-check('index covers ValuePickr companies', indexNames.has('Caplin Point Laboratories') && indexNames.has('Suzlon Energy'));
-
-const articles = [
-  newsPost('a1', 'Why I stay bullish on Caplin Point — a clear multibagger, strong buy.', 2),
-  newsPost('a2', 'Suzlon Energy and Reliance Industries both look interesting here.', 3),
-  newsPost('a3', 'A macro note on rate cuts — no single stock named today.', 4),
+    topicId: '501',
+    topicTitle: 'Caplin Point Laboratories',
+  },
 ];
-const tagged = tagByEntities(articles, index);
-
-check('article tagged to a company via its short alias (Caplin Point)', tagged.some((p) => p.id === 'a1' && p.topicId === '501'));
-check('multi-company article is tagged to both companies', tagged.filter((p) => p.id === 'a2').length === 2);
-check('article a2 tags Suzlon and Reliance', new Set(tagged.filter((p) => p.id === 'a2').map((p) => p.topicId)).size === 2 && tagged.some((p) => p.id === 'a2' && p.topicId === '502') && tagged.some((p) => p.id === 'a2' && p.topicId === '503'));
-check('article naming no indexed company is dropped (a3)', !tagged.some((p) => p.id === 'a3'));
-check('empty index yields no tagged posts', tagByEntities(articles, []).length === 0);
-
-const merged = buildData([...fixtures, ...tagged], { runs: [] }, NOW);
+const merged = buildData([...fixtures, ...newsTagged], { runs: [] }, NOW);
 const mById = new Map(merged.trending.stocks.map((s) => [s.ticker, s]));
-check('merged Caplin counts the news post', mById.get('501')?.sources.news === 1);
-check('merged Caplin mentions = ValuePickr 3 + news 1', mById.get('501')?.mentions === 4);
-check('merged Suzlon mentions = ValuePickr 2 + news 1', mById.get('502')?.mentions === 3);
-check('merged company keeps both sources counted', merged.trending.stocks.every((s) => s.sources.valuepickr + s.sources.news === s.mentions));
+check('news post merges onto the ValuePickr company', mById.get('501')?.mentions === 4);
+check('news post counted under sources.news', mById.get('501')?.sources.news === 1);
+check(
+  'sources sum to mentions across every company',
+  merged.trending.stocks.every((s) => s.sources.valuepickr + s.sources.news === s.mentions),
+);
 
 if (failures > 0) {
   console.error(`\n${failures} check(s) failed.`);
