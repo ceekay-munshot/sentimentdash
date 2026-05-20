@@ -54,13 +54,15 @@ export function buildData(rawPosts, prevHistory = { runs: [] }, now = new Date()
     if (nowMs - tsMs > windowMs) continue; // outside the window
     if (tsMs > nowMs + HOUR_MS) continue; // future timestamp / clock skew
 
-    // ValuePickr posts carry `matchText` (topic title + body); the company is
-    // often only named in the topic title, not the post body.
-    const matchSource = raw.matchText || raw.text;
-    const tickers = matchTickers(matchSource);
+    // A source may pre-attribute a post to specific tickers (ValuePickr fetches
+    // each stock's topic directly); otherwise detect the ticker(s) from text.
+    const tickers =
+      Array.isArray(raw.tickers) && raw.tickers.length
+        ? raw.tickers
+        : matchTickers(raw.text);
     if (tickers.length === 0 || tickers.length > MAX_TICKERS_PER_POST) continue;
 
-    const sentiment = scorePost(matchSource);
+    const sentiment = scorePost(raw.text);
     for (const ticker of tickers) {
       if (!STOCK_BY_TICKER.has(ticker)) continue;
       const post = {

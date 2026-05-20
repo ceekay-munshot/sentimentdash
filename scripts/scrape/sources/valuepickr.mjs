@@ -1,15 +1,14 @@
 /**
- * ValuePickr source — fetches recent posts from the ValuePickr investor forum
- * (forum.valuepickr.com, a Discourse instance) via its public JSON endpoints.
+ * ValuePickr source — fetches recent posts about the tracked stocks from the
+ * ValuePickr investor forum (forum.valuepickr.com, a Discourse instance).
  *
- * No account or API key required. Discourse exposes /posts.json — a site-wide
- * stream of the latest posts — which is paged backwards until the configured
- * time window is covered.
- *
- * Each post carries a `matchText` field (topic title + body): ValuePickr posts
- * usually live inside a per-company topic and don't repeat the company name in
- * the body, so the topic title is essential for ticker matching.
+ * No account or API key required. ValuePickr's recent activity skews heavily
+ * toward small/mid-caps, so a site-wide feed barely overlaps our large-cap
+ * universe. Instead this runs one Discourse search per stock — search weights
+ * topic titles, which carry the company name — and pre-attributes each
+ * returned post to that stock via the shared `tickers` field.
  */
+import { STOCKS } from '../stocks.mjs';
 
 const UA =
   'sentimentdash/0.1 (Indian stock sentiment dashboard; +https://github.com/ceekay-munshot/sentimentdash)';
@@ -17,6 +16,11 @@ const UA =
 const BASE = 'https://forum.valuepickr.com';
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Most ValuePickr topics are titled with the company name; a few need a
+// different search term than the formal name in stocks.mjs.
+const SEARCH_TERM_OVERRIDES = { PAYTM: 'Paytm' };
+const searchTermFor = (stock) => SEARCH_TERM_OVERRIDES[stock.ticker] || stock.name;
 
 /** GET JSON with retry + exponential backoff on rate-limit / transient errors. */
 async function fetchJSON(url) {
@@ -50,86 +54,86 @@ const ENTITIES = {
   '&hellip;': '…',
 };
 
-/** Discourse `cooked` is HTML; reduce it to plain text and drop quoted replies. */
+/** Reduces a Discourse HTML snippet to plain text. */
 function stripHtml(html) {
   return String(html || '')
-    .replace(/<aside\b[^>]*\bquote\b[\s\S]*?<\/aside>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&quot;|&#39;|&amp;|&lt;|&gt;|&nbsp;|&hellip;/g, (m) => ENTITIES[m])
     .replace(/\s+/g, ' ')
     .trim();
 }
 
-function normalize(post) {
+function normalize(post, topicMap, ticker) {
   const author = post.username || post.name || 'unknown';
-  const body = stripHtml(post.cooked);
-  let text = body;
+  let text = stripHtml(post.blurb);
   if (text.length > 600) text = `${text.slice(0, 600).trimEnd()}…`;
-  const topicTitle = post.topic_title || '';
-  const likes = Array.isArray(post.actions_summary)
-    ? post.actions_summary.find((a) => a.id === 2)?.count || 0
-    : 0;
+  const topic = topicMap.get(post.topic_id) || {};
   return {
     source: 'valuepickr',
     id: String(post.id),
     author,
     handle: `@${author}`,
-    community: topicTitle || 'ValuePickr',
+    community: topic.title || 'ValuePickr',
     timestamp: new Date(post.created_at).toISOString(),
-    text,
-    matchText: `${topicTitle} ${body}`.trim(),
-    url:
-      post.topic_slug && post.topic_id
-        ? `${BASE}/t/${post.topic_slug}/${post.topic_id}/${post.post_number || 1}`
-        : BASE,
-    likes,
-    comments: typeof post.reply_count === 'number' ? post.reply_count : 0,
+    text: text || '(no preview)',
+    tickers: [ticker],
+    url: topic.slug
+      ? `${BASE}/t/${topic.slug}/${post.topic_id}/${post.post_number || 1}`
+      : `${BASE}/t/${post.topic_id}`,
+    likes: typeof post.like_count === 'number' ? post.like_count : 0,
+    comments: 0,
   };
 }
 
-/**
- * Fetches recent forum posts within the time window.
- * On failure it logs and returns whatever was gathered so far.
- */
-export async function fetchValuePickrPosts({ windowHours = 24, maxPages = 6 } = {}) {
-  const cutoff = Date.now() - windowHours * 3600 * 1000;
-  const out = [];
-  let before = null;
+/** Searches ValuePickr for one stock and returns its recent posts. */
+async function searchStock(stock, windowMs, maxPages) {
+  const cutoff = Date.now() - windowMs;
+  const query = encodeURIComponent(`${searchTermFor(stock)} order:latest`);
+  const posts = [];
 
-  for (let page = 0; page < maxPages; page++) {
-    const url = `${BASE}/posts.json${before ? `?before=${before}` : ''}`;
-    let data;
-    try {
-      data = await fetchJSON(url);
-    } catch (err) {
-      console.error(`[valuepickr] page ${page + 1} failed: ${err.message}`);
-      break;
-    }
+  for (let page = 1; page <= maxPages; page++) {
+    const data = await fetchJSON(`${BASE}/search.json?q=${query}&page=${page}`);
+    const results = data?.posts || [];
+    if (results.length === 0) break;
 
-    const posts = data?.latest_posts || [];
-    if (posts.length === 0) break;
-
-    let reachedOlder = false;
-    for (const p of posts) {
-      // Keep regular, visible posts only — skip system / "small action" entries.
-      if (p.post_type !== 1 || p.hidden || p.deleted_at || p.username === 'system') continue;
+    const topicMap = new Map(
+      (data.topics || []).map((t) => [t.id, { title: t.title || t.fancy_title, slug: t.slug }]),
+    );
+    for (const p of results) {
       const ts = new Date(p.created_at).getTime();
-      if (!Number.isFinite(ts)) continue;
-      if (ts < cutoff) {
-        reachedOlder = true;
-        continue;
-      }
-      out.push(normalize(p));
+      if (!Number.isFinite(ts) || ts < cutoff) continue;
+      posts.push(normalize(p, topicMap, stock.ticker));
     }
+    await sleep(2000);
+  }
+  return posts;
+}
 
-    before = posts[posts.length - 1]?.id;
-    if (!before || reachedOlder) break;
-    await sleep(1500);
+/**
+ * Searches ValuePickr for every tracked stock within the time window.
+ * A failing search is logged and skipped rather than aborting the run.
+ */
+export async function fetchValuePickrPosts({ windowHours = 24, maxPagesPerStock = 2 } = {}) {
+  const windowMs = windowHours * 3600 * 1000;
+  const all = [];
+
+  for (const stock of STOCKS) {
+    try {
+      const posts = await searchStock(stock, windowMs, maxPagesPerStock);
+      if (posts.length > 0) console.log(`[valuepickr] ${stock.ticker}: ${posts.length} posts`);
+      all.push(...posts);
+    } catch (err) {
+      console.error(`[valuepickr] ${stock.ticker} search failed: ${err.message}`);
+    }
+    await sleep(5000); // gentle on Discourse search rate limits
   }
 
-  // De-dupe by post id.
+  // De-dupe identical (post, ticker) attributions.
   const seen = new Set();
-  const deduped = out.filter((p) => !seen.has(p.id) && seen.add(p.id));
-  console.log(`[valuepickr] ${deduped.length} posts`);
+  const deduped = all.filter((p) => {
+    const key = `${p.id}:${p.tickers[0]}`;
+    return !seen.has(key) && seen.add(key);
+  });
+  console.log(`[valuepickr] ${deduped.length} posts across ${STOCKS.length} stocks`);
   return deduped;
 }

@@ -39,9 +39,9 @@ function post(id, text, ageHours, extra = {}) {
   };
 }
 
-// A ValuePickr post: the company is named only in the topic title, not the
-// body — `matchText` (title + body) is what must drive the ticker match.
-function vpPost(id, topicTitle, body, ageHours) {
+// A ValuePickr post is pre-attributed to its stock via `tickers` (the scraper
+// fetched that stock's topic directly), even when the body names no ticker.
+function vpPost(id, ticker, topicTitle, body, ageHours) {
   return {
     source: 'valuepickr',
     id,
@@ -50,7 +50,7 @@ function vpPost(id, topicTitle, body, ageHours) {
     community: topicTitle,
     timestamp: hoursAgo(ageHours),
     text: body,
-    matchText: `${topicTitle} ${body}`,
+    tickers: [ticker],
     url: `https://forum.valuepickr.com/t/x/${id}`,
     likes: 3,
     comments: 0,
@@ -70,7 +70,7 @@ const fixtures = [
   post('e1', 'Zomato breakout confirmed, huge upside 📈', 2),
   post('f1', 'Suzlon is a value trap, exited fully. Falling knife.', 7),
   post('g1', 'IRCTC board meeting next week, could go either way.', 8),
-  vpPost('vp1', 'Tata Power', VP_BODY, 3),
+  vpPost('vp1', 'TATAPOWER', 'Tata Power', VP_BODY, 3),
   post('z1', 'Market looks toppy, booking some profits across the board.', 1), // no ticker
   post('z2', 'Old TCS news from yesterday, strong buy.', 30), // outside 24h window
   post('z3', 'Watchlist dump: RELIANCE INFY TCS ITC SBIN HAL ZOMATO all on radar', 1), // >5 tickers
@@ -146,7 +146,7 @@ check(
 check('ValuePickr post matched TATAPOWER', byTicker.has('TATAPOWER'));
 check('TATAPOWER has 1 mention', byTicker.get('TATAPOWER')?.mentions === 1);
 check('TATAPOWER post is sourced from valuepickr', byTicker.get('TATAPOWER')?.sources.valuepickr === 1);
-check('matchText was required — post body alone names no ticker', matchTickers(VP_BODY).length === 0);
+check('pre-attribution required — post body alone names no ticker', matchTickers(VP_BODY).length === 0);
 check('TATAPOWER scored bullish', byTicker.get('TATAPOWER')?.sentiment.label === 'bullish');
 
 console.log('\nRun 2 (with run 1 as history)');
