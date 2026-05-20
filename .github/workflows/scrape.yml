@@ -1,0 +1,44 @@
+name: Scrape sentiment data
+
+on:
+  schedule:
+    # Twice daily: 01:30 & 13:30 UTC (~07:00 & 19:00 IST — pre-open & post-close).
+    - cron: '30 1,13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape-data
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Pipeline self-test
+        run: node scripts/scrape/selftest.mjs
+
+      - name: Scrape sources
+        run: node scripts/scrape/run.mjs
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "chore(data): refresh sentiment scrape [skip ci]"
+            git push
+          fi
