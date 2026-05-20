@@ -30,6 +30,9 @@ jobs:
 
       - name: Scrape sources
         run: node scripts/scrape/run.mjs
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
 
       - name: Commit refreshed data
         run: |
