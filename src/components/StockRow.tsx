@@ -43,11 +43,8 @@ export default function StockRow({ stock, index, onSelect }: Props) {
       </span>
 
       <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-        <div className="flex items-center gap-2">
-          <span className="font-mono text-sm font-bold text-white">{stock.ticker}</span>
-          <span className="hidden truncate text-sm text-slate-400 sm:inline">{stock.name}</span>
-        </div>
-        <span className="truncate text-xs text-slate-500">{stock.sector}</span>
+        <span className="truncate text-sm font-bold text-white">{stock.name}</span>
+        <span className="truncate text-xs text-slate-500">ValuePickr</span>
       </div>
 
       <div className="hidden w-[150px] shrink-0 flex-col gap-1.5 md:flex">

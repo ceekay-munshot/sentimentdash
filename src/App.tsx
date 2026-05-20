@@ -73,8 +73,7 @@ export default function App() {
 
       <footer className="border-t border-white/[0.05] py-6">
         <div className="mx-auto w-full max-w-6xl px-4 text-center text-xs text-slate-600 sm:px-6">
-          SentimentDash · Sample data for UI preview — Reddit, ValuePickr and Substack scrapers
-          coming next.
+          SentimentDash · Live sentiment from the ValuePickr investor forum.
         </div>
       </footer>
     </div>

@@ -65,8 +65,8 @@ export default function Dashboard({ data, onSelect }: Props) {
           What India is <span className="text-gradient">talking about</span>
         </h1>
         <p className="mt-1.5 max-w-xl text-sm text-slate-400">
-          The 20 most-discussed stocks across Reddit, ValuePickr and Substack — ranked by buzz,
-          scored by sentiment.
+          The companies ValuePickr is talking about right now — ranked by buzz, scored by
+          sentiment.
         </p>
       </div>
 
@@ -76,7 +76,7 @@ export default function Dashboard({ data, onSelect }: Props) {
           icon={<MessagesSquare className="h-4 w-4" />}
           label="Posts analysed"
           value={<CountUp value={data.totalPosts} />}
-          sub={`Across ${data.totalStocks} stocks · last ${data.window}`}
+          sub={`Across ${data.totalStocks} companies · last ${data.window}`}
         />
         <StatCard
           index={1}
@@ -98,7 +98,7 @@ export default function Dashboard({ data, onSelect }: Props) {
           icon={<Trophy className="h-4 w-4" />}
           label="Most bullish"
           accent="text-bull"
-          value={mostBullish?.ticker ?? '—'}
+          value={<span className="block truncate text-lg sm:text-xl">{mostBullish?.name ?? '—'}</span>}
           sub={mostBullish ? `Sentiment score ${mostBullish.sentiment.score.toFixed(2)}` : undefined}
         />
         <StatCard
@@ -106,7 +106,7 @@ export default function Dashboard({ data, onSelect }: Props) {
           icon={<TrendingUp className="h-4 w-4" />}
           label="Top mover"
           accent="text-brand-300"
-          value={topMover?.ticker ?? '—'}
+          value={<span className="block truncate text-lg sm:text-xl">{topMover?.name ?? '—'}</span>}
           sub={topMover ? `${formatPct(topMover.changePct)} vs previous ${data.window}` : undefined}
         />
       </div>
@@ -115,7 +115,7 @@ export default function Dashboard({ data, onSelect }: Props) {
         <div className="flex items-center gap-2">
           <Flame className="h-4 w-4 text-brand-300" />
           <h2 className="text-sm font-bold uppercase tracking-wider text-slate-300">
-            Top 20 trending
+            Trending now
           </h2>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">

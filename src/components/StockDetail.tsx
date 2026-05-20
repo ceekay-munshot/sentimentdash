@@ -58,7 +58,7 @@ export default function StockDetail({ ticker, stock, onBack }: Props) {
   );
 
   const name = stock?.name ?? data?.name ?? ticker;
-  const highlightTerms = [ticker, name];
+  const highlightTerms = [name];
 
   return (
     <motion.div
@@ -76,7 +76,7 @@ export default function StockDetail({ ticker, stock, onBack }: Props) {
         All stocks
       </button>
 
-      <StockHeader ticker={ticker} name={name} stock={stock} data={data} />
+      <StockHeader name={name} stock={stock} data={data} />
 
       <div className="mt-7">
         <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -117,7 +117,7 @@ export default function StockDetail({ ticker, stock, onBack }: Props) {
 
         {status === 'error' && (
           <div className="card grid place-items-center py-14 text-center">
-            <p className="text-sm text-slate-400">Couldn’t load posts for {ticker}.</p>
+            <p className="text-sm text-slate-400">Couldn’t load posts for {name}.</p>
           </div>
         )}
 
@@ -142,12 +142,10 @@ export default function StockDetail({ ticker, stock, onBack }: Props) {
 }
 
 function StockHeader({
-  ticker,
   name,
   stock,
   data,
 }: {
-  ticker: string;
   name: string;
   stock?: TrendingStock;
   data: StockPosts | null;
@@ -175,8 +173,6 @@ function StockHeader({
     );
 
   const mentions = stock?.mentions ?? posts.length;
-  const sector = stock?.sector ?? data?.sector ?? '';
-  const exchange = stock?.exchange ?? data?.exchange ?? 'NSE';
   const sentMeta = SENTIMENT_META[sentiment.label];
   const up = (stock?.changePct ?? 0) >= 0;
   const sourceTotal = SOURCE_ORDER.reduce((sum, s) => sum + (sources[s] ?? 0), 0) || 1;
@@ -186,8 +182,8 @@ function StockHeader({
       <div className="grid gap-5 p-5 sm:p-6 lg:grid-cols-[1.05fr_1fr] lg:gap-7">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-mono text-3xl font-extrabold tracking-tight text-white">
-              {ticker}
+            <span className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+              {name}
             </span>
             {stock && (
               <span className="rounded-md bg-brand/15 px-2 py-1 text-xs font-bold text-brand-300">
@@ -195,10 +191,8 @@ function StockHeader({
               </span>
             )}
           </div>
-          <p className="mt-1.5 text-base font-medium text-slate-300">{name}</p>
           <div className="mt-3 flex flex-wrap gap-1.5">
-            <Chip>{exchange}</Chip>
-            {sector && <Chip>{sector}</Chip>}
+            <Chip>ValuePickr</Chip>
           </div>
 
           <div className="mt-6 flex items-end gap-3">

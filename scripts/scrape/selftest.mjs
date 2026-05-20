@@ -3,12 +3,11 @@
  *
  *   node scripts/scrape/selftest.mjs
  *
- * Feeds a fixed set of fake posts through buildData and asserts the output
- * honours the dashboard data contract. Runs in CI before the live scrape so a
- * broken pipeline fails fast without touching real data.
+ * Feeds a fixed set of fake forum posts through buildData and asserts the
+ * output honours the dashboard data contract. Runs in CI before the live
+ * scrape so a broken pipeline fails fast without touching real data.
  */
 import { buildData } from './aggregate.mjs';
-import { matchTickers } from './stocks.mjs';
 
 let failures = 0;
 function check(label, condition) {
@@ -23,25 +22,7 @@ function check(label, condition) {
 const NOW = new Date('2026-05-20T12:00:00.000Z');
 const hoursAgo = (h) => new Date(NOW.getTime() - h * 3600 * 1000).toISOString();
 
-function post(id, text, ageHours, extra = {}) {
-  return {
-    source: 'reddit',
-    id,
-    author: 'tester',
-    handle: 'u/tester',
-    community: 'r/IndianStockMarket',
-    timestamp: hoursAgo(ageHours),
-    text,
-    url: `https://www.reddit.com/x/${id}`,
-    likes: 10,
-    comments: 2,
-    ...extra,
-  };
-}
-
-// A ValuePickr post is pre-attributed to its stock via `tickers` (the scraper
-// fetched that stock's topic directly), even when the body names no ticker.
-function vpPost(id, ticker, topicTitle, body, ageHours) {
+function vpPost(id, topicId, topicTitle, text, ageHours) {
   return {
     source: 'valuepickr',
     id,
@@ -49,119 +30,80 @@ function vpPost(id, ticker, topicTitle, body, ageHours) {
     handle: '@vptester',
     community: topicTitle,
     timestamp: hoursAgo(ageHours),
-    text: body,
-    tickers: [ticker],
-    url: `https://forum.valuepickr.com/t/x/${id}`,
-    likes: 3,
-    comments: 0,
+    text,
+    url: `https://forum.valuepickr.com/t/x/${topicId}/${id}`,
+    likes: 4,
+    comments: 1,
+    topicId: String(topicId),
+    topicTitle,
   };
 }
 
-const VP_BODY =
-  'Renewables capacity addition is ahead of guidance and cash flows are improving. Accumulating on dips.';
-
 const fixtures = [
-  post('a1', 'Loaded up more RELIANCE today, conviction multibagger buy 🚀', 1),
-  post('a2', 'RELIANCE downside risk after the results. Avoid this one.', 3),
-  post('b1', 'Sold my TATAMOTORS, JLR demand is weak and stock is overvalued. Clear miss.', 2),
-  post('b2', 'TATAMOTORS rally continues, accumulating on dips. Strong buy.', 5),
-  post('c1', 'Infosys results were in line, nothing exciting either way.', 4),
-  post('d1', 'HDFC Bank vs ICICI Bank — both look like solid long term accumulate picks.', 6),
-  post('e1', 'Zomato breakout confirmed, huge upside 📈', 2),
-  post('f1', 'Suzlon is a value trap, exited fully. Falling knife.', 7),
-  post('g1', 'IRCTC board meeting next week, could go either way.', 8),
-  vpPost('vp1', 'TATAPOWER', 'Tata Power', VP_BODY, 3),
-  post('z1', 'Market looks toppy, booking some profits across the board.', 1), // no ticker
-  post('z2', 'Old TCS news from yesterday, strong buy.', 30), // outside 24h window
-  post('z3', 'Watchlist dump: RELIANCE INFY TCS ITC SBIN HAL ZOMATO all on radar', 1), // >5 tickers
+  // Topic 501 — Caplin Point Laboratories: 3 posts (2 bullish, 1 bearish)
+  vpPost('cp1', 501, 'Caplin Point Laboratories', 'Strong buy, margins expanding and a clear multibagger.', 3),
+  vpPost('cp2', 501, 'Caplin Point Laboratories', 'Accumulating more, the breakout is confirmed.', 5),
+  vpPost('cp3', 501, 'Caplin Point Laboratories', 'Receivables are a red flag for me, I exited.', 7),
+  // Topic 502 — Suzlon Energy: 2 posts (1 bullish, 1 bearish)
+  vpPost('sz1', 502, 'Suzlon Energy', 'Order book looks healthy, accumulating on dips.', 2),
+  vpPost('sz2', 502, 'Suzlon Energy', 'Valuations stretched, would avoid at these levels.', 6),
+  // Topic 503 — Reliance Industries: 1 neutral post
+  vpPost('rl1', 503, 'Reliance Industries', 'Results were in line, nothing exciting either way.', 4),
+  // Excluded — outside the 24h window
+  vpPost('ow1', 504, 'Old Co', 'Strong buy, great quarter.', 30),
 ];
+// Excluded — a post with no topic id
+fixtures.push({ ...vpPost('nt1', 0, 'No Topic', 'Strong buy.', 1), topicId: undefined });
 
 console.log('Run 1 (no prior history)');
 const run1 = buildData(fixtures, { runs: [] }, NOW);
 const { trending, postsFiles, history } = run1;
-const byTicker = new Map(trending.stocks.map((s) => [s.ticker, s]));
+const byId = new Map(trending.stocks.map((s) => [s.ticker, s]));
 
-check('produced at least one stock', trending.stocks.length > 0);
-check('excluded the no-ticker post (z1)', !postsFiles.some((f) => f.posts.some((p) => p.id === 'reddit-z1')));
-check('excluded the out-of-window post (z2)', !postsFiles.some((f) => f.posts.some((p) => p.id === 'reddit-z2')));
-check('excluded the >5-ticker watchlist post (z3)', !postsFiles.some((f) => f.posts.some((p) => p.id === 'reddit-z3')));
-check('RELIANCE has 2 mentions', byTicker.get('RELIANCE')?.mentions === 2);
-check('TATAMOTORS has 2 mentions', byTicker.get('TATAMOTORS')?.mentions === 2);
-check('multi-ticker post counted for HDFCBANK', byTicker.get('HDFCBANK')?.mentions === 1);
-check('multi-ticker post counted for ICICIBANK', byTicker.get('ICICIBANK')?.mentions === 1);
-check('TCS absent (only mention was out-of-window)', !byTicker.has('TCS'));
-check('Zomato scored bullish', byTicker.get('ZOMATO')?.sentiment.label === 'bullish');
-check('Suzlon scored bearish', byTicker.get('SUZLON')?.sentiment.label === 'bearish');
-check('Infosys scored neutral', byTicker.get('INFY')?.sentiment.label === 'neutral');
+check('discovered exactly 3 companies', trending.stocks.length === 3);
+check('excluded the out-of-window post (ow1)', !postsFiles.some((f) => f.posts.some((p) => p.id === 'valuepickr-ow1')));
+check('excluded the topic-less post (nt1)', !postsFiles.some((f) => f.posts.some((p) => p.id === 'valuepickr-nt1')));
+check('Caplin (501) has 3 mentions', byId.get('501')?.mentions === 3);
+check('Suzlon (502) has 2 mentions', byId.get('502')?.mentions === 2);
+check('Reliance (503) has 1 mention', byId.get('503')?.mentions === 1);
+check('most-discussed topic ranks #1', byId.get('501')?.rank === 1);
+check('ranks are contiguous 1..n', trending.stocks.every((s, i) => s.rank === i + 1));
+check('company name comes from the topic title', byId.get('501')?.name === 'Caplin Point Laboratories');
+check('routing key is the topic id', trending.stocks.every((s) => /^\d+$/.test(s.ticker)));
+check('exchange/sector left blank for forum-discovered companies', trending.stocks.every((s) => s.exchange === '' && s.sector === ''));
+check('Caplin scored bullish', byId.get('501')?.sentiment.label === 'bullish');
+check('Suzlon scored neutral (1 bull / 1 bear)', byId.get('502')?.sentiment.label === 'neutral');
 
-check(
-  'ranks are contiguous 1..n',
-  trending.stocks.every((s, i) => s.rank === i + 1),
-);
-check(
-  'every trending stock has a posts file',
-  trending.stocks.every((s) => postsFiles.some((f) => f.ticker === s.ticker)),
-);
-check(
-  'every posts file is in trending',
-  postsFiles.every((f) => byTicker.has(f.ticker)),
-);
+check('every company has a posts file', trending.stocks.every((s) => postsFiles.some((f) => f.ticker === s.ticker)));
+check('every posts file is in trending', postsFiles.every((f) => byId.has(f.ticker)));
 check(
   'sentiment counts sum to mentions',
-  trending.stocks.every(
-    (s) => s.sentiment.bullish + s.sentiment.bearish + s.sentiment.neutral === s.mentions,
-  ),
+  trending.stocks.every((s) => s.sentiment.bullish + s.sentiment.bearish + s.sentiment.neutral === s.mentions),
 );
-check(
-  'each posts file length equals mentions',
-  postsFiles.every((f) => f.posts.length === byTicker.get(f.ticker).mentions),
-);
-check(
-  'changePct values are all finite',
-  trending.stocks.every((s) => Number.isFinite(s.changePct)),
-);
+check('each posts file length equals mentions', postsFiles.every((f) => f.posts.length === byId.get(f.ticker).mentions));
+check('all posts sourced from valuepickr', trending.stocks.every((s) => s.sources.valuepickr === s.mentions));
+check('changePct values are all finite', trending.stocks.every((s) => Number.isFinite(s.changePct)));
 check('first run has changePct 0 (no prior data)', trending.stocks.every((s) => s.changePct === 0));
 check(
   'sparkline values are all finite numbers',
-  trending.stocks.every(
-    (s) => Array.isArray(s.sparkline) && s.sparkline.every((n) => Number.isFinite(n)),
-  ),
+  trending.stocks.every((s) => Array.isArray(s.sparkline) && s.sparkline.every((n) => Number.isFinite(n))),
 );
-check(
-  'totalPosts equals sum of mentions',
-  trending.totalPosts === trending.stocks.reduce((sum, s) => sum + s.mentions, 0),
-);
-check('totalStocks matches stock count', trending.totalStocks === trending.stocks.length);
+check('totalPosts equals sum of mentions', trending.totalPosts === trending.stocks.reduce((sum, s) => sum + s.mentions, 0));
+check('totalStocks matches company count', trending.totalStocks === trending.stocks.length);
 check(
   'marketMood sums to totalPosts',
-  trending.marketMood.bullish + trending.marketMood.bearish + trending.marketMood.neutral ===
-    trending.totalPosts,
+  trending.marketMood.bullish + trending.marketMood.bearish + trending.marketMood.neutral === trending.totalPosts,
 );
 check('history recorded exactly one run', history.runs.length === 1);
-check(
-  'history counts match trending mentions',
-  trending.stocks.every((s) => history.runs[0].counts[s.ticker] === s.mentions),
-);
-
-check('ValuePickr post matched TATAPOWER', byTicker.has('TATAPOWER'));
-check('TATAPOWER has 1 mention', byTicker.get('TATAPOWER')?.mentions === 1);
-check('TATAPOWER post is sourced from valuepickr', byTicker.get('TATAPOWER')?.sources.valuepickr === 1);
-check('pre-attribution required — post body alone names no ticker', matchTickers(VP_BODY).length === 0);
-check('TATAPOWER scored bullish', byTicker.get('TATAPOWER')?.sentiment.label === 'bullish');
+check('history counts match trending mentions', trending.stocks.every((s) => history.runs[0].counts[s.ticker] === s.mentions));
 
 console.log('\nRun 2 (with run 1 as history)');
 const run2 = buildData(fixtures, history, new Date(NOW.getTime() + 12 * 3600 * 1000));
 const r2 = new Map(run2.trending.stocks.map((s) => [s.ticker, s]));
 check('history now has two runs', run2.history.runs.length === 2);
-check(
-  'second-run sparkline uses history (>= 2 points)',
-  run2.trending.stocks.every((s) => s.sparkline.length >= 2),
-);
-check(
-  'mentionsPrev now reflects run 1',
-  r2.get('RELIANCE')?.mentionsPrev === byTicker.get('RELIANCE')?.mentions,
-);
-check('stable mentions => changePct 0 on run 2', r2.get('RELIANCE')?.changePct === 0);
+check('second-run sparkline uses history (>= 2 points)', run2.trending.stocks.every((s) => s.sparkline.length >= 2));
+check('mentionsPrev now reflects run 1', r2.get('501')?.mentionsPrev === 3);
+check('stable mentions => changePct 0 on run 2', r2.get('501')?.changePct === 0);
 
 if (failures > 0) {
   console.error(`\n${failures} check(s) failed.`);

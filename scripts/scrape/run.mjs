@@ -3,14 +3,16 @@
  *
  *   node scripts/scrape/run.mjs
  *
- * Fetches sources, builds the dashboard data contract and writes it to
- * public/data. If fetching yields nothing it exits non-zero WITHOUT writing,
- * so a failed run never overwrites the last good data.
+ * Scrapes the investor forums, builds the dashboard data contract and writes
+ * it to public/data. If scraping yields nothing it exits non-zero WITHOUT
+ * writing, so a failed run never overwrites the last good data.
+ *
+ * Reddit is parked: its posts are free-text with no per-company structure, so
+ * a forum-to-company model needs a different (entity-extraction) approach.
  */
 import { writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { fetchRedditPosts } from './sources/reddit.mjs';
 import { fetchValuePickrPosts } from './sources/valuepickr.mjs';
 import { loadHistory } from './history.mjs';
 import { buildData } from './aggregate.mjs';
@@ -26,17 +28,7 @@ async function main() {
   const now = new Date();
   console.log(`[scrape] start ${now.toISOString()}`);
 
-  const rawPosts = [];
-  rawPosts.push(...(await fetchValuePickrPosts({ windowHours: 24 })));
-
-  // Reddit blocks anonymous datacenter traffic, so it only runs once OAuth
-  // credentials are configured as repo secrets.
-  if (process.env.REDDIT_CLIENT_ID && process.env.REDDIT_CLIENT_SECRET) {
-    rawPosts.push(...(await fetchRedditPosts({ windowHours: 24 })));
-  } else {
-    console.log('[scrape] Reddit credentials not set — skipping Reddit (ValuePickr only).');
-  }
-
+  const rawPosts = await fetchValuePickrPosts({ windowHours: 24 });
   console.log(`[scrape] fetched ${rawPosts.length} posts total`);
 
   if (rawPosts.length === 0) {
@@ -48,7 +40,7 @@ async function main() {
   const { trending, postsFiles, history: nextHistory } = buildData(rawPosts, history, now);
 
   if (trending.stocks.length === 0) {
-    console.error('[scrape] no tracked stocks matched — keeping existing data, exiting non-zero.');
+    console.error('[scrape] no companies discovered — keeping existing data, exiting non-zero.');
     process.exit(1);
   }
 
@@ -61,13 +53,13 @@ async function main() {
   writeJSON(HISTORY_FILE, nextHistory);
 
   console.log(
-    `[scrape] wrote ${postsFiles.length} stocks, ${trending.totalPosts} mentions, ` +
+    `[scrape] wrote ${postsFiles.length} companies, ${trending.totalPosts} posts, ` +
       `mood score ${trending.marketMood.score}`,
   );
   console.log(
     `[scrape] top: ${trending.stocks
       .slice(0, 5)
-      .map((s) => `${s.ticker}(${s.mentions})`)
+      .map((s) => `${s.name} (${s.mentions})`)
       .join(', ')}`,
   );
 }
