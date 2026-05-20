@@ -1,35 +1,872 @@
 {
-  "generatedAt": "2026-05-20T13:12:38.102Z",
+  "generatedAt": "2026-05-20T16:35:33.764Z",
   "window": "30d",
-  "totalPosts": 452,
-  "totalStocks": 146,
+  "totalPosts": 4290,
+  "totalStocks": 145,
   "marketMood": {
-    "bullish": 43,
-    "bearish": 43,
-    "neutral": 366,
-    "score": 0
+    "bullish": 528,
+    "bearish": 234,
+    "neutral": 3528,
+    "score": 0.07
   },
   "stocks": [
     {
       "rank": 1,
+      "ticker": "81692",
+      "name": "PayTM (One 97 Communications Ltd)",
+      "exchange": "",
+      "sector": "",
+      "mentions": 101,
+      "mentionsPrev": 1,
+      "changePct": 10000,
+      "sentiment": {
+        "score": 0.03,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 2,
+        "neutral": 94
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 100
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        101
+      ]
+    },
+    {
+      "rank": 2,
+      "ticker": "9935",
+      "name": "Maruti Suzuki - Leader in Passenger Vehicles",
+      "exchange": "",
+      "sector": "",
+      "mentions": 101,
+      "mentionsPrev": 1,
+      "changePct": 10000,
+      "sentiment": {
+        "score": 0.02,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 99
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 100
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        101
+      ]
+    },
+    {
+      "rank": 3,
+      "ticker": "158490",
+      "name": "Ola Electric - Full Stack EV play?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 101,
+      "mentionsPrev": 11,
+      "changePct": 818.2,
+      "sentiment": {
+        "score": 0.02,
+        "label": "neutral",
+        "bullish": 10,
+        "bearish": 8,
+        "neutral": 83
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 11,
+        "news": 90
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        12,
+        11,
+        11,
+        101
+      ]
+    },
+    {
+      "rank": 4,
+      "ticker": "186791",
+      "name": "Nuclear Energy - A new kid in the block - opportunities and threats",
+      "exchange": "",
+      "sector": "",
+      "mentions": 101,
+      "mentionsPrev": 1,
+      "changePct": 10000,
+      "sentiment": {
+        "score": 0.01,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 100
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 100
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        101
+      ]
+    },
+    {
+      "rank": 5,
+      "ticker": "16625",
+      "name": "Bharti Airtel - What doesn't kill you makes you stronger?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 100,
+      "mentionsPrev": 1,
+      "changePct": 9900,
+      "sentiment": {
+        "score": 0.08,
+        "label": "neutral",
+        "bullish": 10,
+        "bearish": 2,
+        "neutral": 88
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 99
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        100
+      ]
+    },
+    {
+      "rank": 6,
+      "ticker": "20399",
+      "name": "Nestle India - FMCG Play",
+      "exchange": "",
+      "sector": "",
+      "mentions": 92,
+      "mentionsPrev": 1,
+      "changePct": 9100,
+      "sentiment": {
+        "score": 0.09,
+        "label": "neutral",
+        "bullish": 11,
+        "bearish": 3,
+        "neutral": 78
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 91
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        92
+      ]
+    },
+    {
+      "rank": 7,
+      "ticker": "181934",
+      "name": "Mobikwik - Are wallets still a thing?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 81,
+      "mentionsPrev": 1,
+      "changePct": 8000,
+      "sentiment": {
+        "score": 0.01,
+        "label": "neutral",
+        "bullish": 6,
+        "bearish": 5,
+        "neutral": 70
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 80
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        81
+      ]
+    },
+    {
+      "rank": 8,
+      "ticker": "427",
+      "name": "Lic housing finance",
+      "exchange": "",
+      "sector": "",
+      "mentions": 77,
+      "mentionsPrev": 5,
+      "changePct": 1440,
+      "sentiment": {
+        "score": 0.13,
+        "label": "bullish",
+        "bullish": 12,
+        "bearish": 2,
+        "neutral": 63
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 5,
+        "news": 72
+      },
+      "sparkline": [
+        0,
+        1,
+        5,
+        5,
+        5,
+        5,
+        77
+      ]
+    },
+    {
+      "rank": 9,
+      "ticker": "6946",
+      "name": "Raymond - The Complete Man",
+      "exchange": "",
+      "sector": "",
+      "mentions": 77,
+      "mentionsPrev": 4,
+      "changePct": 1825,
+      "sentiment": {
+        "score": 0.04,
+        "label": "neutral",
+        "bullish": 6,
+        "bearish": 3,
+        "neutral": 68
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 73
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        4,
+        77
+      ]
+    },
+    {
+      "rank": 10,
+      "ticker": "177404",
+      "name": "Apollo Micro Systems Limited - A Small cap in Aerospace & Defense",
+      "exchange": "",
+      "sector": "",
+      "mentions": 73,
+      "mentionsPrev": 2,
+      "changePct": 3550,
+      "sentiment": {
+        "score": 0.23,
+        "label": "bullish",
+        "bullish": 19,
+        "bearish": 2,
+        "neutral": 52
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 71
+      },
+      "sparkline": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        73
+      ]
+    },
+    {
+      "rank": 11,
+      "ticker": "5328",
+      "name": "Manappuram Finance",
+      "exchange": "",
+      "sector": "",
+      "mentions": 73,
+      "mentionsPrev": 9,
+      "changePct": 711.1,
+      "sentiment": {
+        "score": 0.15,
+        "label": "bullish",
+        "bullish": 17,
+        "bearish": 6,
+        "neutral": 50
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 9,
+        "news": 64
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        9,
+        9,
+        9,
+        73
+      ]
+    },
+    {
+      "rank": 12,
+      "ticker": "1092",
+      "name": "IIFL Finance (erstwhile IIFL Holdings) ~ Retail focused diversified NBFC",
+      "exchange": "",
+      "sector": "",
+      "mentions": 72,
+      "mentionsPrev": 2,
+      "changePct": 3500,
+      "sentiment": {
+        "score": 0.11,
+        "label": "neutral",
+        "bullish": 10,
+        "bearish": 2,
+        "neutral": 60
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 70
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        72
+      ]
+    },
+    {
+      "rank": 13,
+      "ticker": "23985",
+      "name": "Bajaj Auto - Is the company back on growth track?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 72,
+      "mentionsPrev": 1,
+      "changePct": 7100,
+      "sentiment": {
+        "score": 0.01,
+        "label": "neutral",
+        "bullish": 4,
+        "bearish": 3,
+        "neutral": 65
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 71
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        72
+      ]
+    },
+    {
+      "rank": 14,
+      "ticker": "200216",
+      "name": "Inventurus Knowledge Solutions - Where A.I. Meets the Business of Medicine",
+      "exchange": "",
+      "sector": "",
+      "mentions": 71,
+      "mentionsPrev": 3,
+      "changePct": 2266.7,
+      "sentiment": {
+        "score": 0.07,
+        "label": "neutral",
+        "bullish": 9,
+        "bearish": 4,
+        "neutral": 58
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 68
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        71
+      ]
+    },
+    {
+      "rank": 15,
+      "ticker": "170360",
+      "name": "P N Gadgil Jewellers Ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 68,
+      "mentionsPrev": 11,
+      "changePct": 518.2,
+      "sentiment": {
+        "score": 0.01,
+        "label": "neutral",
+        "bullish": 8,
+        "bearish": 7,
+        "neutral": 53
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 11,
+        "news": 57
+      },
+      "sparkline": [
+        0,
+        2,
+        8,
+        11,
+        11,
+        11,
+        68
+      ]
+    },
+    {
+      "rank": 16,
+      "ticker": "1614",
+      "name": "Muthoot Finance",
+      "exchange": "",
+      "sector": "",
+      "mentions": 67,
+      "mentionsPrev": 4,
+      "changePct": 1575,
+      "sentiment": {
+        "score": 0.07,
+        "label": "neutral",
+        "bullish": 8,
+        "bearish": 3,
+        "neutral": 56
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 63
+      },
+      "sparkline": [
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        67
+      ]
+    },
+    {
+      "rank": 17,
+      "ticker": "8456",
+      "name": "Sheela Foam - An exciting branded play",
+      "exchange": "",
+      "sector": "",
+      "mentions": 63,
+      "mentionsPrev": 3,
+      "changePct": 2000,
+      "sentiment": {
+        "score": 0.05,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 2,
+        "neutral": 56
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 60
+      },
+      "sparkline": [
+        0,
+        0,
+        2,
+        3,
+        3,
+        3,
+        63
+      ]
+    },
+    {
+      "rank": 18,
+      "ticker": "283",
+      "name": "City Union Bank (CUB) ~ Conservative Lending Franchise",
+      "exchange": "",
+      "sector": "",
+      "mentions": 62,
+      "mentionsPrev": 3,
+      "changePct": 1966.7,
+      "sentiment": {
+        "score": 0.19,
+        "label": "bullish",
+        "bullish": 16,
+        "bearish": 4,
+        "neutral": 42
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 59
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        62
+      ]
+    },
+    {
+      "rank": 19,
+      "ticker": "147652",
+      "name": "Azad Engineering - A stock picker’s dream!",
+      "exchange": "",
+      "sector": "",
+      "mentions": 61,
+      "mentionsPrev": 4,
+      "changePct": 1425,
+      "sentiment": {
+        "score": 0.25,
+        "label": "bullish",
+        "bullish": 15,
+        "bearish": 0,
+        "neutral": 46
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 57
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        61
+      ]
+    },
+    {
+      "rank": 20,
+      "ticker": "337",
+      "name": "Delta Corp - A huge but risky opportunity",
+      "exchange": "",
+      "sector": "",
+      "mentions": 60,
+      "mentionsPrev": 2,
+      "changePct": 2900,
+      "sentiment": {
+        "score": -0.02,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 6,
+        "neutral": 49
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 58
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        60
+      ]
+    },
+    {
+      "rank": 21,
+      "ticker": "94739",
+      "name": "Piramal Pharma Limited",
+      "exchange": "",
+      "sector": "",
+      "mentions": 59,
+      "mentionsPrev": 1,
+      "changePct": 5800,
+      "sentiment": {
+        "score": 0.2,
+        "label": "bullish",
+        "bullish": 14,
+        "bearish": 2,
+        "neutral": 43
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 58
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        59
+      ]
+    },
+    {
+      "rank": 22,
+      "ticker": "20381",
+      "name": "Lemon Tree Hotels - Market leader in mid-priced hotel sector",
+      "exchange": "",
+      "sector": "",
+      "mentions": 58,
+      "mentionsPrev": 1,
+      "changePct": 5700,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 4,
+        "bearish": 4,
+        "neutral": 50
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 57
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        58
+      ]
+    },
+    {
+      "rank": 23,
+      "ticker": "62657",
+      "name": "Zomato - Should you order?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 54,
+      "mentionsPrev": 1,
+      "changePct": 5300,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 2,
+        "neutral": 50
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 53
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        54
+      ]
+    },
+    {
+      "rank": 24,
+      "ticker": "71829",
+      "name": "Websol energy system ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 53,
+      "mentionsPrev": 4,
+      "changePct": 1225,
+      "sentiment": {
+        "score": 0.19,
+        "label": "bullish",
+        "bullish": 10,
+        "bearish": 0,
+        "neutral": 43
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 49
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        53
+      ]
+    },
+    {
+      "rank": 25,
+      "ticker": "218154",
+      "name": "Avalon Technologies Ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 52,
+      "mentionsPrev": 3,
+      "changePct": 1633.3,
+      "sentiment": {
+        "score": 0.17,
+        "label": "bullish",
+        "bullish": 10,
+        "bearish": 1,
+        "neutral": 41
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 50
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        3,
+        52
+      ]
+    },
+    {
+      "rank": 26,
+      "ticker": "5761",
+      "name": "Sharda Cropchem - Can it get into indian market in a bigger way?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 52,
+      "mentionsPrev": 7,
+      "changePct": 642.9,
+      "sentiment": {
+        "score": 0.08,
+        "label": "neutral",
+        "bullish": 7,
+        "bearish": 3,
+        "neutral": 42
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 7,
+        "news": 45
+      },
+      "sparkline": [
+        0,
+        0,
+        7,
+        7,
+        7,
+        7,
+        52
+      ]
+    },
+    {
+      "rank": 27,
+      "ticker": "5722",
+      "name": "Sunteck Realty - Quality Real Estate Company",
+      "exchange": "",
+      "sector": "",
+      "mentions": 52,
+      "mentionsPrev": 2,
+      "changePct": 2500,
+      "sentiment": {
+        "score": 0.04,
+        "label": "neutral",
+        "bullish": 7,
+        "bearish": 5,
+        "neutral": 40
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 50
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        52
+      ]
+    },
+    {
+      "rank": 28,
       "ticker": "214074",
       "name": "Afcom Holdings - Sky High Ambitions, Grounded in Reality?",
       "exchange": "",
       "sector": "",
-      "mentions": 25,
+      "mentions": 52,
       "mentionsPrev": 25,
-      "changePct": 0,
+      "changePct": 108,
       "sentiment": {
-        "score": -0.04,
+        "score": 0.02,
         "label": "neutral",
-        "bullish": 1,
-        "bearish": 2,
-        "neutral": 22
+        "bullish": 7,
+        "bearish": 6,
+        "neutral": 39
       },
       "sources": {
         "reddit": 0,
         "valuepickr": 25,
-        "news": 0
+        "news": 27
       },
       "sparkline": [
         0,
@@ -37,29 +874,216 @@
         1,
         25,
         25,
-        25
+        25,
+        52
       ]
     },
     {
-      "rank": 2,
+      "rank": 29,
+      "ticker": "217970",
+      "name": "Jain Resource Recycling Ltd : A metal recycling compounder in the making",
+      "exchange": "",
+      "sector": "",
+      "mentions": 51,
+      "mentionsPrev": 4,
+      "changePct": 1175,
+      "sentiment": {
+        "score": 0.22,
+        "label": "bullish",
+        "bullish": 12,
+        "bearish": 1,
+        "neutral": 38
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 47
+      },
+      "sparkline": [
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        51
+      ]
+    },
+    {
+      "rank": 30,
+      "ticker": "94031",
+      "name": "Dynamic Cables - Much more dynamic in 2022?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 49,
+      "mentionsPrev": 2,
+      "changePct": 2350,
+      "sentiment": {
+        "score": 0.14,
+        "label": "bullish",
+        "bullish": 7,
+        "bearish": 0,
+        "neutral": 42
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 47
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        49
+      ]
+    },
+    {
+      "rank": 31,
+      "ticker": "631",
+      "name": "Rain Industries - An oversold de-leveraging play",
+      "exchange": "",
+      "sector": "",
+      "mentions": 48,
+      "mentionsPrev": 3,
+      "changePct": 1500,
+      "sentiment": {
+        "score": 0.1,
+        "label": "neutral",
+        "bullish": 8,
+        "bearish": 3,
+        "neutral": 37
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 45
+      },
+      "sparkline": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        3,
+        48
+      ]
+    },
+    {
+      "rank": 32,
+      "ticker": "181206",
+      "name": "Interarch: A Proxy Play on India's Infrastructure and CapEx Revival",
+      "exchange": "",
+      "sector": "",
+      "mentions": 48,
+      "mentionsPrev": 2,
+      "changePct": 2300,
+      "sentiment": {
+        "score": 0.08,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 1,
+        "neutral": 42
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 46
+      },
+      "sparkline": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        48
+      ]
+    },
+    {
+      "rank": 33,
+      "ticker": "213",
+      "name": "Eicher Motors",
+      "exchange": "",
+      "sector": "",
+      "mentions": 47,
+      "mentionsPrev": 2,
+      "changePct": 2250,
+      "sentiment": {
+        "score": 0.11,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 0,
+        "neutral": 42
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 45
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        47
+      ]
+    },
+    {
+      "rank": 34,
+      "ticker": "217695",
+      "name": "Rossell Techsys",
+      "exchange": "",
+      "sector": "",
+      "mentions": 47,
+      "mentionsPrev": 2,
+      "changePct": 2250,
+      "sentiment": {
+        "score": 0.06,
+        "label": "neutral",
+        "bullish": 4,
+        "bearish": 1,
+        "neutral": 42
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 45
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        47
+      ]
+    },
+    {
+      "rank": 35,
       "ticker": "1065",
       "name": "Piccadily Agro Industries Ltd",
       "exchange": "",
       "sector": "",
-      "mentions": 17,
+      "mentions": 47,
       "mentionsPrev": 17,
-      "changePct": 0,
+      "changePct": 176.5,
       "sentiment": {
-        "score": -0.12,
+        "score": -0.04,
         "label": "neutral",
-        "bullish": 1,
-        "bearish": 3,
-        "neutral": 13
+        "bullish": 4,
+        "bearish": 6,
+        "neutral": 37
       },
       "sources": {
         "reddit": 0,
         "valuepickr": 17,
-        "news": 0
+        "news": 30
       },
       "sparkline": [
         0,
@@ -67,11 +1091,1748 @@
         5,
         18,
         17,
+        17,
+        47
+      ]
+    },
+    {
+      "rank": 36,
+      "ticker": "3279",
+      "name": "IDFC First Bank Limited - First Bank Preference for Long Term Investors too?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 47,
+      "mentionsPrev": 6,
+      "changePct": 683.3,
+      "sentiment": {
+        "score": -0.28,
+        "label": "bearish",
+        "bullish": 2,
+        "bearish": 15,
+        "neutral": 30
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 6,
+        "news": 41
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        6,
+        6,
+        6,
+        47
+      ]
+    },
+    {
+      "rank": 37,
+      "ticker": "1034",
+      "name": "Avantel",
+      "exchange": "",
+      "sector": "",
+      "mentions": 46,
+      "mentionsPrev": 1,
+      "changePct": 4500,
+      "sentiment": {
+        "score": 0.04,
+        "label": "neutral",
+        "bullish": 6,
+        "bearish": 4,
+        "neutral": 36
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 45
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        46
+      ]
+    },
+    {
+      "rank": 38,
+      "ticker": "1047",
+      "name": "Garware Technical Fibres (Earlier: Garware Wallropes)",
+      "exchange": "",
+      "sector": "",
+      "mentions": 46,
+      "mentionsPrev": 1,
+      "changePct": 4500,
+      "sentiment": {
+        "score": -0.02,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 3,
+        "neutral": 41
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 45
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        46
+      ]
+    },
+    {
+      "rank": 39,
+      "ticker": "106674",
+      "name": "NRB Bearings - EV and exports to drive growth?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 45,
+      "mentionsPrev": 2,
+      "changePct": 2150,
+      "sentiment": {
+        "score": 0.04,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 3,
+        "neutral": 37
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 43
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        45
+      ]
+    },
+    {
+      "rank": 40,
+      "ticker": "200382",
+      "name": "Sambhv Steel Tubes - Emerging Backbone of India’s Infrastructure Boom",
+      "exchange": "",
+      "sector": "",
+      "mentions": 45,
+      "mentionsPrev": 1,
+      "changePct": 4400,
+      "sentiment": {
+        "score": 0.04,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 1,
+        "neutral": 41
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 44
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        45
+      ]
+    },
+    {
+      "rank": 41,
+      "ticker": "134893",
+      "name": "Paras Defence and Space Technologies Limited (“Paras Defence”) :- Big News ! A Potential Investment Gem?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 44,
+      "mentionsPrev": 1,
+      "changePct": 4300,
+      "sentiment": {
+        "score": 0.09,
+        "label": "neutral",
+        "bullish": 8,
+        "bearish": 4,
+        "neutral": 32
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 43
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        44
+      ]
+    },
+    {
+      "rank": 42,
+      "ticker": "990",
+      "name": "Atul Auto Limited",
+      "exchange": "",
+      "sector": "",
+      "mentions": 44,
+      "mentionsPrev": 1,
+      "changePct": 4300,
+      "sentiment": {
+        "score": 0.07,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 41
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 43
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        44
+      ]
+    },
+    {
+      "rank": 43,
+      "ticker": "114496",
+      "name": "Chennai petroleum",
+      "exchange": "",
+      "sector": "",
+      "mentions": 42,
+      "mentionsPrev": 1,
+      "changePct": 4100,
+      "sentiment": {
+        "score": 0.24,
+        "label": "bullish",
+        "bullish": 10,
+        "bearish": 0,
+        "neutral": 32
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 41
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        42
+      ]
+    },
+    {
+      "rank": 44,
+      "ticker": "2279",
+      "name": "Syngene International",
+      "exchange": "",
+      "sector": "",
+      "mentions": 42,
+      "mentionsPrev": 4,
+      "changePct": 950,
+      "sentiment": {
+        "score": -0.07,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 6,
+        "neutral": 33
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 38
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        42
+      ]
+    },
+    {
+      "rank": 45,
+      "ticker": "174957",
+      "name": "KRN Heat Exchanger and Refrigeration Ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 41,
+      "mentionsPrev": 4,
+      "changePct": 925,
+      "sentiment": {
+        "score": 0.22,
+        "label": "bullish",
+        "bullish": 9,
+        "bearish": 0,
+        "neutral": 32
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 37
+      },
+      "sparkline": [
+        0,
+        0,
+        2,
+        4,
+        4,
+        4,
+        41
+      ]
+    },
+    {
+      "rank": 46,
+      "ticker": "42",
+      "name": "Wockhardt - A story with twist and turn",
+      "exchange": "",
+      "sector": "",
+      "mentions": 40,
+      "mentionsPrev": 1,
+      "changePct": 3900,
+      "sentiment": {
+        "score": 0.23,
+        "label": "bullish",
+        "bullish": 11,
+        "bearish": 2,
+        "neutral": 27
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 39
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        40
+      ]
+    },
+    {
+      "rank": 47,
+      "ticker": "172296",
+      "name": "Northern Arc - Long term play",
+      "exchange": "",
+      "sector": "",
+      "mentions": 40,
+      "mentionsPrev": 1,
+      "changePct": 3900,
+      "sentiment": {
+        "score": 0.05,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 3,
+        "neutral": 32
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 39
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        40
+      ]
+    },
+    {
+      "rank": 48,
+      "ticker": "10029",
+      "name": "Subex Ltd. - Possible Turnaround?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 40,
+      "mentionsPrev": 1,
+      "changePct": 3900,
+      "sentiment": {
+        "score": -0.1,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 9,
+        "neutral": 26
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 39
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        40
+      ]
+    },
+    {
+      "rank": 49,
+      "ticker": "110152",
+      "name": "Schneider Electric Infrastructure: A global company with advantage of a industry tailwind:",
+      "exchange": "",
+      "sector": "",
+      "mentions": 39,
+      "mentionsPrev": 2,
+      "changePct": 1850,
+      "sentiment": {
+        "score": 0.33,
+        "label": "bullish",
+        "bullish": 13,
+        "bearish": 0,
+        "neutral": 26
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 37
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        39
+      ]
+    },
+    {
+      "rank": 50,
+      "ticker": "23031",
+      "name": "Mahindra Logistics",
+      "exchange": "",
+      "sector": "",
+      "mentions": 39,
+      "mentionsPrev": 1,
+      "changePct": 3800,
+      "sentiment": {
+        "score": 0.08,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 36
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 38
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        39
+      ]
+    },
+    {
+      "rank": 51,
+      "ticker": "32642",
+      "name": "NALCO - lowest cost producer of alumina and bauxite",
+      "exchange": "",
+      "sector": "",
+      "mentions": 38,
+      "mentionsPrev": 3,
+      "changePct": 1166.7,
+      "sentiment": {
+        "score": 0.08,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 35
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 35
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        38
+      ]
+    },
+    {
+      "rank": 52,
+      "ticker": "204009",
+      "name": "Akums - CDMO Leader serving the Indian Pharma space",
+      "exchange": "",
+      "sector": "",
+      "mentions": 37,
+      "mentionsPrev": 1,
+      "changePct": 3600,
+      "sentiment": {
+        "score": 0.03,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 36
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 36
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        37
+      ]
+    },
+    {
+      "rank": 53,
+      "ticker": "107232",
+      "name": "Tata Technologies",
+      "exchange": "",
+      "sector": "",
+      "mentions": 36,
+      "mentionsPrev": 1,
+      "changePct": 3500,
+      "sentiment": {
+        "score": 0.06,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 3,
+        "neutral": 28
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 35
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        36
+      ]
+    },
+    {
+      "rank": 54,
+      "ticker": "1011",
+      "name": "Deep Industries (DIL)",
+      "exchange": "",
+      "sector": "",
+      "mentions": 34,
+      "mentionsPrev": 4,
+      "changePct": 750,
+      "sentiment": {
+        "score": 0.12,
+        "label": "neutral",
+        "bullish": 5,
+        "bearish": 1,
+        "neutral": 28
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 30
+      },
+      "sparkline": [
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        34
+      ]
+    },
+    {
+      "rank": 55,
+      "ticker": "63826",
+      "name": "Home First Finance Company",
+      "exchange": "",
+      "sector": "",
+      "mentions": 34,
+      "mentionsPrev": 1,
+      "changePct": 3300,
+      "sentiment": {
+        "score": 0.03,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 1,
+        "neutral": 31
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 33
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        34
+      ]
+    },
+    {
+      "rank": 56,
+      "ticker": "232",
+      "name": "Foseco india limited",
+      "exchange": "",
+      "sector": "",
+      "mentions": 34,
+      "mentionsPrev": 1,
+      "changePct": 3300,
+      "sentiment": {
+        "score": -0.06,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 5,
+        "neutral": 26
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 33
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        34
+      ]
+    },
+    {
+      "rank": 57,
+      "ticker": "52302",
+      "name": "CSB BANK - will it become next HDFC Bank?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 34,
+      "mentionsPrev": 2,
+      "changePct": 1600,
+      "sentiment": {
+        "score": -0.09,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 5,
+        "neutral": 27
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 32
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        2,
+        2,
+        2,
+        34
+      ]
+    },
+    {
+      "rank": 58,
+      "ticker": "187656",
+      "name": "Aether Industries: A Niche Leader in Specialty Chemicals with High Growth Potential",
+      "exchange": "",
+      "sector": "",
+      "mentions": 32,
+      "mentionsPrev": 1,
+      "changePct": 3100,
+      "sentiment": {
+        "score": 0.16,
+        "label": "bullish",
+        "bullish": 6,
+        "bearish": 1,
+        "neutral": 25
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 31
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        32
+      ]
+    },
+    {
+      "rank": 59,
+      "ticker": "11839",
+      "name": "Kamat Hotels (India) Ltd- A Possible Turnaround Story!",
+      "exchange": "",
+      "sector": "",
+      "mentions": 32,
+      "mentionsPrev": 2,
+      "changePct": 1500,
+      "sentiment": {
+        "score": -0.03,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 3,
+        "neutral": 27
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 30
+      },
+      "sparkline": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        32
+      ]
+    },
+    {
+      "rank": 60,
+      "ticker": "73801",
+      "name": "Aster DM healthcare",
+      "exchange": "",
+      "sector": "",
+      "mentions": 30,
+      "mentionsPrev": 1,
+      "changePct": 2900,
+      "sentiment": {
+        "score": 0.2,
+        "label": "bullish",
+        "bullish": 6,
+        "bearish": 0,
+        "neutral": 24
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 29
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        30
+      ]
+    },
+    {
+      "rank": 61,
+      "ticker": "103009",
+      "name": "Five Star Business Finance - Financing Bharat!",
+      "exchange": "",
+      "sector": "",
+      "mentions": 30,
+      "mentionsPrev": 1,
+      "changePct": 2900,
+      "sentiment": {
+        "score": 0.07,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 28
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 29
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        30
+      ]
+    },
+    {
+      "rank": 62,
+      "ticker": "107967",
+      "name": "PNGS Gargi Fashion Jewellery Ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 30,
+      "mentionsPrev": 3,
+      "changePct": 900,
+      "sentiment": {
+        "score": -0.07,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 3,
+        "neutral": 26
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 27
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        30
+      ]
+    },
+    {
+      "rank": 63,
+      "ticker": "411",
+      "name": "Sunflag Iron & Steel",
+      "exchange": "",
+      "sector": "",
+      "mentions": 29,
+      "mentionsPrev": 1,
+      "changePct": 2800,
+      "sentiment": {
+        "score": 0.17,
+        "label": "bullish",
+        "bullish": 6,
+        "bearish": 1,
+        "neutral": 22
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 28
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        29
+      ]
+    },
+    {
+      "rank": 64,
+      "ticker": "8695",
+      "name": "Chambal Fertilisers and Chemicals - Sector with structural change",
+      "exchange": "",
+      "sector": "",
+      "mentions": 27,
+      "mentionsPrev": 2,
+      "changePct": 1250,
+      "sentiment": {
+        "score": 0.11,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 24
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 25
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        2,
+        2,
+        2,
+        27
+      ]
+    },
+    {
+      "rank": 65,
+      "ticker": "387",
+      "name": "Globus Spirits",
+      "exchange": "",
+      "sector": "",
+      "mentions": 27,
+      "mentionsPrev": 1,
+      "changePct": 2600,
+      "sentiment": {
+        "score": 0.11,
+        "label": "neutral",
+        "bullish": 4,
+        "bearish": 1,
+        "neutral": 22
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 26
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        27
+      ]
+    },
+    {
+      "rank": 66,
+      "ticker": "180374",
+      "name": "Transrail Lighting: T&D play",
+      "exchange": "",
+      "sector": "",
+      "mentions": 27,
+      "mentionsPrev": 3,
+      "changePct": 800,
+      "sentiment": {
+        "score": 0.07,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 1,
+        "neutral": 23
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 24
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        27
+      ]
+    },
+    {
+      "rank": 67,
+      "ticker": "180859",
+      "name": "Veefin Solutions - A fintech SME with large ambitions!",
+      "exchange": "",
+      "sector": "",
+      "mentions": 27,
+      "mentionsPrev": 9,
+      "changePct": 200,
+      "sentiment": {
+        "score": 0.04,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 26
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 9,
+        "news": 18
+      },
+      "sparkline": [
+        0,
+        0,
+        7,
+        9,
+        9,
+        9,
+        27
+      ]
+    },
+    {
+      "rank": 68,
+      "ticker": "185353",
+      "name": "Styrenix Performance Materials - This Market leader is doubling capacities - FAST!",
+      "exchange": "",
+      "sector": "",
+      "mentions": 27,
+      "mentionsPrev": 2,
+      "changePct": 1250,
+      "sentiment": {
+        "score": -0.04,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 2,
+        "neutral": 24
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 25
+      },
+      "sparkline": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        27
+      ]
+    },
+    {
+      "rank": 69,
+      "ticker": "216585",
+      "name": "Silkflex Polymers (India) Ltd : A make in India initiative",
+      "exchange": "",
+      "sector": "",
+      "mentions": 26,
+      "mentionsPrev": 1,
+      "changePct": 2500,
+      "sentiment": {
+        "score": 0.19,
+        "label": "bullish",
+        "bullish": 5,
+        "bearish": 0,
+        "neutral": 21
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 25
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        26
+      ]
+    },
+    {
+      "rank": 70,
+      "ticker": "310",
+      "name": "Elecon Engineering Limited",
+      "exchange": "",
+      "sector": "",
+      "mentions": 26,
+      "mentionsPrev": 1,
+      "changePct": 2500,
+      "sentiment": {
+        "score": 0.15,
+        "label": "bullish",
+        "bullish": 6,
+        "bearish": 2,
+        "neutral": 18
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 25
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        26
+      ]
+    },
+    {
+      "rank": 71,
+      "ticker": "1006",
+      "name": "Edelweiss Financial Services",
+      "exchange": "",
+      "sector": "",
+      "mentions": 26,
+      "mentionsPrev": 3,
+      "changePct": 766.7,
+      "sentiment": {
+        "score": 0.08,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 1,
+        "neutral": 22
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 23
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        26
+      ]
+    },
+    {
+      "rank": 72,
+      "ticker": "5465",
+      "name": "VRL Logistics - value unlocking due to promoter actions",
+      "exchange": "",
+      "sector": "",
+      "mentions": 25,
+      "mentionsPrev": 1,
+      "changePct": 2400,
+      "sentiment": {
+        "score": 0.08,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 23
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 24
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        25
+      ]
+    },
+    {
+      "rank": 73,
+      "ticker": "95965",
+      "name": "DCX Systems Ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 25,
+      "mentionsPrev": 1,
+      "changePct": 2400,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 3,
+        "neutral": 19
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 24
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        25
+      ]
+    },
+    {
+      "rank": 74,
+      "ticker": "23418",
+      "name": "Frontier Springs - has departed, whats the next destination?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 24,
+      "mentionsPrev": 1,
+      "changePct": 2300,
+      "sentiment": {
+        "score": 0.21,
+        "label": "bullish",
+        "bullish": 8,
+        "bearish": 3,
+        "neutral": 13
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 23
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "rank": 75,
+      "ticker": "218895",
+      "name": "Amanta Healthcare Ltd : India's Only Two-Port IV Fluid Manufacturer",
+      "exchange": "",
+      "sector": "",
+      "mentions": 22,
+      "mentionsPrev": 1,
+      "changePct": 2100,
+      "sentiment": {
+        "score": 0.09,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 20
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 21
+      },
+      "sparkline": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        22
+      ]
+    },
+    {
+      "rank": 76,
+      "ticker": "173914",
+      "name": "Jindal Drilling - Beneficiary of a sustained offshore upcycle?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 22,
+      "mentionsPrev": 1,
+      "changePct": 2100,
+      "sentiment": {
+        "score": 0.05,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 2,
+        "neutral": 17
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 21
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        22
+      ]
+    },
+    {
+      "rank": 77,
+      "ticker": "10448",
+      "name": "Waaree Renewable Technologies Ltd - old Sangam Advisors - can it keep on renewing?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 22,
+      "mentionsPrev": 2,
+      "changePct": 1000,
+      "sentiment": {
+        "score": 0.05,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 21
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 20
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        22
+      ]
+    },
+    {
+      "rank": 78,
+      "ticker": "1443",
+      "name": "KDDL (Ethos Watches) - Scalable business model at an inflection point?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 22,
+      "mentionsPrev": 1,
+      "changePct": 2100,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 2,
+        "neutral": 18
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 21
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        22
+      ]
+    },
+    {
+      "rank": 79,
+      "ticker": "1005",
+      "name": "Sanghvi Movers",
+      "exchange": "",
+      "sector": "",
+      "mentions": 20,
+      "mentionsPrev": 2,
+      "changePct": 900,
+      "sentiment": {
+        "score": 0.2,
+        "label": "bullish",
+        "bullish": 7,
+        "bearish": 3,
+        "neutral": 10
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 18
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        20
+      ]
+    },
+    {
+      "rank": 80,
+      "ticker": "1129",
+      "name": "3B Blackbio DX Ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 20,
+      "mentionsPrev": 12,
+      "changePct": 66.7,
+      "sentiment": {
+        "score": -0.05,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 3,
+        "neutral": 15
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 13,
+        "news": 7
+      },
+      "sparkline": [
+        0,
+        0,
+        4,
+        11,
+        12,
+        12,
+        20
+      ]
+    },
+    {
+      "rank": 81,
+      "ticker": "169816",
+      "name": "JNK India ltd - Oil and Gas sector proxy?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 19,
+      "mentionsPrev": 2,
+      "changePct": 850,
+      "sentiment": {
+        "score": 0.26,
+        "label": "bullish",
+        "bullish": 6,
+        "bearish": 1,
+        "neutral": 12
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 17
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        19
+      ]
+    },
+    {
+      "rank": 82,
+      "ticker": "129959",
+      "name": "Bhagiradha Chemicals & Industries Ltd - Growing AgroChemical Company",
+      "exchange": "",
+      "sector": "",
+      "mentions": 19,
+      "mentionsPrev": 1,
+      "changePct": 1800,
+      "sentiment": {
+        "score": -0.05,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 3,
+        "neutral": 14
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 18
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        19
+      ]
+    },
+    {
+      "rank": 83,
+      "ticker": "1033",
+      "name": "Jupiter Wagons Ltd (previously CEBBCO)",
+      "exchange": "",
+      "sector": "",
+      "mentions": 19,
+      "mentionsPrev": 4,
+      "changePct": 375,
+      "sentiment": {
+        "score": -0.05,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 3,
+        "neutral": 14
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 15
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        4,
+        4,
+        4,
+        19
+      ]
+    },
+    {
+      "rank": 84,
+      "ticker": "199411",
+      "name": "Marine Electricals: Riding the Waves of Expansion",
+      "exchange": "",
+      "sector": "",
+      "mentions": 17,
+      "mentionsPrev": 1,
+      "changePct": 1600,
+      "sentiment": {
+        "score": 0.41,
+        "label": "bullish",
+        "bullish": 8,
+        "bearish": 1,
+        "neutral": 8
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 16
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
         17
       ]
     },
     {
-      "rank": 3,
+      "rank": 85,
+      "ticker": "20389",
+      "name": "GMM Pfaudler: A safe way to play the Pharma/Chemical cycle",
+      "exchange": "",
+      "sector": "",
+      "mentions": 17,
+      "mentionsPrev": 1,
+      "changePct": 1600,
+      "sentiment": {
+        "score": 0.12,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 15
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 16
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        17
+      ]
+    },
+    {
+      "rank": 86,
+      "ticker": "1205",
+      "name": "Kilburn Engineering - Huge undervaluation",
+      "exchange": "",
+      "sector": "",
+      "mentions": 17,
+      "mentionsPrev": 1,
+      "changePct": 1600,
+      "sentiment": {
+        "score": 0.12,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 1,
+        "neutral": 13
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 16
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        17
+      ]
+    },
+    {
+      "rank": 87,
+      "ticker": "146700",
+      "name": "Anlon Technology Solutions Ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 17,
+      "mentionsPrev": 6,
+      "changePct": 183.3,
+      "sentiment": {
+        "score": 0.06,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 16
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 6,
+        "news": 11
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        6,
+        6,
+        6,
+        17
+      ]
+    },
+    {
+      "rank": 88,
+      "ticker": "1022",
+      "name": "Control Print - Deserves attention?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 17,
+      "mentionsPrev": 4,
+      "changePct": 325,
+      "sentiment": {
+        "score": -0.12,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 4,
+        "neutral": 11
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 13
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        17
+      ]
+    },
+    {
+      "rank": 89,
+      "ticker": "17384",
+      "name": "Tips Industries Limited - Ready to RACE ahead!",
+      "exchange": "",
+      "sector": "",
+      "mentions": 16,
+      "mentionsPrev": 1,
+      "changePct": 1500,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 16
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 15
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        16
+      ]
+    },
+    {
+      "rank": 90,
+      "ticker": "216521",
+      "name": "V marc (A diamond in dust)",
+      "exchange": "",
+      "sector": "",
+      "mentions": 15,
+      "mentionsPrev": 2,
+      "changePct": 650,
+      "sentiment": {
+        "score": 0.07,
+        "label": "neutral",
+        "bullish": 2,
+        "bearish": 1,
+        "neutral": 12
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 13
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        2,
+        2,
+        2,
+        15
+      ]
+    },
+    {
+      "rank": 91,
+      "ticker": "195699",
+      "name": "Aimtron Electronics Ltd (EMS China+1 Global Play)",
+      "exchange": "",
+      "sector": "",
+      "mentions": 15,
+      "mentionsPrev": 5,
+      "changePct": 200,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 15
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 5,
+        "news": 10
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        5,
+        5,
+        5,
+        15
+      ]
+    },
+    {
+      "rank": 92,
       "ticker": "130278",
       "name": "Data Center Value Chain in India: Investment Opportunities",
       "exchange": "",
@@ -97,101 +2858,198 @@
         1,
         19,
         15,
+        15,
         15
       ]
     },
     {
-      "rank": 4,
-      "ticker": "1129",
-      "name": "3B Blackbio DX Ltd",
+      "rank": 93,
+      "ticker": "3504",
+      "name": "Deepak Fertilizers and Petrochemicals",
       "exchange": "",
       "sector": "",
-      "mentions": 12,
-      "mentionsPrev": 12,
-      "changePct": 0,
+      "mentions": 14,
+      "mentionsPrev": 9,
+      "changePct": 55.6,
       "sentiment": {
-        "score": 0.17,
+        "score": 0.14,
         "label": "bullish",
         "bullish": 2,
         "bearish": 0,
-        "neutral": 10
+        "neutral": 12
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 12,
-        "news": 0
+        "valuepickr": 9,
+        "news": 5
       },
       "sparkline": [
         0,
         0,
-        4,
-        11,
-        12,
-        12
+        7,
+        9,
+        9,
+        9,
+        14
       ]
     },
     {
-      "rank": 5,
-      "ticker": "170360",
-      "name": "P N Gadgil Jewellers Ltd",
+      "rank": 94,
+      "ticker": "105680",
+      "name": "CFF Fluid Control Limited - SME",
       "exchange": "",
       "sector": "",
-      "mentions": 11,
-      "mentionsPrev": 11,
-      "changePct": 0,
+      "mentions": 14,
+      "mentionsPrev": 5,
+      "changePct": 180,
       "sentiment": {
-        "score": -0.09,
+        "score": 0.07,
         "label": "neutral",
-        "bullish": 0,
+        "bullish": 2,
         "bearish": 1,
-        "neutral": 10
+        "neutral": 11
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 11,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        2,
-        8,
-        11,
-        11,
-        11
-      ]
-    },
-    {
-      "rank": 6,
-      "ticker": "158490",
-      "name": "Ola Electric - Full Stack EV play?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 11,
-      "mentionsPrev": 11,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.18,
-        "label": "bearish",
-        "bullish": 1,
-        "bearish": 3,
-        "neutral": 7
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 11,
-        "news": 0
+        "valuepickr": 5,
+        "news": 9
       },
       "sparkline": [
         0,
         0,
         1,
-        12,
-        11,
+        5,
+        5,
+        5,
+        14
+      ]
+    },
+    {
+      "rank": 95,
+      "ticker": "141216",
+      "name": "Oriana Power - SME play on Renewable Energy",
+      "exchange": "",
+      "sector": "",
+      "mentions": 14,
+      "mentionsPrev": 4,
+      "changePct": 250,
+      "sentiment": {
+        "score": 0.07,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 13
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 10
+      },
+      "sparkline": [
+        0,
+        0,
+        3,
+        4,
+        4,
+        4,
+        14
+      ]
+    },
+    {
+      "rank": 96,
+      "ticker": "134332",
+      "name": "Walchandnagar Industries | Return of a Golden Era",
+      "exchange": "",
+      "sector": "",
+      "mentions": 14,
+      "mentionsPrev": 3,
+      "changePct": 366.7,
+      "sentiment": {
+        "score": -0.07,
+        "label": "neutral",
+        "bullish": 3,
+        "bearish": 4,
+        "neutral": 7
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 11
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        14
+      ]
+    },
+    {
+      "rank": 97,
+      "ticker": "136755",
+      "name": "Samhi Hotels - Turnaround with Tailwinds",
+      "exchange": "",
+      "sector": "",
+      "mentions": 12,
+      "mentionsPrev": 2,
+      "changePct": 500,
+      "sentiment": {
+        "score": -0.08,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 2,
+        "neutral": 9
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 10
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        12
+      ]
+    },
+    {
+      "rank": 98,
+      "ticker": "204965",
+      "name": "Alpex Solar Ltd - Stunning sun powered performance?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 11,
+      "mentionsPrev": 4,
+      "changePct": 175,
+      "sentiment": {
+        "score": 0.18,
+        "label": "bullish",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 9
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 4,
+        "news": 7
+      },
+      "sparkline": [
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
         11
       ]
     },
     {
-      "rank": 7,
+      "rank": 99,
       "ticker": "218878",
       "name": "BESS~Solar~ Hybrid~PHS- Why RTC & FDRE Projects faces an existential crisis ? Is Solar with BESS going to be the future for Discom?",
       "exchange": "",
@@ -217,18 +3075,19 @@
         0,
         10,
         10,
+        10,
         10
       ]
     },
     {
-      "rank": 8,
-      "ticker": "3504",
-      "name": "Deepak Fertilizers and Petrochemicals",
+      "rank": 100,
+      "ticker": "213409",
+      "name": "CONNPLEX CINEMA - A RETAILER WITH NEAR INFINITE RoCE",
       "exchange": "",
       "sector": "",
       "mentions": 9,
-      "mentionsPrev": 9,
-      "changePct": 0,
+      "mentionsPrev": 3,
+      "changePct": 200,
       "sentiment": {
         "score": 0.11,
         "label": "neutral",
@@ -238,57 +3097,59 @@
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 9,
-        "news": 0
+        "valuepickr": 3,
+        "news": 6
       },
       "sparkline": [
         0,
         0,
-        7,
-        9,
-        9,
+        2,
+        3,
+        3,
+        3,
         9
       ]
     },
     {
-      "rank": 9,
-      "ticker": "180859",
-      "name": "Veefin Solutions - A fintech SME with large ambitions!",
+      "rank": 101,
+      "ticker": "1282",
+      "name": "Investing Basics - Feel free to ask the most basic questions",
       "exchange": "",
       "sector": "",
       "mentions": 9,
-      "mentionsPrev": 9,
-      "changePct": 0,
+      "mentionsPrev": 5,
+      "changePct": 80,
       "sentiment": {
-        "score": 0.11,
+        "score": 0,
         "label": "neutral",
         "bullish": 1,
-        "bearish": 0,
-        "neutral": 8
+        "bearish": 1,
+        "neutral": 7
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 9,
-        "news": 0
+        "valuepickr": 5,
+        "news": 4
       },
       "sparkline": [
         0,
         0,
-        7,
-        9,
-        9,
+        1,
+        5,
+        5,
+        5,
         9
       ]
     },
     {
-      "rank": 10,
-      "ticker": "5328",
-      "name": "Manappuram Finance",
+      "rank": 102,
+      "ticker": "200499",
+      "name": "OBSC Perfection Ltd - Perfection Not Just in Name, but in Business DNA",
       "exchange": "",
       "sector": "",
       "mentions": 9,
-      "mentionsPrev": 9,
-      "changePct": 0,
+      "mentionsPrev": 4,
+      "changePct": 125,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -298,20 +3159,21 @@
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 9,
-        "news": 0
+        "valuepickr": 4,
+        "news": 5
       },
       "sparkline": [
         0,
         0,
-        0,
-        9,
-        9,
+        1,
+        4,
+        4,
+        4,
         9
       ]
     },
     {
-      "rank": 11,
+      "rank": 103,
       "ticker": "10324",
       "name": "Gravita India success story",
       "exchange": "",
@@ -337,11 +3199,43 @@
         1,
         8,
         8,
+        8,
         8
       ]
     },
     {
-      "rank": 12,
+      "rank": 104,
+      "ticker": "139204",
+      "name": "Baheti Recycling Industries Ltd - Undervalued and Growth?",
+      "exchange": "",
+      "sector": "",
+      "mentions": 8,
+      "mentionsPrev": 1,
+      "changePct": 700,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 8
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 7
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        8
+      ]
+    },
+    {
+      "rank": 105,
       "ticker": "213822",
       "name": "Yash High Voltage Ltd : Transformer Guardians",
       "exchange": "",
@@ -367,11 +3261,43 @@
         3,
         8,
         8,
+        8,
         8
       ]
     },
     {
-      "rank": 13,
+      "rank": 106,
+      "ticker": "129812",
+      "name": "Priti International Ltd",
+      "exchange": "",
+      "sector": "",
+      "mentions": 8,
+      "mentionsPrev": 1,
+      "changePct": 700,
+      "sentiment": {
+        "score": -0.25,
+        "label": "bearish",
+        "bullish": 0,
+        "bearish": 2,
+        "neutral": 6
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 7
+      },
+      "sparkline": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        8
+      ]
+    },
+    {
+      "rank": 107,
       "ticker": "124693",
       "name": "Ceinsys Tech-Engineering, Geospatial & IT solutions Company",
       "exchange": "",
@@ -397,11 +3323,12 @@
         5,
         8,
         7,
+        7,
         7
       ]
     },
     {
-      "rank": 14,
+      "rank": 108,
       "ticker": "215047",
       "name": "L. T. Elevators: Can they lift investors",
       "exchange": "",
@@ -427,71 +3354,43 @@
         1,
         7,
         7,
+        7,
         7
       ]
     },
     {
-      "rank": 15,
-      "ticker": "5761",
-      "name": "Sharda Cropchem - Can it get into indian market in a bigger way?",
+      "rank": 109,
+      "ticker": "174958",
+      "name": "Osel Devices Ltd",
       "exchange": "",
       "sector": "",
       "mentions": 7,
-      "mentionsPrev": 7,
-      "changePct": 0,
+      "mentionsPrev": 5,
+      "changePct": 40,
       "sentiment": {
-        "score": -0.43,
+        "score": -0.29,
         "label": "bearish",
         "bullish": 0,
-        "bearish": 3,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 7,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        7,
-        7,
-        7,
-        7
-      ]
-    },
-    {
-      "rank": 16,
-      "ticker": "146700",
-      "name": "Anlon Technology Solutions Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 6,
-      "mentionsPrev": 6,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.17,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
+        "bearish": 2,
         "neutral": 5
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 6,
-        "news": 0
+        "valuepickr": 5,
+        "news": 2
       },
       "sparkline": [
         0,
         0,
         0,
-        6,
-        6,
-        6
+        5,
+        5,
+        5,
+        7
       ]
     },
     {
-      "rank": 17,
+      "rank": 110,
       "ticker": "249",
       "name": "Selan Oil Exploration",
       "exchange": "",
@@ -517,41 +3416,12 @@
         1,
         6,
         6,
-        6
-      ]
-    },
-    {
-      "rank": 18,
-      "ticker": "3279",
-      "name": "IDFC First Bank Limited - First Bank Preference for Long Term Investors too?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 6,
-      "mentionsPrev": 6,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.33,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 2,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 6,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        6,
         6,
         6
       ]
     },
     {
-      "rank": 19,
+      "rank": 111,
       "ticker": "92051",
       "name": "Insolation Energy SME IPO",
       "exchange": "",
@@ -577,41 +3447,12 @@
         0,
         6,
         6,
+        6,
         6
       ]
     },
     {
-      "rank": 20,
-      "ticker": "105680",
-      "name": "CFF Fluid Control Limited - SME",
-      "exchange": "",
-      "sector": "",
-      "mentions": 5,
-      "mentionsPrev": 5,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.2,
-        "label": "bullish",
-        "bullish": 2,
-        "bearish": 1,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 5,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        5,
-        5,
-        5
-      ]
-    },
-    {
-      "rank": 21,
+      "rank": 112,
       "ticker": "120648",
       "name": "Companies with 20%+ growth guidance for next few years by the company Management",
       "exchange": "",
@@ -637,18 +3478,50 @@
         3,
         4,
         5,
+        5,
         5
       ]
     },
     {
-      "rank": 22,
-      "ticker": "195699",
-      "name": "Aimtron Electronics Ltd (EMS China+1 Global Play)",
+      "rank": 113,
+      "ticker": "43246",
+      "name": "Semiconductor world - CPU/GPU Wars",
       "exchange": "",
       "sector": "",
       "mentions": 5,
-      "mentionsPrev": 5,
-      "changePct": 0,
+      "mentionsPrev": 2,
+      "changePct": 150,
+      "sentiment": {
+        "score": 0.2,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 4
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 3
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        5
+      ]
+    },
+    {
+      "rank": 114,
+      "ticker": "179546",
+      "name": "C2C Advanced Systems: Specialized Defence Play",
+      "exchange": "",
+      "sector": "",
+      "mentions": 5,
+      "mentionsPrev": 3,
+      "changePct": 66.7,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -658,80 +3531,21 @@
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 5,
-        "news": 0
+        "valuepickr": 2,
+        "news": 3
       },
       "sparkline": [
         0,
         0,
         0,
-        5,
-        5,
+        3,
+        3,
+        3,
         5
       ]
     },
     {
-      "rank": 23,
-      "ticker": "1282",
-      "name": "Investing Basics - Feel free to ask the most basic questions",
-      "exchange": "",
-      "sector": "",
-      "mentions": 5,
-      "mentionsPrev": 5,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 1,
-        "bearish": 1,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 5,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        5,
-        5,
-        5
-      ]
-    },
-    {
-      "rank": 24,
-      "ticker": "427",
-      "name": "Lic housing finance",
-      "exchange": "",
-      "sector": "",
-      "mentions": 5,
-      "mentionsPrev": 5,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 1,
-        "bearish": 1,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 5,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        1,
-        5,
-        5,
-        5,
-        5
-      ]
-    },
-    {
-      "rank": 25,
+      "rank": 115,
       "ticker": "258",
       "name": "PVR Ltd.- Play on increasing disposable income",
       "exchange": "",
@@ -757,11 +3571,43 @@
         0,
         5,
         5,
+        5,
         5
       ]
     },
     {
-      "rank": 26,
+      "rank": 116,
+      "ticker": "217393",
+      "name": "Safe Enterprises Retail Fixtures Limited: Positioning at the Intersection of India’s Retail Growth Story",
+      "exchange": "",
+      "sector": "",
+      "mentions": 5,
+      "mentionsPrev": 2,
+      "changePct": 150,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 5
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 2,
+        "news": 3
+      },
+      "sparkline": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        5
+      ]
+    },
+    {
+      "rank": 117,
       "ticker": "156313",
       "name": "Vasa Denticity aka Dentalkart - The Indian Amazon of Dental supplies ?!",
       "exchange": "",
@@ -787,161 +3633,12 @@
         1,
         5,
         5,
-        5
-      ]
-    },
-    {
-      "rank": 27,
-      "ticker": "174958",
-      "name": "Osel Devices Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 5,
-      "mentionsPrev": 5,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.4,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 2,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 5,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        5,
         5,
         5
       ]
     },
     {
-      "rank": 28,
-      "ticker": "147652",
-      "name": "Azad Engineering - A stock picker’s dream!",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.75,
-        "label": "bullish",
-        "bullish": 3,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 29,
-      "ticker": "1022",
-      "name": "Control Print - Deserves attention?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.25,
-        "label": "bullish",
-        "bullish": 2,
-        "bearish": 1,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 30,
-      "ticker": "141216",
-      "name": "Oriana Power - SME play on Renewable Energy",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.25,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        3,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 31,
-      "ticker": "204965",
-      "name": "Alpex Solar Ltd - Stunning sun powered performance?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        4,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 32,
+      "rank": 118,
       "ticker": "13699",
       "name": "BSE (Bombay Stock Exchange)- Bet on Financialization?",
       "exchange": "",
@@ -967,191 +3664,12 @@
         0,
         5,
         4,
-        4
-      ]
-    },
-    {
-      "rank": 33,
-      "ticker": "1011",
-      "name": "Deep Industries (DIL)",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        4,
-        4,
         4,
         4
       ]
     },
     {
-      "rank": 34,
-      "ticker": "1033",
-      "name": "Jupiter Wagons Ltd (previously CEBBCO)",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 35,
-      "ticker": "174957",
-      "name": "KRN Heat Exchanger and Refrigeration Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        2,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 36,
-      "ticker": "1614",
-      "name": "Muthoot Finance",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        4,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 37,
-      "ticker": "200499",
-      "name": "OBSC Perfection Ltd - Perfection Not Just in Name, but in Business DNA",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 38,
-      "ticker": "6946",
-      "name": "Raymond - The Complete Man",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 1,
-      "changePct": 300,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        4
-      ]
-    },
-    {
-      "rank": 39,
+      "rank": 119,
       "ticker": "139205",
       "name": "RBM Infra - a less discussed SME",
       "exchange": "",
@@ -1177,341 +3695,12 @@
         0,
         4,
         4,
-        4
-      ]
-    },
-    {
-      "rank": 40,
-      "ticker": "71829",
-      "name": "Websol energy system ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        4,
         4,
         4
       ]
     },
     {
-      "rank": 41,
-      "ticker": "217970",
-      "name": "Jain Resource Recycling Ltd : A metal recycling compounder in the making",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.25,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 1,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        4,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 42,
-      "ticker": "2279",
-      "name": "Syngene International",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.25,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 1,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 4,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        4,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 43,
-      "ticker": "218154",
-      "name": "Avalon Technologies Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 2,
-      "changePct": 50,
-      "sentiment": {
-        "score": 0.67,
-        "label": "bullish",
-        "bullish": 2,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 1
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        3
-      ]
-    },
-    {
-      "rank": 44,
-      "ticker": "179546",
-      "name": "C2C Advanced Systems: Specialized Defence Play",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.33,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 45,
-      "ticker": "213409",
-      "name": "CONNPLEX CINEMA - A RETAILER WITH NEAR INFINITE RoCE",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.33,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        2,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 46,
-      "ticker": "8456",
-      "name": "Sheela Foam - An exciting branded play",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.33,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        2,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 47,
-      "ticker": "1006",
-      "name": "Edelweiss Financial Services",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 48,
-      "ticker": "32642",
-      "name": "NALCO - lowest cost producer of alumina and bauxite",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 49,
-      "ticker": "107967",
-      "name": "PNGS Gargi Fashion Jewellery Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 50,
-      "ticker": "631",
-      "name": "Rain Industries - An oversold de-leveraging play",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        1,
-        2,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 51,
+      "rank": 120,
       "ticker": "197768",
       "name": "Semiconductor is a passe - now it is the turn of Rare Earth Elements to shake the Mother earth with disruption in Global supply chain",
       "exchange": "",
@@ -1537,161 +3726,12 @@
         0,
         3,
         3,
-        3
-      ]
-    },
-    {
-      "rank": 52,
-      "ticker": "180374",
-      "name": "Transrail Lighting: T&D play",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        3,
         3,
         3
       ]
     },
     {
-      "rank": 53,
-      "ticker": "134332",
-      "name": "Walchandnagar Industries | Return of a Golden Era",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.33,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 1,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 54,
-      "ticker": "283",
-      "name": "City Union Bank (CUB) ~ Conservative Lending Franchise",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.67,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 2,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 55,
-      "ticker": "200216",
-      "name": "Inventurus Knowledge Solutions - Where A.I. Meets the Business of Medicine",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 3,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.67,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 2,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 3,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        3,
-        3,
-        3
-      ]
-    },
-    {
-      "rank": 56,
-      "ticker": "8695",
-      "name": "Chambal Fertilisers and Chemicals - Sector with structural change",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 1,
-        "label": "bullish",
-        "bullish": 2,
-        "bearish": 0,
-        "neutral": 0
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 57,
+      "rank": 121,
       "ticker": "217603",
       "name": "Freshara Agro Exports Ltd - 3rd Largest Gherkins Exporter from India",
       "exchange": "",
@@ -1717,11 +3757,12 @@
         0,
         2,
         2,
+        2,
         2
       ]
     },
     {
-      "rank": 58,
+      "rank": 122,
       "ticker": "107868",
       "name": "Asarfi Hospital Limited SME IPO (Asarfi Hospital IPO)",
       "exchange": "",
@@ -1747,71 +3788,12 @@
         2,
         2,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 59,
-      "ticker": "52302",
-      "name": "CSB BANK - will it become next HDFC Bank?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.5,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        2,
         2,
         2
       ]
     },
     {
-      "rank": 60,
-      "ticker": "43246",
-      "name": "Semiconductor world - CPU/GPU Wars",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.5,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 61,
+      "rank": 123,
       "ticker": "220725",
       "name": "Wires and cables space discussion",
       "exchange": "",
@@ -1837,41 +3819,12 @@
         2,
         2,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 62,
-      "ticker": "177404",
-      "name": "Apollo Micro Systems Limited - A Small cap in Aerospace & Defense",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        2,
-        2,
         2,
         2
       ]
     },
     {
-      "rank": 63,
+      "rank": 124,
       "ticker": "218880",
       "name": "Bansal wire industries -- SMALL CAP WITH CONSISTENT GROWTH BUT LEADING VOLUME",
       "exchange": "",
@@ -1897,11 +3850,12 @@
         0,
         2,
         2,
+        2,
         2
       ]
     },
     {
-      "rank": 64,
+      "rank": 125,
       "ticker": "18799",
       "name": "Curious Case of Coal India",
       "exchange": "",
@@ -1927,71 +3881,12 @@
         0,
         2,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 65,
-      "ticker": "337",
-      "name": "Delta Corp - A huge but risky opportunity",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
         2,
         2
       ]
     },
     {
-      "rank": 66,
-      "ticker": "94031",
-      "name": "Dynamic Cables - Much more dynamic in 2022?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 67,
+      "rank": 126,
       "ticker": "146688",
       "name": "EFC - Entrepreneurial Facilitation Centre",
       "exchange": "",
@@ -2017,18 +3912,19 @@
         0,
         2,
         2,
+        2,
         2
       ]
     },
     {
-      "rank": 68,
-      "ticker": "213",
-      "name": "Eicher Motors",
+      "rank": 127,
+      "ticker": "992",
+      "name": "HIL – Eco (onomic) friendly way to play rural prosperity in India",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
+      "mentionsPrev": 1,
+      "changePct": 100,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -2045,73 +3941,14 @@
         0,
         0,
         0,
-        2,
-        2,
+        0,
+        0,
+        1,
         2
       ]
     },
     {
-      "rank": 69,
-      "ticker": "1092",
-      "name": "IIFL Finance (erstwhile IIFL Holdings) ~ Retail focused diversified NBFC",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 70,
-      "ticker": "181206",
-      "name": "Interarch: A Proxy Play on India's Infrastructure and CapEx Revival",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        2,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 71,
+      "rank": 128,
       "ticker": "219153",
       "name": "Jayaswal Neco- Integrated Steel Player",
       "exchange": "",
@@ -2137,136 +3974,17 @@
         0,
         2,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 72,
-      "ticker": "169816",
-      "name": "JNK India ltd - Oil and Gas sector proxy?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
         2,
         2
       ]
     },
     {
-      "rank": 73,
-      "ticker": "11839",
-      "name": "Kamat Hotels (India) Ltd- A Possible Turnaround Story!",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        2,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 74,
-      "ticker": "106674",
-      "name": "NRB Bearings - EV and exports to drive growth?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 75,
+      "rank": 129,
       "ticker": "178146",
       "name": "Paramount Communication - Belongs to Lucrative Industry",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 1,
-      "changePct": 100,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        2
-      ]
-    },
-    {
-      "rank": 76,
-      "ticker": "217695",
-      "name": "Rossell Techsys",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
       "mentionsPrev": 2,
       "changePct": 0,
       "sentiment": {
@@ -2285,13 +4003,14 @@
         0,
         0,
         0,
-        2,
+        1,
+        1,
         2,
         2
       ]
     },
     {
-      "rank": 77,
+      "rank": 130,
       "ticker": "137385",
       "name": "RR Kabel -Wires, Cables and FMEG- Akalmand Bano Sahi Chuno",
       "exchange": "",
@@ -2317,131 +4036,12 @@
         1,
         2,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 78,
-      "ticker": "217393",
-      "name": "Safe Enterprises Retail Fixtures Limited: Positioning at the Intersection of India’s Retail Growth Story",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        2,
-        2,
-        2,
         2,
         2
       ]
     },
     {
-      "rank": 79,
-      "ticker": "136755",
-      "name": "Samhi Hotels - Turnaround with Tailwinds",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 80,
-      "ticker": "1005",
-      "name": "Sanghvi Movers",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 81,
-      "ticker": "110152",
-      "name": "Schneider Electric Infrastructure: A global company with advantage of a industry tailwind:",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 82,
+      "rank": 131,
       "ticker": "217530",
       "name": "Senores Pharma- Hidden in plain sight",
       "exchange": "",
@@ -2467,71 +4067,12 @@
         2,
         2,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 83,
-      "ticker": "185353",
-      "name": "Styrenix Performance Materials - This Market leader is doubling capacities - FAST!",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        2,
-        2,
         2,
         2
       ]
     },
     {
-      "rank": 84,
-      "ticker": "5722",
-      "name": "Sunteck Realty - Quality Real Estate Company",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 85,
+      "rank": 132,
       "ticker": "1114",
       "name": "TGV SRAAC erstwhile Sree Rayalseema Alkali",
       "exchange": "",
@@ -2557,41 +4098,12 @@
         1,
         2,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 86,
-      "ticker": "10448",
-      "name": "Waaree Renewable Technologies Ltd - old Sangam Advisors - can it keep on renewing?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        2,
         2,
         2
       ]
     },
     {
-      "rank": 87,
+      "rank": 133,
       "ticker": "11552",
       "name": "CESC LTD Demerger",
       "exchange": "",
@@ -2617,71 +4129,12 @@
         0,
         2,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 88,
-      "ticker": "216521",
-      "name": "V marc (A diamond in dust)",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.5,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 1,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 2,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        2,
         2,
         2
       ]
     },
     {
-      "rank": 89,
-      "ticker": "134893",
-      "name": "Paras Defence and Space Technologies Limited (“Paras Defence”) :- Big News ! A Potential Investment Gem?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 1,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 0
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 90,
+      "rank": 134,
       "ticker": "618",
       "name": "Phillips Carbon Black",
       "exchange": "",
@@ -2707,131 +4160,12 @@
         0,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 91,
-      "ticker": "94739",
-      "name": "Piramal Pharma Limited",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 1,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 0
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
         1,
         1
       ]
     },
     {
-      "rank": 92,
-      "ticker": "411",
-      "name": "Sunflag Iron & Steel",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 1,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 0
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 93,
-      "ticker": "187656",
-      "name": "Aether Industries: A Niche Leader in Specialty Chemicals with High Growth Potential",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 94,
-      "ticker": "204009",
-      "name": "Akums - CDMO Leader serving the Indian Pharma space",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 95,
+      "rank": 135,
       "ticker": "136970",
       "name": "All E Technologies, making businesses ready for AI",
       "exchange": "",
@@ -2857,41 +4191,12 @@
         1,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 96,
-      "ticker": "218895",
-      "name": "Amanta Healthcare Ltd : India's Only Two-Port IV Fluid Manufacturer",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        1,
-        1,
-        1,
         1,
         1
       ]
     },
     {
-      "rank": 97,
+      "rank": 136,
       "ticker": "9164",
       "name": "Asian oilfields",
       "exchange": "",
@@ -2917,71 +4222,12 @@
         1,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 98,
-      "ticker": "73801",
-      "name": "Aster DM healthcare",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
         1,
         1
       ]
     },
     {
-      "rank": 99,
-      "ticker": "990",
-      "name": "Atul Auto Limited",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 100,
+      "rank": 137,
       "ticker": "77408",
       "name": "Autoline Industries- Potential Turnaround Story",
       "exchange": "",
@@ -3007,41 +4253,12 @@
         1,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 101,
-      "ticker": "1034",
-      "name": "Avantel",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
         1,
         1
       ]
     },
     {
-      "rank": 102,
+      "rank": 138,
       "ticker": "9270",
       "name": "Avenue Supermart: a compounding machine?",
       "exchange": "",
@@ -3067,191 +4284,12 @@
         1,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 103,
-      "ticker": "139204",
-      "name": "Baheti Recycling Industries Ltd - Undervalued and Growth?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
         1,
         1
       ]
     },
     {
-      "rank": 104,
-      "ticker": "23985",
-      "name": "Bajaj Auto - Is the company back on growth track?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 105,
-      "ticker": "129959",
-      "name": "Bhagiradha Chemicals & Industries Ltd - Growing AgroChemical Company",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 106,
-      "ticker": "16625",
-      "name": "Bharti Airtel - What doesn't kill you makes you stronger?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 107,
-      "ticker": "114496",
-      "name": "Chennai petroleum",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 108,
-      "ticker": "95965",
-      "name": "DCX Systems Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 109,
+      "rank": 139,
       "ticker": "67304",
       "name": "Dish TV 10 bagger stock",
       "exchange": "",
@@ -3277,401 +4315,12 @@
         0,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 110,
-      "ticker": "310",
-      "name": "Elecon Engineering Limited",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
         1,
         1
       ]
     },
     {
-      "rank": 111,
-      "ticker": "103009",
-      "name": "Five Star Business Finance - Financing Bharat!",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 112,
-      "ticker": "232",
-      "name": "Foseco india limited",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 113,
-      "ticker": "23418",
-      "name": "Frontier Springs - has departed, whats the next destination?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 114,
-      "ticker": "1047",
-      "name": "Garware Technical Fibres (Earlier: Garware Wallropes)",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 115,
-      "ticker": "387",
-      "name": "Globus Spirits",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 116,
-      "ticker": "20389",
-      "name": "GMM Pfaudler: A safe way to play the Pharma/Chemical cycle",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 117,
-      "ticker": "992",
-      "name": "HIL – Eco (onomic) friendly way to play rural prosperity in India",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "rank": 118,
-      "ticker": "63826",
-      "name": "Home First Finance Company",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 119,
-      "ticker": "173914",
-      "name": "Jindal Drilling - Beneficiary of a sustained offshore upcycle?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 120,
-      "ticker": "1443",
-      "name": "KDDL (Ethos Watches) - Scalable business model at an inflection point?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 121,
-      "ticker": "1205",
-      "name": "Kilburn Engineering - Huge undervaluation",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 122,
-      "ticker": "20381",
-      "name": "Lemon Tree Hotels - Market leader in mid-priced hotel sector",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 123,
+      "rank": 140,
       "ticker": "105229",
       "name": "Macfos Limited- A niche E-commerce Company",
       "exchange": "",
@@ -3697,311 +4346,12 @@
         0,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 124,
-      "ticker": "23031",
-      "name": "Mahindra Logistics",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
         1,
         1
       ]
     },
     {
-      "rank": 125,
-      "ticker": "199411",
-      "name": "Marine Electricals: Riding the Waves of Expansion",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 126,
-      "ticker": "9935",
-      "name": "Maruti Suzuki - Leader in Passenger Vehicles",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 127,
-      "ticker": "181934",
-      "name": "Mobikwik - Are wallets still a thing?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 128,
-      "ticker": "172296",
-      "name": "Northern Arc - Long term play",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 129,
-      "ticker": "186791",
-      "name": "Nuclear Energy - A new kid in the block - opportunities and threats",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 130,
-      "ticker": "81692",
-      "name": "PayTM (One 97 Communications Ltd)",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 131,
-      "ticker": "129812",
-      "name": "Priti International Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 132,
-      "ticker": "200382",
-      "name": "Sambhv Steel Tubes - Emerging Backbone of India’s Infrastructure Boom",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 133,
-      "ticker": "216585",
-      "name": "Silkflex Polymers (India) Ltd : A make in India initiative",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 134,
+      "rank": 141,
       "ticker": "340",
       "name": "SRF Limited",
       "exchange": "",
@@ -4027,11 +4377,12 @@
         0,
         1,
         1,
+        1,
         1
       ]
     },
     {
-      "rank": 135,
+      "rank": 142,
       "ticker": "131748",
       "name": "Syrma SGS an Export Substitution opportunity in EMS sector",
       "exchange": "",
@@ -4057,191 +4408,12 @@
         1,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 136,
-      "ticker": "107232",
-      "name": "Tata Technologies",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
         1,
         1
       ]
     },
     {
-      "rank": 137,
-      "ticker": "17384",
-      "name": "Tips Industries Limited - Ready to RACE ahead!",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 138,
-      "ticker": "220768",
-      "name": "Viviana Power- Emerging Play in Transformers + BESS + Power T&D EPC-Small Cap - Transition to Mainboard",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "rank": 139,
-      "ticker": "5465",
-      "name": "VRL Logistics - value unlocking due to promoter actions",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 140,
-      "ticker": "42",
-      "name": "Wockhardt - A story with twist and turn",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 141,
-      "ticker": "62657",
-      "name": "Zomato - Should you order?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 142,
+      "rank": 143,
       "ticker": "93923",
       "name": "HBL Power Systems Stock Story",
       "exchange": "",
@@ -4263,35 +4435,6 @@
       },
       "sparkline": [
         0,
-        0,
-        0,
-        0,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 143,
-      "ticker": "20399",
-      "name": "Nestle India - FMCG Play",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": -1,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 1,
-        "neutral": 0
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
         0,
         0,
         0,
@@ -4327,41 +4470,12 @@
         1,
         1,
         1,
+        1,
         1
       ]
     },
     {
       "rank": 145,
-      "ticker": "10029",
-      "name": "Subex Ltd. - Possible Turnaround?",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": -1,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 1,
-        "neutral": 0
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "rank": 146,
       "ticker": "26168",
       "name": "Trent -- A value unlocking story from the house of TATA",
       "exchange": "",
@@ -4385,6 +4499,7 @@
         0,
         0,
         0,
+        1,
         1,
         1,
         1
