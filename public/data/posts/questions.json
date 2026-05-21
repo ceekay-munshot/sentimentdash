@@ -1,0 +1,74 @@
+{
+  "ticker": "questions",
+  "name": "Questions",
+  "exchange": "",
+  "sector": "",
+  "generatedAt": "2026-05-21T07:27:40.432Z",
+  "posts": [
+    {
+      "id": "tradingqna-tqna-528495",
+      "source": "tradingqna",
+      "author": "mayank_ambastha",
+      "handle": "@mayank_ambastha",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-19T12:44:20.224Z",
+      "text": "Questions on FNO — You’re right about delta ceiling of 1(and floor of -1). But options also have vol shocks and I think NSE uses spot and vol shocks to arrive at the margin requirement. For futures it’s just spot shock as it’s largely unaffected by vols.",
+      "url": "https://tradingqna.com/t/questions-on-fno/194046/5",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-528436",
+      "source": "tradingqna",
+      "author": "BB789",
+      "handle": "@BB789",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-19T02:37:36.396Z",
+      "text": "Questions on FNO — How so? Per lot, the gamma still only adds upto delta 1 of the futures.",
+      "url": "https://tradingqna.com/t/questions-on-fno/194046/4",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-528431",
+      "source": "tradingqna",
+      "author": "mayank_ambastha",
+      "handle": "@mayank_ambastha",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-18T18:49:21.646Z",
+      "text": "Questions on FNO — There is much larger tail risk in writing options, any large directional move against you and you’ll scramble to square off your position booking huge losses(so margins are required to cover these). Futures, while still leveraged products, have linear delta risk(unlike options which have gamma adding non-lineraity), so considerably less risky. However, it would be interesting to compare how much delta risk you can take in options as compared to futures for the same margin because Futures are delta one while options delta varies and moves in a non linear fashion.",
+      "url": "https://tradingqna.com/t/questions-on-fno/194046/3",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-528094",
+      "source": "tradingqna",
+      "author": "niftymonk",
+      "handle": "@niftymonk",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-14T06:47:55.059Z",
+      "text": "Questions on FNO — Futures risk is simple. If Nifty moves against you, your loss moves directly with Nifty. Option selling risk is not that simple. The option price can increase because Nifty moved against you and because volatility/fear increased. So the exchange checks worst-case situations using SPAN. In those stress cases, short options can show bigger risk than futures because they have extra risk from volatility and changing delta/gamma. That’s why option-writing margin can be higher. I think MTM settlement happens as per closing everyday from day 1. You check your statement you will fin…",
+      "url": "https://tradingqna.com/t/questions-on-fno/194046/2",
+      "sentiment": "bearish",
+      "likes": 1,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-528062",
+      "source": "tradingqna",
+      "author": "Newbie420",
+      "handle": "@Newbie420",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-14T04:35:12.374Z",
+      "text": "Questions on FNO — I have two questions: Why margin for option writing is more than futures buying? For example, margin for Nifty option writing is 3.5 lacs per lot, and Futures is 2 lacs per lot. Yesterday I did futures trade, but until now there is no MTM settlement, nothing impacted to my account balance. Is it done on T+1? What is the procedure.",
+      "url": "https://tradingqna.com/t/questions-on-fno/194046/1",
+      "sentiment": "bullish",
+      "likes": 1,
+      "comments": 1
+    }
+  ]
+}

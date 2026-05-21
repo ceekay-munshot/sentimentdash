@@ -1,0 +1,74 @@
+{
+  "ticker": "orders-pnl",
+  "name": "Orders PNL",
+  "exchange": "",
+  "sector": "",
+  "generatedAt": "2026-05-21T07:27:40.432Z",
+  "posts": [
+    {
+      "id": "tradingqna-tqna-527551",
+      "source": "tradingqna",
+      "author": "altamash",
+      "handle": "@altamash",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-07T13:49:00.092Z",
+      "text": "Is there a way we can view executed Orders PNL except the tradebook? — thanks mate this works",
+      "url": "https://tradingqna.com/t/is-there-a-way-we-can-view-executed-orders-pnl-except-the-tradebook/193840/6",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-527550",
+      "source": "tradingqna",
+      "author": "altamash",
+      "handle": "@altamash",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-07T13:48:13.223Z",
+      "text": "Is there a way we can view executed Orders PNL except the tradebook? — thanks",
+      "url": "https://tradingqna.com/t/is-there-a-way-we-can-view-executed-orders-pnl-except-the-tradebook/193840/5",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-527517",
+      "source": "tradingqna",
+      "author": "Ensotrade",
+      "handle": "@Ensotrade",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-07T08:21:34.039Z",
+      "text": "Is there a way we can view executed Orders PNL except the tradebook? — Console doesn’t break it down order-wise natively which is genuinely frustrating for tax loss harvesting calculations. Quickest workaround — download your tradebook as CSV from Console, open it in Excel or Google Sheets, filter by Reliance, then manually match buy/sell pairs using FIFO (which is how income tax calculates it anyway). Gives you exact order-level P&L per trade. If you want something more automated, Zerodha’s tax P&L report under Console → Reports → Tax P&L lets you filter by scrip and shows realized gains/loss…",
+      "url": "https://tradingqna.com/t/is-there-a-way-we-can-view-executed-orders-pnl-except-the-tradebook/193840/3",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-527507",
+      "source": "tradingqna",
+      "author": "TheGouda",
+      "handle": "@TheGouda",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-07T04:47:04.485Z",
+      "text": "Is there a way we can view executed Orders PNL except the tradebook? — You can download and check Console Tax P&L report for tradewise entries and exits.",
+      "url": "https://tradingqna.com/t/is-there-a-way-we-can-view-executed-orders-pnl-except-the-tradebook/193840/2",
+      "sentiment": "neutral",
+      "likes": 2,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-527504",
+      "source": "tradingqna",
+      "author": "altamash",
+      "handle": "@altamash",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-07T04:17:10.543Z",
+      "text": "Is there a way we can view executed Orders PNL except the tradebook? — @nithin @siva I did some tax loss harvesting last year, now I wanted to see for Reliance how much loss have i booked… but if i check PNL in console for Reliance, it shows me one consolidated entry for Reliance PNL for entire year, and not executed order wise entries. The Console tradebook shows all trades broken down and does not show PNL. Is there a way we can view PNL Orderwise ? or any other way i can view pnl for specific stocks?",
+      "url": "https://tradingqna.com/t/is-there-a-way-we-can-view-executed-orders-pnl-except-the-tradebook/193840/1",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "ticker": "orderflow",
+  "name": "Orderflow",
+  "exchange": "",
+  "sector": "",
+  "generatedAt": "2026-05-21T07:27:40.432Z",
+  "posts": [
+    {
+      "id": "tradingqna-tqna-527451",
+      "source": "tradingqna",
+      "author": "Ranjit_DailyTrader",
+      "handle": "@Ranjit_DailyTrader",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-06T11:03:42.251Z",
+      "text": "Orderflow trading in India — Yeah, you’re pretty much on the right track. Indian exchanges don’t give true bid/ask aggressor data like CME, so whatever footprint/delta you see here is mostly derived, not actual. I’ve been using Mirra Charts’ order flow indicator myself, and it works fine for spotting volume clusters and reactions, but I don’t rely on the delta part as “real” order flow. There are a few Indian providers like VolumeLens, Proflow, etc., doing similar stuff — all based on approximations using tick/price movement. So overall, it’s useful for context, just don’t treat it like pure o…",
+      "url": "https://tradingqna.com/t/orderflow-trading-in-india/192774/7",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-527421",
+      "source": "tradingqna",
+      "author": "Dailytrader",
+      "handle": "@Dailytrader",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-06T05:57:11.729Z",
+      "text": "Orderflow trading in India — You can use Order Flow/Footprint charts in the Indian market as well. Several indicator providers offer Order Flow and Market Profile specifically for Indian markets. However, the data you receive is typically level 1 tick-by-tick data, where you will get 1 best bid/ask price per second. You’re also correct that there are no vendors offering full market depth (Level 2 &3) data for the Indian market. This is because exchanges primarily provide Level 1 tick-by-tick data to data vendors, which restricts access to deeper order book information for the Indian Market.",
+      "url": "https://tradingqna.com/t/orderflow-trading-in-india/192774/6",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    }
+  ]
+}

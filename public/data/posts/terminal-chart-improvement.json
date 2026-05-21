@@ -1,0 +1,100 @@
+{
+  "ticker": "terminal-chart-improvement",
+  "name": "Terminal Chart Improvement",
+  "exchange": "",
+  "sector": "",
+  "generatedAt": "2026-05-21T07:27:40.432Z",
+  "posts": [
+    {
+      "id": "tradingqna-tqna-528532",
+      "source": "tradingqna",
+      "author": "Som_E",
+      "handle": "@Som_E",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-20T03:50:28.953Z",
+      "text": "Zerodha Terminal Chart Improvement — @Arockiya_Raja Hello In attached SS, I had created a GTT for buying a stk. At time of creation, the price of the stk was above the traded price. Today, the stk gapped down and the price of the stk is BELOW the trigger price of the GTT. Yet, the GTT did not trigger. And yes, I have more than adequate free cash. Its 9:19am, and the stk is trading, and yet the GTT hasn’t triggered. Ideally, when the LTP is below the trigger price, the GTT buy should be triggered. And vice-versa for GTT sell orders. Kindly consider this on priority. For GTT, this is critical to…",
+      "url": "https://tradingqna.com/t/zerodha-terminal-chart-improvement/194080/7",
+      "sentiment": "bullish",
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-528417",
+      "source": "tradingqna",
+      "author": "Arockiya_Raja",
+      "handle": "@Arockiya_Raja",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-18T13:32:56.031Z",
+      "text": "Zerodha Terminal Chart Improvement — Noted, will try to implement this in the next patch. The chart should open in a separate panel. Multiple chart widgets can exist in the workspace, making it unfeasible to select a specific one.",
+      "url": "https://tradingqna.com/t/zerodha-terminal-chart-improvement/194080/6",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-528385",
+      "source": "tradingqna",
+      "author": "Som_E",
+      "handle": "@Som_E",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-18T06:18:43.670Z",
+      "text": "Zerodha Terminal Chart Improvement — When i click on “Create GTT”, the Search box is not auto-selected. So I have to additionally click the search box before I type the stk name for GTT. Can you make it such that the search box is auto selected so that I can just start typing the stk name? 18-05-2026 11_46_41-Trade - Kite — Mozilla Firefox 687×602 30.4 KB Clicking on Chart icon beside stock name in holdings widget does not work. Says “select a chart widget”. However, I’m in the Holdings widget. I can’t select a chart widget while the holdings widget is open?",
+      "url": "https://tradingqna.com/t/zerodha-terminal-chart-improvement/194080/5",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-528265",
+      "source": "tradingqna",
+      "author": "Arockiya_Raja",
+      "handle": "@Arockiya_Raja",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-16T06:53:47.890Z",
+      "text": "Zerodha Terminal Chart Improvement — Noted, thanks for the feedback.",
+      "url": "https://tradingqna.com/t/zerodha-terminal-chart-improvement/194080/4",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-528220",
+      "source": "tradingqna",
+      "author": "Som_E",
+      "handle": "@Som_E",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-15T09:00:26.946Z",
+      "text": "Zerodha Terminal Chart Improvement — I thought it could open the most recent chart widget. But yes, its a fair point. Also, can you have an option of converting an open Limit buy/sell order to GTT with quantity & price pre-filled?",
+      "url": "https://tradingqna.com/t/zerodha-terminal-chart-improvement/194080/3",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-528196",
+      "source": "tradingqna",
+      "author": "Arockiya_Raja",
+      "handle": "@Arockiya_Raja",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-15T04:55:19.982Z",
+      "text": "Zerodha Terminal Chart Improvement — If there are multiple chart widgets on the workspace, the system would not know which one to open. that’s why its required to select the chart widget to open the chart.",
+      "url": "https://tradingqna.com/t/zerodha-terminal-chart-improvement/194080/2",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-528193",
+      "source": "tradingqna",
+      "author": "Som_E",
+      "handle": "@Som_E",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-15T04:48:36.336Z",
+      "text": "Zerodha Terminal Chart Improvement — Terminal only opens chart of a stock IF a chart widget is open. Else it shows an error (SS attached) Kindly make changes so that chart opens even if other widgets are open. So that the terminal will auto-switch to chart widget and open the chart In the below SS, I have a chart widget already open. Ideally it should switch to that and use that as a common chart widget for all stocks. This behavior is similar to what Zerodha-Web platform already does. 15-05-2026 10_14_59-Trade - Kite — Mozilla Firefox 1278×647 134 KB @Arockiya_Raja",
+      "url": "https://tradingqna.com/t/zerodha-terminal-chart-improvement/194080/1",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    }
+  ]
+}
