@@ -9,11 +9,17 @@
  * aggregator groups them together.
  *
  * Two kinds of noise are dropped: ValuePickr threads that are themes rather
- * than companies ("Data Center Value Chain in India"), and news-discovered
- * companies seen in only one headline (likely extraction noise).
+ * than companies ("Data Center Value Chain in India"), and companies seen in
+ * too few posts to be real.
+ *
+ * Discovery is done only by ValuePickr and Google News. TradingQnA is
+ * enrichment-only — its Q&A titles are too noisy to trust as company names, so
+ * a TradingQnA post counts only when its company is already discovered by
+ * ValuePickr or Google News; it can never introduce a company on its own.
  */
 
 const MIN_NEWS_HEADLINES = 2;
+const DISCOVERY_SOURCES = new Set(['news']); // ValuePickr handled separately
 
 // Words that mark a label as a theme/discussion thread, not a company name:
 // phrase/function words a company name never contains, plus topic words.
@@ -92,15 +98,21 @@ export function keyPosts(vpPosts, extractedPosts) {
 
   const extractedTagged = [];
   for (const [key, entries] of extractedByKey) {
-    const onValuePickr = vpKeys.has(key);
-    const distinctPosts = new Set(entries.map((e) => e.post.id)).size;
-    // A company seen in just one post outside ValuePickr is likely noise.
-    if (!onValuePickr && distinctPosts < MIN_NEWS_HEADLINES) continue;
+    // A key is real only if a discovery source vouches for it: ValuePickr, or
+    // Google News with enough distinct headlines. TradingQnA never qualifies a
+    // key — it only rides along on keys the others already discovered.
+    const distinctDiscovery = new Set(
+      entries.filter((e) => DISCOVERY_SOURCES.has(e.post.source)).map((e) => e.post.id),
+    ).size;
+    const discovered = vpKeys.has(key) || distinctDiscovery >= MIN_NEWS_HEADLINES;
+    if (!discovered) continue;
 
     if (!displayByKey.has(key)) {
-      // No ValuePickr name for this company — use the commonest extracted name.
+      // No ValuePickr name — use the commonest name from the discovery posts
+      // (news names are cleaner than TradingQnA's Q&A-title extractions).
+      const named = entries.filter((e) => DISCOVERY_SOURCES.has(e.post.source));
       const freq = new Map();
-      for (const e of entries) freq.set(e.name, (freq.get(e.name) || 0) + 1);
+      for (const e of named) freq.set(e.name, (freq.get(e.name) || 0) + 1);
       displayByKey.set(key, [...freq].sort((a, b) => b[1] - a[1])[0][0]);
     }
     for (const e of entries) {
