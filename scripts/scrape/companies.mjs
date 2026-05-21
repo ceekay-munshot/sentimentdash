@@ -60,13 +60,13 @@ export function companyKey(name) {
 }
 
 /**
- * Re-keys ValuePickr + Google News posts onto shared company keys.
+ * Re-keys ValuePickr + extracted-name posts onto shared company keys.
  *
- * @param {object[]} vpPosts    ValuePickr posts (carry topicId/topicTitle)
- * @param {object[]} newsPosts  Google News posts (carry companyName)
+ * @param {object[]} vpPosts         ValuePickr posts (carry topicId/topicTitle)
+ * @param {object[]} extractedPosts  Google News / Traderji posts (carry companyName)
  * @returns {object[]} every kept post, re-tagged with topicId (key) + topicTitle
  */
-export function keyPosts(vpPosts, newsPosts) {
+export function keyPosts(vpPosts, extractedPosts) {
   const displayByKey = new Map(); // key -> canonical display name
   const vpKeys = new Set();
 
@@ -80,22 +80,22 @@ export function keyPosts(vpPosts, newsPosts) {
     vpTagged.push({ ...p, topicId: key, topicTitle: displayByKey.get(key) });
   }
 
-  // Group news posts by key, keeping each post's cleaned company name.
-  const newsByKey = new Map();
-  for (const p of newsPosts) {
+  // Group extracted-name posts by key, keeping each post's cleaned name.
+  const extractedByKey = new Map();
+  for (const p of extractedPosts) {
     const name = cleanCompanyName(p.companyName);
     const key = companyKey(name);
     if (!key || !isCompanyName(name)) continue;
-    if (!newsByKey.has(key)) newsByKey.set(key, []);
-    newsByKey.get(key).push({ post: p, name });
+    if (!extractedByKey.has(key)) extractedByKey.set(key, []);
+    extractedByKey.get(key).push({ post: p, name });
   }
 
-  const newsTagged = [];
-  for (const [key, entries] of newsByKey) {
+  const extractedTagged = [];
+  for (const [key, entries] of extractedByKey) {
     const onValuePickr = vpKeys.has(key);
-    const distinctHeadlines = new Set(entries.map((e) => e.post.id)).size;
-    // A news-only company seen just once is almost always extraction noise.
-    if (!onValuePickr && distinctHeadlines < MIN_NEWS_HEADLINES) continue;
+    const distinctPosts = new Set(entries.map((e) => e.post.id)).size;
+    // A company seen in just one post outside ValuePickr is likely noise.
+    if (!onValuePickr && distinctPosts < MIN_NEWS_HEADLINES) continue;
 
     if (!displayByKey.has(key)) {
       // No ValuePickr name for this company — use the commonest extracted name.
@@ -104,9 +104,9 @@ export function keyPosts(vpPosts, newsPosts) {
       displayByKey.set(key, [...freq].sort((a, b) => b[1] - a[1])[0][0]);
     }
     for (const e of entries) {
-      newsTagged.push({ ...e.post, topicId: key, topicTitle: displayByKey.get(key) });
+      extractedTagged.push({ ...e.post, topicId: key, topicTitle: displayByKey.get(key) });
     }
   }
 
-  return [...vpTagged, ...newsTagged];
+  return [...vpTagged, ...extractedTagged];
 }

@@ -23,6 +23,7 @@ const SOURCE_FILTERS: { key: SourceKey; label: string }[] = [
   { key: 'all', label: 'All sources' },
   { key: 'valuepickr', label: 'ValuePickr' },
   { key: 'news', label: 'Google News' },
+  { key: 'traderji', label: 'Traderji' },
 ];
 
 interface Props {
