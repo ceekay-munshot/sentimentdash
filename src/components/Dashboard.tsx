@@ -23,7 +23,7 @@ const SOURCE_FILTERS: { key: SourceKey; label: string }[] = [
   { key: 'all', label: 'All sources' },
   { key: 'valuepickr', label: 'ValuePickr' },
   { key: 'news', label: 'Google News' },
-  { key: 'traderji', label: 'Traderji' },
+  { key: 'tradingqna', label: 'TradingQnA' },
 ];
 
 interface Props {
@@ -76,8 +76,8 @@ export default function Dashboard({ data, onSelect }: Props) {
           What India is <span className="text-gradient">talking about</span>
         </h1>
         <p className="mt-1.5 max-w-xl text-sm text-slate-400">
-          Companies trending across the ValuePickr forum and Google News — ranked by buzz,
-          scored by sentiment.
+          Companies trending across the ValuePickr &amp; TradingQnA forums and Google News —
+          ranked by buzz, scored by sentiment.
         </p>
       </div>
 

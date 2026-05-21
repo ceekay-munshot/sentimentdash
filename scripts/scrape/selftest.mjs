@@ -184,13 +184,13 @@ const newsRaw = (id, companyName, ageHours) => ({
 const newsForKey = [
   newsRaw('gn-1', 'Suzlon Energy', 2), // merges onto the ValuePickr company
   newsRaw('gn-2', 'Suzlon Energy', 5),
-  newsRaw('gn-3', 'Tata Motors', 2), //   news + traderji discover this one
+  newsRaw('gn-3', 'Tata Motors', 2), //   news + tradingqna discover this one
   newsRaw('gn-5', 'Tata Power', 3), //    news-only company, 1 post -> dropped
 ];
-const traderjiForKey = [
-  { ...newsRaw('tj-1', 'Tata Motors', 4), source: 'traderji', community: 'Traderji' },
+const tradingqnaForKey = [
+  { ...newsRaw('tj-1', 'Tata Motors', 4), source: 'tradingqna', community: 'TradingQnA' },
 ];
-const keyed = keyPosts(vpForKey, [...newsForKey, ...traderjiForKey]);
+const keyed = keyPosts(vpForKey, [...newsForKey, ...tradingqnaForKey]);
 const merged = buildData(keyed, { runs: [] }, NOW);
 const mById = new Map(merged.trending.stocks.map((s) => [s.ticker, s]));
 
@@ -200,10 +200,10 @@ check(
   mById.get('suzlon-energy')?.sources.valuepickr === 1 &&
     mById.get('suzlon-energy')?.sources.news === 2,
 );
-check('news + traderji discover a company ValuePickr lacks', mById.get('tata-motors')?.mentions === 2);
+check('news + tradingqna discover a company ValuePickr lacks', mById.get('tata-motors')?.mentions === 2);
 check(
-  'Traderji posts are counted under their own source',
-  mById.get('tata-motors')?.sources.news === 1 && mById.get('tata-motors')?.sources.traderji === 1,
+  'TradingQnA posts are counted under their own source',
+  mById.get('tata-motors')?.sources.news === 1 && mById.get('tata-motors')?.sources.tradingqna === 1,
 );
 check('a company seen in one post outside ValuePickr is dropped', !mById.has('tata-power'));
 check('a ValuePickr thematic thread is dropped', !mById.has('data-center-value-chain-in-india'));
@@ -214,7 +214,7 @@ check(
 check(
   'sources sum to mentions across every company',
   merged.trending.stocks.every(
-    (s) => s.sources.valuepickr + s.sources.news + s.sources.traderji === s.mentions,
+    (s) => s.sources.valuepickr + s.sources.news + s.sources.tradingqna === s.mentions,
   ),
 );
 

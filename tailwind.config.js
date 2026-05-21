@@ -25,7 +25,7 @@ export default {
         reddit: '#ff5414',
         valuepickr: '#27b3a8',
         news: '#ff8a3d',
-        traderji: '#4ea3e0',
+        tradingqna: '#4ea3e0',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],

@@ -1,4 +1,4 @@
-export type Source = 'reddit' | 'valuepickr' | 'news' | 'traderji';
+export type Source = 'reddit' | 'valuepickr' | 'news' | 'tradingqna';
 export type Sentiment = 'bullish' | 'bearish' | 'neutral';
 
 export interface SentimentBreakdown {

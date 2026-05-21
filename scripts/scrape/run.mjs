@@ -7,9 +7,9 @@
  * it to public/data. If scraping yields nothing it exits non-zero WITHOUT
  * writing, so a failed run never overwrites the last good data.
  *
- * ValuePickr, Google News and Traderji are peer discovery sources: ValuePickr
- * surfaces companies from forum topics, Google News from headlines, Traderji
- * from forum thread titles. companies.mjs keys all three onto shared company
+ * ValuePickr, Google News and TradingQnA are peer discovery sources: ValuePickr
+ * surfaces companies from forum topics, Google News from headlines, TradingQnA
+ * from Q&A question titles. companies.mjs keys all three onto shared company
  * ids so the same company merges into one card. Reddit and Substack stay
  * parked: both block datacenter IPs (CI).
  */
@@ -18,7 +18,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchValuePickrPosts } from './sources/valuepickr.mjs';
 import { fetchGoogleNewsPosts } from './sources/googlenews.mjs';
-import { fetchTraderjiPosts } from './sources/traderji.mjs';
+import { fetchTradingQnaPosts } from './sources/tradingqna.mjs';
 import { keyPosts } from './companies.mjs';
 import { loadHistory } from './history.mjs';
 import { buildData } from './aggregate.mjs';
@@ -36,7 +36,7 @@ async function main() {
 
   const vpPosts = await fetchValuePickrPosts({ windowHours: 720 });
 
-  // Google News and Traderji discover companies independently; a failure in
+  // Google News and TradingQnA discover companies independently; a failure in
   // either must not abort the run, so each is caught and skipped.
   let newsPosts = [];
   try {
@@ -45,18 +45,18 @@ async function main() {
     console.error(`[scrape] news source failed, continuing: ${err.message}`);
   }
 
-  let traderjiPosts = [];
+  let qnaPosts = [];
   try {
-    traderjiPosts = await fetchTraderjiPosts({ windowHours: 720 });
+    qnaPosts = await fetchTradingQnaPosts({ windowHours: 720 });
   } catch (err) {
-    console.error(`[scrape] traderji source failed, continuing: ${err.message}`);
+    console.error(`[scrape] tradingqna source failed, continuing: ${err.message}`);
   }
 
   // Key all sources onto shared company ids, merging companies seen in several.
-  const rawPosts = keyPosts(vpPosts, [...newsPosts, ...traderjiPosts]);
+  const rawPosts = keyPosts(vpPosts, [...newsPosts, ...qnaPosts]);
   console.log(
     `[scrape] fetched ${rawPosts.length} posts total ` +
-      `(valuepickr ${vpPosts.length}, news ${newsPosts.length}, traderji ${traderjiPosts.length})`,
+      `(valuepickr ${vpPosts.length}, news ${newsPosts.length}, tradingqna ${qnaPosts.length})`,
   );
 
   if (rawPosts.length === 0) {

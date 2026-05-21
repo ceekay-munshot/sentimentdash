@@ -63,7 +63,7 @@ export function companyKey(name) {
  * Re-keys ValuePickr + extracted-name posts onto shared company keys.
  *
  * @param {object[]} vpPosts         ValuePickr posts (carry topicId/topicTitle)
- * @param {object[]} extractedPosts  Google News / Traderji posts (carry companyName)
+ * @param {object[]} extractedPosts  Google News / TradingQnA posts (carry companyName)
  * @returns {object[]} every kept post, re-tagged with topicId (key) + topicTitle
  */
 export function keyPosts(vpPosts, extractedPosts) {
