@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Flame, MessagesSquare, Search, TrendingUp, Trophy } from 'lucide-react';
-import type { TrendingData, TrendingStock } from '../types';
+import type { Source, TrendingData, TrendingStock } from '../types';
 import { SENTIMENT_META, moodLabel } from '../lib/meta';
 import { cn, formatPct } from '../lib/format';
 import StatCard from './StatCard';
@@ -10,12 +10,19 @@ import SentimentBar from './SentimentBar';
 import CountUp from './CountUp';
 
 type SortKey = 'trending' | 'bullish' | 'bearish' | 'movers';
+type SourceKey = 'all' | Source;
 
 const SORTS: { key: SortKey; label: string }[] = [
   { key: 'trending', label: 'Trending' },
   { key: 'bullish', label: 'Bullish' },
   { key: 'bearish', label: 'Bearish' },
   { key: 'movers', label: 'Movers' },
+];
+
+const SOURCE_FILTERS: { key: SourceKey; label: string }[] = [
+  { key: 'all', label: 'All sources' },
+  { key: 'valuepickr', label: 'ValuePickr' },
+  { key: 'news', label: 'Google News' },
 ];
 
 interface Props {
@@ -26,6 +33,7 @@ interface Props {
 export default function Dashboard({ data, onSelect }: Props) {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState<SortKey>('trending');
+  const [source, setSource] = useState<SourceKey>('all');
 
   const topMover = useMemo(
     () => [...data.stocks].sort((a, b) => b.changePct - a.changePct)[0],
@@ -39,7 +47,9 @@ export default function Dashboard({ data, onSelect }: Props) {
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = data.stocks.filter(
-      (s) => !q || s.ticker.toLowerCase().includes(q) || s.name.toLowerCase().includes(q),
+      (s) =>
+        (!q || s.ticker.toLowerCase().includes(q) || s.name.toLowerCase().includes(q)) &&
+        (source === 'all' || (s.sources[source] ?? 0) > 0),
     );
     const sorters: Record<SortKey, (a: TrendingStock, b: TrendingStock) => number> = {
       trending: (a, b) => a.rank - b.rank,
@@ -48,7 +58,7 @@ export default function Dashboard({ data, onSelect }: Props) {
       movers: (a, b) => b.changePct - a.changePct,
     };
     return [...list].sort(sorters[sort]);
-  }, [data.stocks, query, sort]);
+  }, [data.stocks, query, sort, source]);
 
   const mood = moodLabel(data.marketMood.score);
 
@@ -65,8 +75,8 @@ export default function Dashboard({ data, onSelect }: Props) {
           What India is <span className="text-gradient">talking about</span>
         </h1>
         <p className="mt-1.5 max-w-xl text-sm text-slate-400">
-          The companies ValuePickr is talking about right now — ranked by buzz, scored by
-          sentiment.
+          Companies trending across the ValuePickr forum and Google News — ranked by buzz,
+          scored by sentiment.
         </p>
       </div>
 
@@ -144,6 +154,26 @@ export default function Dashboard({ data, onSelect }: Props) {
               </button>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="mb-4 flex items-center gap-2">
+        <span className="text-xs font-medium uppercase tracking-wider text-slate-600">Source</span>
+        <div className="flex gap-1 rounded-lg border border-white/[0.06] bg-ink-800/50 p-1">
+          {SOURCE_FILTERS.map((s) => (
+            <button
+              key={s.key}
+              onClick={() => setSource(s.key)}
+              className={cn(
+                'rounded-md px-2.5 py-1 text-xs font-medium transition-colors',
+                source === s.key
+                  ? 'bg-brand/20 text-brand-300'
+                  : 'text-slate-500 hover:text-slate-300',
+              )}
+            >
+              {s.label}
+            </button>
+          ))}
         </div>
       </div>
 

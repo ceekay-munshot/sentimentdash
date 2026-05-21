@@ -155,6 +155,10 @@ check(
   'does not treat a month as a company',
   extractCompany('Top 5 stocks to buy in May 2026') === null,
 );
+check(
+  'skips the jargon word in "Breakout stock: ..."',
+  extractCompany('Breakout stock: HDFC Bank tops resistance') === 'HDFC Bank',
+);
 
 console.log('\nDiscovery + cross-source merge');
 const vpForKey = [
