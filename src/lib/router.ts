@@ -4,7 +4,8 @@ export type Route = { view: 'home' } | { view: 'stock'; ticker: string };
 
 function parse(hash: string): Route {
   const match = hash.match(/^#\/stock\/([A-Za-z0-9.&-]+)/);
-  if (match) return { view: 'stock', ticker: decodeURIComponent(match[1]).toUpperCase() };
+  // Company keys are lowercase slugs (e.g. "afcom-holdings"); used verbatim.
+  if (match) return { view: 'stock', ticker: decodeURIComponent(match[1]) };
   return { view: 'home' };
 }
 
