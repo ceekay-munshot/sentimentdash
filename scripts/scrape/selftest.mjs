@@ -8,7 +8,7 @@
  * scrape so a broken pipeline fails fast without touching real data.
  */
 import { buildData } from './aggregate.mjs';
-import { cleanCompanyName, companyKey, keyPosts } from './companies.mjs';
+import { cleanCompanyName, companyKey, isCompanyName, keyPosts } from './companies.mjs';
 import { extractCompany } from './sources/googlenews.mjs';
 
 let failures = 0;
@@ -118,11 +118,20 @@ check(
     'Data Center Value Chain in India',
 );
 check('leaves a clean company name untouched', cleanCompanyName('Suzlon Energy') === 'Suzlon Energy');
+check(
+  'strips a trailing Ltd from the display name',
+  cleanCompanyName('Piccadily Agro Industries Ltd') === 'Piccadily Agro Industries',
+);
 check('keys drop the Ltd suffix', companyKey('Reliance Industries Ltd') === 'reliance-industries');
 check('keys are slugs', companyKey('Suzlon Energy') === 'suzlon-energy');
 check(
   'a name and its Ltd form share one key',
   companyKey('Caplin Point Laboratories') === companyKey('Caplin Point Laboratories Ltd'),
+);
+check('accepts a real company name', isCompanyName('Caplin Point Laboratories') === true);
+check(
+  'rejects a thematic thread title',
+  isCompanyName('Data Center Value Chain in India') === false,
 );
 
 console.log('\nHeadline company extraction');
@@ -151,6 +160,9 @@ console.log('\nDiscovery + cross-source merge');
 const vpForKey = [
   vpPost('vp-s', 901, 'Suzlon Energy', 'Order book strong, accumulating.', 3),
   vpPost('vp-c', 902, 'Caplin Point Laboratories', 'Margins expanding, buy.', 4),
+  vpPost('vp-p', 904, 'Piccadily Agro Industries Ltd', 'Bonus on the cards.', 2),
+  // A ValuePickr thematic thread — must be dropped, it is not a company.
+  vpPost('vp-t', 903, 'Data Center Value Chain in India: Investment Opportunities', 'Big theme.', 3),
 ];
 const newsRaw = (id, companyName, ageHours) => ({
   source: 'news',
@@ -184,6 +196,11 @@ check(
 );
 check('news independently discovers a company ValuePickr lacks', mById.get('tata-motors')?.mentions === 2);
 check('a news-only company seen once is dropped as noise', !mById.has('tata-power'));
+check('a ValuePickr thematic thread is dropped', !mById.has('data-center-value-chain-in-india'));
+check(
+  'a trailing Ltd is dropped from the card name',
+  mById.get('piccadily-agro-industries')?.name === 'Piccadily Agro Industries',
+);
 check(
   'sources sum to mentions across every company',
   merged.trending.stocks.every((s) => s.sources.valuepickr + s.sources.news === s.mentions),
