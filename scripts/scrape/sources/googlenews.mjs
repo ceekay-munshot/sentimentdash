@@ -42,7 +42,9 @@ const CAPS_STOP = new Set(
     'november december jan feb mar apr jun jul aug sep sept oct nov dec ' +
     'monday tuesday wednesday thursday friday saturday sunday ' +
     'multibagger multibaggers penny smallcap midcap largecap bluechip ' +
-    'bonus dividend watch watchlist focus gainers losers'
+    'bonus dividend watch watchlist focus gainers losers gainer loser ' +
+    'breakout potential rally surge target alert pick picks momentum ' +
+    'outperformer outperformers'
   ).split(' '),
 );
 

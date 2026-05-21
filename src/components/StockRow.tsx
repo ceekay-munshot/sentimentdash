@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ChevronRight, TrendingDown, TrendingUp } from 'lucide-react';
 import type { TrendingStock } from '../types';
-import { SENTIMENT_META } from '../lib/meta';
+import { SENTIMENT_META, SOURCE_META, SOURCE_ORDER } from '../lib/meta';
 import { cn, compactNumber, formatPct } from '../lib/format';
 import Sparkline from './Sparkline';
 import SentimentBar from './SentimentBar';
@@ -22,6 +22,10 @@ interface Props {
 export default function StockRow({ stock, index, onSelect }: Props) {
   const sent = SENTIMENT_META[stock.sentiment.label];
   const up = stock.changePct >= 0;
+  const sourceLabel =
+    SOURCE_ORDER.filter((s) => (stock.sources[s] ?? 0) > 0)
+      .map((s) => SOURCE_META[s].label)
+      .join(' · ') || '—';
 
   return (
     <motion.button
@@ -44,7 +48,7 @@ export default function StockRow({ stock, index, onSelect }: Props) {
 
       <div className="flex min-w-0 flex-1 flex-col gap-0.5">
         <span className="truncate text-sm font-bold text-white">{stock.name}</span>
-        <span className="truncate text-xs text-slate-500">ValuePickr</span>
+        <span className="truncate text-xs text-slate-500">{sourceLabel}</span>
       </div>
 
       <div className="hidden w-[150px] shrink-0 flex-col gap-1.5 md:flex">
