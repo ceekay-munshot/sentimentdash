@@ -8,7 +8,8 @@
  * scrape so a broken pipeline fails fast without touching real data.
  */
 import { buildData } from './aggregate.mjs';
-import { cleanCompanyName } from './sources/googlenews.mjs';
+import { cleanCompanyName, companyKey, keyPosts } from './companies.mjs';
+import { extractCompany } from './sources/googlenews.mjs';
 
 let failures = 0;
 function check(label, condition) {
@@ -106,8 +107,7 @@ check('second-run sparkline uses history (>= 2 points)', run2.trending.stocks.ev
 check('mentionsPrev now reflects run 1', r2.get('501')?.mentionsPrev === 3);
 check('stable mentions => changePct 0 on run 2', r2.get('501')?.changePct === 0);
 
-console.log('\nCompany-name cleaning + news merge');
-
+console.log('\nName cleaning + keying');
 check(
   'strips an editorial subtitle after a dash',
   cleanCompanyName('Afcom Holdings - Sky High Ambitions, Grounded in Reality?') === 'Afcom Holdings',
@@ -117,34 +117,65 @@ check(
   cleanCompanyName('Data Center Value Chain in India: Investment Opportunities') ===
     'Data Center Value Chain in India',
 );
+check('leaves a clean company name untouched', cleanCompanyName('Suzlon Energy') === 'Suzlon Energy');
+check('keys drop the Ltd suffix', companyKey('Reliance Industries Ltd') === 'reliance-industries');
+check('keys are slugs', companyKey('Suzlon Energy') === 'suzlon-energy');
 check(
-  'leaves a clean company name untouched',
-  cleanCompanyName('Piccadily Agro Industries Ltd') === 'Piccadily Agro Industries Ltd',
+  'a name and its Ltd form share one key',
+  companyKey('Caplin Point Laboratories') === companyKey('Caplin Point Laboratories Ltd'),
 );
-check('trims a trailing question mark', cleanCompanyName('Suzlon Energy?') === 'Suzlon Energy');
 
-// News posts arrive already tagged with a ValuePickr topicId; buildData must
-// merge them onto that company and count them under sources.news.
-const newsTagged = [
-  {
-    source: 'news',
-    id: 'gn-n1',
-    author: 'Test Wire',
-    handle: 'Test Wire',
-    community: 'Google News',
-    timestamp: hoursAgo(2),
-    text: 'Caplin Point Laboratories wins fresh US FDA approval',
-    url: 'https://news.google.com/x/n1',
-    likes: 0,
-    comments: 0,
-    topicId: '501',
-    topicTitle: 'Caplin Point Laboratories',
-  },
+console.log('\nHeadline company extraction');
+check(
+  'extracts a company that leads the headline',
+  extractCompany('Tata Motors shares jump 5% after Q4 results') === 'Tata Motors',
+);
+check(
+  'extracts a company from mid-headline',
+  extractCompany('Should you buy Suzlon Energy at these levels?') === 'Suzlon Energy',
+);
+check(
+  'returns null for an index-only headline',
+  extractCompany('Sensex, Nifty close higher; IT stocks lead') === null,
+);
+
+console.log('\nDiscovery + cross-source merge');
+const vpForKey = [
+  vpPost('vp-s', 901, 'Suzlon Energy', 'Order book strong, accumulating.', 3),
+  vpPost('vp-c', 902, 'Caplin Point Laboratories', 'Margins expanding, buy.', 4),
 ];
-const merged = buildData([...fixtures, ...newsTagged], { runs: [] }, NOW);
+const newsRaw = (id, companyName, ageHours) => ({
+  source: 'news',
+  id,
+  author: 'Test Wire',
+  handle: 'Test Wire',
+  community: 'Google News',
+  timestamp: hoursAgo(ageHours),
+  text: `${companyName} in the news`,
+  url: `https://news.google.com/x/${id}`,
+  likes: 0,
+  comments: 0,
+  companyName,
+});
+const newsForKey = [
+  newsRaw('gn-1', 'Suzlon Energy', 2), // merges onto the ValuePickr company
+  newsRaw('gn-2', 'Suzlon Energy', 5),
+  newsRaw('gn-3', 'Tata Motors', 2), //   news-only company, 2 headlines -> kept
+  newsRaw('gn-4', 'Tata Motors', 6),
+  newsRaw('gn-5', 'Tata Power', 3), //    news-only company, 1 headline  -> dropped
+];
+const keyed = keyPosts(vpForKey, newsForKey);
+const merged = buildData(keyed, { runs: [] }, NOW);
 const mById = new Map(merged.trending.stocks.map((s) => [s.ticker, s]));
-check('news post merges onto the ValuePickr company', mById.get('501')?.mentions === 4);
-check('news post counted under sources.news', mById.get('501')?.sources.news === 1);
+
+check('ValuePickr + news merge into one company', mById.get('suzlon-energy')?.mentions === 3);
+check(
+  'merged company counts both sources',
+  mById.get('suzlon-energy')?.sources.valuepickr === 1 &&
+    mById.get('suzlon-energy')?.sources.news === 2,
+);
+check('news independently discovers a company ValuePickr lacks', mById.get('tata-motors')?.mentions === 2);
+check('a news-only company seen once is dropped as noise', !mById.has('tata-power'));
 check(
   'sources sum to mentions across every company',
   merged.trending.stocks.every((s) => s.sources.valuepickr + s.sources.news === s.mentions),
