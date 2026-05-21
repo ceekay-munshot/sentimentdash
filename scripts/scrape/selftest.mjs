@@ -138,6 +138,14 @@ check(
   'returns null for an index-only headline',
   extractCompany('Sensex, Nifty close higher; IT stocks lead') === null,
 );
+check(
+  'skips the jargon word in "Multibagger stock: ..."',
+  extractCompany('Multibagger stock: Tata Power doubles investor wealth') === 'Tata Power',
+);
+check(
+  'does not treat a month as a company',
+  extractCompany('Top 5 stocks to buy in May 2026') === null,
+);
 
 console.log('\nDiscovery + cross-source merge');
 const vpForKey = [

@@ -28,7 +28,8 @@ const DISCOVERY_QUERIES = [
   'stocks to buy',
 ];
 
-// Capitalised words that are not company names (headline/sentence words).
+// Capitalised words that are not company names (headline/sentence words,
+// months, weekdays, and finance jargon that recurs in headlines).
 const CAPS_STOP = new Set(
   (
     'the a an this that these those why how what when where who whom should ' +
@@ -36,7 +37,12 @@ const CAPS_STOP = new Set(
     'there now new news top best worst big small after before as at in on for ' +
     'with and or but if to of from by up down over under amid vs buy sell hold ' +
     'results result earnings profit loss revenue update updates live target ' +
-    'price stock stocks share shares my your you it its he she they we'
+    'price stock stocks share shares my your you it its he she they we ' +
+    'january february march april may june july august september october ' +
+    'november december jan feb mar apr jun jul aug sep sept oct nov dec ' +
+    'monday tuesday wednesday thursday friday saturday sunday ' +
+    'multibagger multibaggers penny smallcap midcap largecap bluechip ' +
+    'bonus dividend watch watchlist focus gainers losers'
   ).split(' '),
 );
 
