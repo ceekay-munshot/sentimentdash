@@ -1,0 +1,48 @@
+{
+  "ticker": "provide",
+  "name": "Provide",
+  "exchange": "",
+  "sector": "",
+  "generatedAt": "2026-05-21T07:27:40.432Z",
+  "posts": [
+    {
+      "id": "tradingqna-tqna-528081",
+      "source": "tradingqna",
+      "author": "omkarukirde",
+      "handle": "@omkarukirde",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-14T06:05:23.549Z",
+      "text": "Provide access of \"Predefined Watchlists\" on Kite API — This is not really about instrument.json. its about trading only in stocks from specific index and avoiding particular index, which we dont have to maintain since zerodha already has robust endpoints for this. Kindly allow this. I really need this. As of now I am building fno list from instruments fno segment by multiple string methods. I feel if there is endpoint given (which is already build) i can manage my app perfectly fine. Also only one part of my app is jugad as of now and thats this watchlist one. Request you guys to allow those…",
+      "url": "https://tradingqna.com/t/provide-access-of-predefined-watchlists-on-kite-api/194032/3",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-528013",
+      "source": "tradingqna",
+      "author": "nivas_k",
+      "handle": "@nivas_k",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-13T12:28:36.501Z",
+      "text": "Provide access of \"Predefined Watchlists\" on Kite API — From the API side, a watchlist is essentially a user-defined collection of instruments. API users can already maintain this easily in their own application using arrays, dictionaries, or database tables. Even if watchlist APIs are exposed, clients would still need to rely on the instruments master (instruments.json) to identify and manage instrument tokens before adding them to a watchlist. So the core dependency on the instrument dump does not really go away.",
+      "url": "https://tradingqna.com/t/provide-access-of-predefined-watchlists-on-kite-api/194032/2",
+      "sentiment": "bearish",
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-528010",
+      "source": "tradingqna",
+      "author": "omkarukirde",
+      "handle": "@omkarukirde",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-13T11:06:14.661Z",
+      "text": "Provide access of \"Predefined Watchlists\" on Kite API — Hi Team, You already have these endpoints build for Predefined Watchlists. Please make these available for kite API users as well. Since getting it from instruments.json is very hard. Team, API’s are already build, please provide access. My application will just get most required feature. @Arockiya_Raja",
+      "url": "https://tradingqna.com/t/provide-access-of-predefined-watchlists-on-kite-api/194032/1",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 1
+    }
+  ]
+}

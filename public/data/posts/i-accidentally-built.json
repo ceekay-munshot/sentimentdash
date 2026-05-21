@@ -1,0 +1,74 @@
+{
+  "ticker": "i-accidentally-built",
+  "name": "I Accidentally Built",
+  "exchange": "",
+  "sector": "",
+  "generatedAt": "2026-05-21T07:27:40.432Z",
+  "posts": [
+    {
+      "id": "tradingqna-tqna-527208",
+      "source": "tradingqna",
+      "author": "Rajandran_R",
+      "handle": "@Rajandran_R",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-02T13:08:32.830Z",
+      "text": "How I Accidentally Built an Open-Source Algo Trading Platform — Thank you so much for the kind words. OpenAlgo is about building the common infra once and keeping it open so more traders and developers can build on top of it.",
+      "url": "https://tradingqna.com/t/how-i-accidentally-built-an-open-source-algo-trading-platform/193691/5",
+      "sentiment": "neutral",
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-527206",
+      "source": "tradingqna",
+      "author": "Rajandran_R",
+      "handle": "@Rajandran_R",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-02T11:23:05.775Z",
+      "text": "How I Accidentally Built an Open-Source Algo Trading Platform — Thanks Vijay, very valid feedback. I agree that short, focused videos on practical workflows like straddles, SL/target handling, rolls, next-day square-off, persistence, monitoring, and multi-broker execution will help many users understand OpenAlgo better. At the same time, my own core interest has slowly shifted from just building individual strategies to building the infrastructure that lets anyone build their own strategies faster. OpenAlgo is not only about giving ready-made scripts. The bigger goal is to create an open infra…",
+      "url": "https://tradingqna.com/t/how-i-accidentally-built-an-open-source-algo-trading-platform/193691/4",
+      "sentiment": "bearish",
+      "likes": 1,
+      "comments": 0
+    },
+    {
+      "id": "tradingqna-tqna-527186",
+      "source": "tradingqna",
+      "author": "TDSnoGST",
+      "handle": "@TDSnoGST",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-02T06:16:37.803Z",
+      "text": "How I Accidentally Built an Open-Source Algo Trading Platform — Outstanding work here. This is so much required and thanks for sharing your story. Crazy good level of broker integration and a ferocious speed of updates. Keep up the amazing work. This level of infra would take a year for a regular user to build and place trades and you’ve offered it opensource - all I wish is that more and more people try it and help evolve it.",
+      "url": "https://tradingqna.com/t/how-i-accidentally-built-an-open-source-algo-trading-platform/193691/3",
+      "sentiment": "neutral",
+      "likes": 1,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-527178",
+      "source": "tradingqna",
+      "author": "VijayNair",
+      "handle": "@VijayNair",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-02T04:23:13.474Z",
+      "text": "How I Accidentally Built an Open-Source Algo Trading Platform — Congratulations on a very good initiative. I am an algo trader who codes his own stuff. I am more a get-things-done coder than a professional developer. Heres what I suggest to increase adoption rate. Make short videos on the following Show a simple straddle with sl/tgts/rolls that is started at a certain time and squared off at 9:18 next day. You dont have to code this on screen, just a 2 minute look up of readymade script. Show how you can run 2 such scripts to start at different times on 2 different brokers using openalgo infra…",
+      "url": "https://tradingqna.com/t/how-i-accidentally-built-an-open-source-algo-trading-platform/193691/2",
+      "sentiment": "bearish",
+      "likes": 3,
+      "comments": 1
+    },
+    {
+      "id": "tradingqna-tqna-527146",
+      "source": "tradingqna",
+      "author": "Rajandran_R",
+      "handle": "@Rajandran_R",
+      "community": "TradingQnA",
+      "timestamp": "2026-05-01T08:03:20.273Z",
+      "text": "How I Accidentally Built an Open-Source Algo Trading Platform — Around two years ago, I was trying to solve a very simple problem. I wanted to automate one trading strategy from Amibroker. That’s it. No startup idea. No grand vision. No platform. Just one basic requirement: When a signal is generated from my chart, the order should reach my broker automatically. So I built a small Amibroker module. It sent the signal to a local Python Flask server. The Flask server formatted the request and sent it to the broker API. It worked. It was fast. And at that time, it was enough. Or so I thought. Fro…",
+      "url": "https://tradingqna.com/t/how-i-accidentally-built-an-open-source-algo-trading-platform/193691/1",
+      "sentiment": "neutral",
+      "likes": 11,
+      "comments": 0
+    }
+  ]
+}
