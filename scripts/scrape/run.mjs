@@ -7,16 +7,17 @@
  * it to public/data. If scraping yields nothing it exits non-zero WITHOUT
  * writing, so a failed run never overwrites the last good data.
  *
- * ValuePickr discovers the companies (one forum topic ≈ one company). Google
- * News is then searched once per discovered company, so each headline is
- * already tagged to a known company. Reddit and Substack stay parked: both
- * block datacenter IPs (CI) behind bot-protection.
+ * ValuePickr and Google News are peer discovery sources: ValuePickr surfaces
+ * companies from forum topics, Google News from the headlines. companies.mjs
+ * keys both onto shared company ids so the same company merges into one card.
+ * Reddit and Substack stay parked: both block datacenter IPs (CI).
  */
 import { writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchValuePickrPosts } from './sources/valuepickr.mjs';
 import { fetchGoogleNewsPosts } from './sources/googlenews.mjs';
+import { keyPosts } from './companies.mjs';
 import { loadHistory } from './history.mjs';
 import { buildData } from './aggregate.mjs';
 
@@ -33,27 +34,17 @@ async function main() {
 
   const vpPosts = await fetchValuePickrPosts({ windowHours: 720 });
 
-  // The companies ValuePickr surfaced this run — one Google News search each.
-  const companies = [];
-  const seenTopics = new Set();
-  for (const p of vpPosts) {
-    if (p.topicId && p.topicTitle && !seenTopics.has(p.topicId)) {
-      seenTopics.add(p.topicId);
-      companies.push({ topicId: p.topicId, topicTitle: p.topicTitle });
-    }
-  }
-
-  // Google News enriches those companies; a news-only failure must not abort
-  // the run, so it is caught and skipped.
+  // Google News discovers companies independently; a news-only failure must
+  // not abort the run, so it is caught and skipped.
   let newsPosts = [];
   try {
-    newsPosts = await fetchGoogleNewsPosts({ companies, windowHours: 720 });
-    console.log(`[scrape] news: ${newsPosts.length} headlines across ${companies.length} companies`);
+    newsPosts = await fetchGoogleNewsPosts({ windowHours: 720 });
   } catch (err) {
     console.error(`[scrape] news source failed, continuing: ${err.message}`);
   }
 
-  const rawPosts = [...vpPosts, ...newsPosts];
+  // Key both sources onto shared company ids, merging companies seen in both.
+  const rawPosts = keyPosts(vpPosts, newsPosts);
   console.log(
     `[scrape] fetched ${rawPosts.length} posts total ` +
       `(valuepickr ${vpPosts.length}, news ${newsPosts.length})`,

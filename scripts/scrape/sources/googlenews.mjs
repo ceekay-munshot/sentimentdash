@@ -1,44 +1,105 @@
 /**
- * Google News source — pulls recent headlines for the companies ValuePickr
- * is discussing, via Google News RSS search (news.google.com/rss/search).
+ * Google News source — discovers which companies are most in the headlines.
  *
- * No login and no API key. Unlike Reddit and Substack — which block
- * datacenter IPs (GitHub Actions) behind bot-protection — Google News RSS is
- * built to be syndicated to feed readers and serves fine from CI.
+ * No login and no API key. Unlike Reddit and Substack — which block datacenter
+ * IPs (GitHub Actions) behind bot-protection — Google News RSS is built to be
+ * syndicated and serves fine from CI.
  *
- * One search is issued per ValuePickr-discovered company, so every headline
- * is already about a known company: results are tagged with that company's
- * topicId directly, no fuzzy entity matching required.
+ * This is a discovery source, a peer to ValuePickr (not a per-company lookup):
+ * it runs broad India-markets searches, then extracts the company name from
+ * each headline. Indian financial headlines almost always lead with the
+ * company ("Tata Motors shares jump..."), so the leading proper-noun phrase is
+ * the company. Posts carry that as `companyName`; companies.mjs keys them.
  */
 
 const UA =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) ' +
   'Chrome/124.0.0.0 Safari/537.36';
 
+// Broad searches — the goal is volume of company-led headlines, not precision.
+const DISCOVERY_QUERIES = [
+  'stock',
+  'shares',
+  'share price target',
+  'Q4 results',
+  'stock surges OR stock jumps',
+  'stock falls OR stock slumps',
+  'multibagger stocks',
+  'stocks to buy',
+];
+
+// Capitalised words that are not company names (headline/sentence words).
+const CAPS_STOP = new Set(
+  (
+    'the a an this that these those why how what when where who whom should ' +
+    'could would is are was were will shall can do does did has have had here ' +
+    'there now new news top best worst big small after before as at in on for ' +
+    'with and or but if to of from by up down over under amid vs buy sell hold ' +
+    'results result earnings profit loss revenue update updates live target ' +
+    'price stock stocks share shares my your you it its he she they we'
+  ).split(' '),
+);
+
+// Index / macro / sector terms that look like names but are not companies.
+const MACRO = new Set([
+  'sensex', 'nifty', 'nifty 50', 'bank nifty', 'gift nifty', 'dalal street',
+  'wall street', 'budget', 'union budget', 'rbi', 'sebi', 'nse', 'bse', 'gst',
+  'sip', 'market', 'markets', 'stock market', 'share market', 'ipo', 'fii',
+  'dii', 'fpi', 'gdp', 'it stocks', 'psu', 'psu banks', 'bank stocks',
+  'auto stocks', 'pharma stocks', 'metal stocks', 'india', 'indian', 'gold',
+  'silver', 'crude oil', 'rupee', 'dollar', 'asian markets', 'us markets',
+]);
+
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-/**
- * Reduces a ValuePickr topic title to the company name: forum titles often
- * carry an editorial subtitle ("Afcom Holdings - Sky High Ambitions...",
- * "X: the theme") — only the head, before the first separator, is the name.
- */
-export function cleanCompanyName(title) {
-  let s = String(title || '').trim();
-  const cut = s.search(/\s[-–—]\s|:\s|\s\|\s|\s\(/);
-  if (cut > 0) s = s.slice(0, cut);
-  return s.replace(/[?.,!]+$/, '').trim();
+/** Strips surrounding punctuation from a headline token. */
+function cleanToken(w) {
+  return w.replace(/^[^A-Za-z0-9]+/, '').replace(/[^A-Za-z0-9.&]+$/, '');
 }
 
-/** Derives the search term: the cleaned name minus a trailing Ltd/Limited.
- *  Returns null when the result is too short or too long to be a company. */
-function queryName(title) {
-  const cleaned = cleanCompanyName(title)
-    .replace(/\b(?:ltd\.?|limited)\b/gi, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-  const words = cleaned.split(' ').filter(Boolean);
-  if (cleaned.length < 4 || words.length > 5) return null;
-  return cleaned;
+/** True when a token can be part of a company name (Title-case / acronym). */
+function isNameToken(w) {
+  if (!w) return false;
+  if (/^(?:q[1-4]|fy\d*|h[12]|\d{4})$/i.test(w)) return false;
+  if (CAPS_STOP.has(w.toLowerCase())) return false;
+  return (
+    /^[A-Z][A-Za-z.&'-]*$/.test(w) || // Title-case word
+    /^[A-Z]{2,6}$/.test(w) || //         all-caps acronym (RIL, ITC, HDFC)
+    /^[0-9]+[A-Z][A-Za-z]*$/.test(w) //  digit-led name (3M, 5Paisa)
+  );
+}
+
+/**
+ * Extracts the company name from a headline: the earliest run of consecutive
+ * name-like tokens that is not an index/macro term. Returns null when none.
+ */
+export function extractCompany(headline) {
+  const toks = String(headline || '')
+    .split(/\s+/)
+    .map(cleanToken);
+
+  let i = 0;
+  while (i < toks.length) {
+    if (!isNameToken(toks[i])) {
+      i++;
+      continue;
+    }
+    let j = i;
+    const run = [];
+    while (j < toks.length && isNameToken(toks[j])) {
+      run.push(toks[j]);
+      j++;
+    }
+    const candidate = run.join(' ').trim();
+    const isMacro =
+      MACRO.has(candidate.toLowerCase()) ||
+      run.every((w) => MACRO.has(w.toLowerCase()));
+    if (run.length <= 5 && candidate.replace(/[^A-Za-z0-9]/g, '').length >= 3 && !isMacro) {
+      return candidate;
+    }
+    i = j;
+  }
+  return null;
 }
 
 /** GET text with retry + exponential backoff on rate-limit / transient errors. */
@@ -98,7 +159,7 @@ function stripHtml(html) {
     .trim();
 }
 
-/** Parses one Google News RSS document into normalized posts within the window. */
+/** Parses a Google News RSS document into posts that name an extractable company. */
 function parseFeed(xml, windowMs) {
   const cutoff = Date.now() - windowMs;
   const posts = [];
@@ -116,7 +177,8 @@ function parseFeed(xml, windowMs) {
     if (publisher && headline.endsWith(` - ${publisher}`)) {
       headline = headline.slice(0, -(publisher.length + 3)).trim();
     }
-    if (!headline) continue;
+    const companyName = extractCompany(headline);
+    if (!headline || !companyName) continue;
 
     const guid = stripHtml(tag(item, 'guid')).replace(/[^a-z0-9]/gi, '');
     const id = `gn-${guid.slice(-32) || ts}`;
@@ -132,54 +194,43 @@ function parseFeed(xml, windowMs) {
       url: link,
       likes: 0,
       comments: 0,
+      companyName,
     });
   }
   return posts;
 }
 
 /**
- * Fetches recent headlines for each ValuePickr-discovered company.
- *
- * @param {{topicId: string, topicTitle: string}[]} companies
- * Returns posts already tagged with topicId/topicTitle, ready for aggregation.
- * A failing search is logged and skipped rather than aborting the run.
+ * Runs the broad discovery searches and returns headline posts, each carrying
+ * the company name extracted from its headline. A failing search is logged
+ * and skipped rather than aborting the run.
  */
-export async function fetchGoogleNewsPosts({ companies = [], windowHours = 720, maxCompanies = 250 } = {}) {
+export async function fetchGoogleNewsPosts({ queries = DISCOVERY_QUERIES, windowHours = 720 } = {}) {
   const windowMs = windowHours * 3600 * 1000;
 
   const all = [];
   const seen = new Set();
-  let queried = 0;
-  let skipped = 0;
-
-  for (const { topicId, topicTitle } of companies.slice(0, maxCompanies)) {
-    const query = queryName(topicTitle);
-    if (!query) {
-      skipped++;
-      continue;
-    }
-    queried++;
-
+  for (const query of queries) {
     const url =
       'https://news.google.com/rss/search?q=' +
-      encodeURIComponent(`"${query}"`) +
+      encodeURIComponent(query) +
       '&hl=en-IN&gl=IN&ceid=IN:en';
     try {
-      const xml = await fetchText(url);
-      for (const post of parseFeed(xml, windowMs)) {
-        const key = `${post.id}::${topicId}`;
-        if (seen.has(key)) continue;
-        seen.add(key);
-        all.push({ ...post, topicId, topicTitle });
+      const posts = parseFeed(await fetchText(url), windowMs);
+      let added = 0;
+      for (const post of posts) {
+        if (seen.has(post.id)) continue;
+        seen.add(post.id);
+        all.push(post);
+        added++;
       }
+      console.log(`[news] "${query}": ${posts.length} headlines with a company (${added} new)`);
     } catch (err) {
       console.error(`[news] "${query}" failed: ${err.message}`);
     }
     await sleep(800);
   }
 
-  console.log(
-    `[news] searched ${queried} companies (${skipped} skipped), ${all.length} tagged headlines`,
-  );
+  console.log(`[news] ${all.length} unique company headlines`);
   return all;
 }
