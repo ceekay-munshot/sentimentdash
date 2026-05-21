@@ -181,31 +181,42 @@ const newsRaw = (id, companyName, ageHours) => ({
   comments: 0,
   companyName,
 });
+const qnaRaw = (id, companyName, ageHours) => ({
+  ...newsRaw(id, companyName, ageHours),
+  source: 'tradingqna',
+  community: 'TradingQnA',
+});
 const newsForKey = [
   newsRaw('gn-1', 'Suzlon Energy', 2), // merges onto the ValuePickr company
   newsRaw('gn-2', 'Suzlon Energy', 5),
-  newsRaw('gn-3', 'Tata Motors', 2), //   news + tradingqna discover this one
-  newsRaw('gn-5', 'Tata Power', 3), //    news-only company, 1 post -> dropped
+  newsRaw('gn-3', 'Tata Motors', 2), //   2 news headlines -> news discovers it
+  newsRaw('gn-4', 'Tata Motors', 6),
+  newsRaw('gn-5', 'Tata Power', 3), //    1 news headline only -> dropped
 ];
-const tradingqnaForKey = [
-  { ...newsRaw('tj-1', 'Tata Motors', 4), source: 'tradingqna', community: 'TradingQnA' },
+const qnaForKey = [
+  qnaRaw('tq-1', 'Suzlon Energy', 4), //  enriches a discovered company -> kept
+  qnaRaw('tq-2', 'Tata Motors', 7), //    enriches a discovered company -> kept
+  qnaRaw('tq-3', 'Anandmitra', 2), //     TradingQnA-only noise -> dropped
+  qnaRaw('tq-4', 'Anandmitra', 8),
 ];
-const keyed = keyPosts(vpForKey, [...newsForKey, ...tradingqnaForKey]);
+const keyed = keyPosts(vpForKey, [...newsForKey, ...qnaForKey]);
 const merged = buildData(keyed, { runs: [] }, NOW);
 const mById = new Map(merged.trending.stocks.map((s) => [s.ticker, s]));
 
-check('ValuePickr + news merge into one company', mById.get('suzlon-energy')?.mentions === 3);
+check('ValuePickr + news + TradingQnA merge into one company', mById.get('suzlon-energy')?.mentions === 4);
 check(
-  'merged company counts both sources',
+  'merged company counts all three sources',
   mById.get('suzlon-energy')?.sources.valuepickr === 1 &&
-    mById.get('suzlon-energy')?.sources.news === 2,
+    mById.get('suzlon-energy')?.sources.news === 2 &&
+    mById.get('suzlon-energy')?.sources.tradingqna === 1,
 );
-check('news + tradingqna discover a company ValuePickr lacks', mById.get('tata-motors')?.mentions === 2);
+check('Google News independently discovers a company ValuePickr lacks', mById.get('tata-motors')?.mentions === 3);
 check(
-  'TradingQnA posts are counted under their own source',
-  mById.get('tata-motors')?.sources.news === 1 && mById.get('tata-motors')?.sources.tradingqna === 1,
+  'TradingQnA enriches a discovered company',
+  mById.get('tata-motors')?.sources.news === 2 && mById.get('tata-motors')?.sources.tradingqna === 1,
 );
-check('a company seen in one post outside ValuePickr is dropped', !mById.has('tata-power'));
+check('TradingQnA cannot introduce a company on its own', !mById.has('anandmitra'));
+check('a company seen in one news headline only is dropped', !mById.has('tata-power'));
 check('a ValuePickr thematic thread is dropped', !mById.has('data-center-value-chain-in-india'));
 check(
   'a trailing Ltd is dropped from the card name',
