@@ -72,10 +72,10 @@ export default function Dashboard({ data, onSelect }: Props) {
       className="py-6 sm:py-8"
     >
       <div className="mb-6">
-        <h1 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+        <h1 className="text-2xl font-extrabold tracking-tight text-fg sm:text-3xl">
           What India is <span className="text-gradient">talking about</span>
         </h1>
-        <p className="mt-1.5 max-w-xl text-sm text-slate-400">
+        <p className="mt-1.5 max-w-xl text-sm text-muted">
           Companies trending across the ValuePickr &amp; TradingQnA forums and Google News —
           ranked by buzz, scored by sentiment.
         </p>
@@ -125,21 +125,21 @@ export default function Dashboard({ data, onSelect }: Props) {
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-2">
           <Flame className="h-4 w-4 text-brand-300" />
-          <h2 className="text-sm font-bold uppercase tracking-wider text-slate-300">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-muted">
             Trending now
           </h2>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
           <div className="relative">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-faint" />
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search stock…"
-              className="h-9 w-full rounded-lg border border-white/[0.07] bg-ink-800/70 pl-9 pr-3 text-sm text-slate-200 outline-none transition-colors placeholder:text-slate-600 focus:border-brand/40 sm:w-44"
+              className="h-9 w-full rounded-lg border border-edge bg-surface/70 pl-9 pr-3 text-sm text-fg outline-none transition-colors placeholder:text-faint focus:border-brand/40 sm:w-44"
             />
           </div>
-          <div className="flex gap-1 rounded-lg border border-white/[0.06] bg-ink-800/50 p-1">
+          <div className="flex gap-1 rounded-lg border border-edge bg-surface/50 p-1">
             {SORTS.map((s) => (
               <button
                 key={s.key}
@@ -148,7 +148,7 @@ export default function Dashboard({ data, onSelect }: Props) {
                   'flex-1 rounded-md px-2.5 py-1 text-xs font-medium transition-colors sm:flex-none',
                   sort === s.key
                     ? 'bg-brand/20 text-brand-300'
-                    : 'text-slate-500 hover:text-slate-300',
+                    : 'text-faint hover:text-muted',
                 )}
               >
                 {s.label}
@@ -159,8 +159,8 @@ export default function Dashboard({ data, onSelect }: Props) {
       </div>
 
       <div className="mb-4 flex items-center gap-2">
-        <span className="text-xs font-medium uppercase tracking-wider text-slate-600">Source</span>
-        <div className="flex gap-1 rounded-lg border border-white/[0.06] bg-ink-800/50 p-1">
+        <span className="text-xs font-medium uppercase tracking-wider text-faint">Source</span>
+        <div className="flex gap-1 rounded-lg border border-edge bg-surface/50 p-1">
           {SOURCE_FILTERS.map((s) => (
             <button
               key={s.key}
@@ -169,7 +169,7 @@ export default function Dashboard({ data, onSelect }: Props) {
                 'rounded-md px-2.5 py-1 text-xs font-medium transition-colors',
                 source === s.key
                   ? 'bg-brand/20 text-brand-300'
-                  : 'text-slate-500 hover:text-slate-300',
+                  : 'text-faint hover:text-muted',
               )}
             >
               {s.label}
@@ -180,8 +180,8 @@ export default function Dashboard({ data, onSelect }: Props) {
 
       {visible.length === 0 ? (
         <div className="card grid place-items-center gap-3 py-16 text-center">
-          <Search className="h-7 w-7 text-slate-600" />
-          <p className="text-sm text-slate-400">No stocks match “{query}”.</p>
+          <Search className="h-7 w-7 text-faint" />
+          <p className="text-sm text-muted">No stocks match “{query}”.</p>
         </div>
       ) : (
         <div className="space-y-2">

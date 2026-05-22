@@ -16,10 +16,10 @@ export default function SourceBreakdown({ sources, className }: Props) {
           <span
             key={src}
             title={`${meta.label}: ${sources[src] ?? 0} posts`}
-            className="inline-flex items-center gap-1.5 rounded-md border border-white/[0.06] bg-white/[0.02] px-2 py-1"
+            className="inline-flex items-center gap-1.5 rounded-md border border-edge bg-overlay/[0.02] px-2 py-1"
           >
             <span className={cn('h-1.5 w-1.5 rounded-full', meta.dot)} />
-            <span className="font-mono text-xs font-semibold text-slate-300">{sources[src] ?? 0}</span>
+            <span className="font-mono text-xs font-semibold text-muted">{sources[src] ?? 0}</span>
           </span>
         );
       })}

@@ -4,6 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Theme-aware tokens — values come from CSS variables (see index.css),
+        // so light/dark swap without touching component classes.
+        base: 'rgb(var(--c-base) / <alpha-value>)',
+        surface: 'rgb(var(--c-surface) / <alpha-value>)',
+        'surface-2': 'rgb(var(--c-surface-2) / <alpha-value>)',
+        'surface-3': 'rgb(var(--c-surface-3) / <alpha-value>)',
+        edge: 'rgb(var(--c-edge) / <alpha-value>)',
+        fg: 'rgb(var(--c-fg) / <alpha-value>)',
+        muted: 'rgb(var(--c-muted) / <alpha-value>)',
+        faint: 'rgb(var(--c-faint) / <alpha-value>)',
+        overlay: 'rgb(var(--c-overlay) / <alpha-value>)',
         ink: {
           900: '#070811',
           850: '#0b0c16',

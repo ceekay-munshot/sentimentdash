@@ -9,6 +9,18 @@
       content="See which Indian stocks are most talked about across ValuePickr and the financial news — ranked by buzz and sentiment."
     />
     <title>SentimentDash — Trending Indian Stocks</title>
+    <script>
+      // Apply the saved (or system) theme before paint, to avoid a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          if (t === 'light') document.documentElement.classList.add('light');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

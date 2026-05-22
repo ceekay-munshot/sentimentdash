@@ -18,7 +18,7 @@ export default function SentimentBar({ bullish, bearish, neutral, className, ani
   ];
 
   return (
-    <div className={cn('flex h-1.5 w-full overflow-hidden rounded-full bg-ink-700', className)}>
+    <div className={cn('flex h-1.5 w-full overflow-hidden rounded-full bg-surface-3', className)}>
       {segments.map((s) => {
         const width = `${(s.value / total) * 100}%`;
         return animate ? (

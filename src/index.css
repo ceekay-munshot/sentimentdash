@@ -3,8 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  /* Dark theme — the default. Light theme overrides the channels below.
+   * Values are space-separated RGB channels so Tailwind can apply opacity. */
   :root {
     color-scheme: dark;
+    --c-base: 7 8 17;
+    --c-surface: 16 18 31;
+    --c-surface-2: 21 24 38;
+    --c-surface-3: 27 31 49;
+    --c-edge: 40 45 68;
+    --c-fg: 237 239 245;
+    --c-muted: 156 163 184;
+    --c-faint: 110 116 132;
+    --c-overlay: 255 255 255;
+  }
+
+  html.light {
+    color-scheme: light;
+    --c-base: 245 246 251;
+    --c-surface: 255 255 255;
+    --c-surface-2: 240 241 247;
+    --c-surface-3: 231 233 241;
+    --c-edge: 223 225 234;
+    --c-fg: 17 20 33;
+    --c-muted: 82 88 104;
+    --c-faint: 125 131 147;
+    --c-overlay: 17 20 33;
   }
 
   html,
@@ -14,7 +38,7 @@
   }
 
   body {
-    @apply bg-ink-900 font-sans text-slate-300 antialiased;
+    @apply bg-base font-sans text-muted antialiased;
     background-image:
       radial-gradient(54rem 38rem at 10% -10%, rgba(124, 108, 255, 0.16), transparent 70%),
       radial-gradient(46rem 34rem at 96% -4%, rgba(39, 179, 168, 0.1), transparent 66%);
@@ -22,36 +46,33 @@
   }
 
   ::selection {
-    @apply bg-brand/30 text-white;
+    @apply bg-brand/30 text-fg;
   }
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #2b3048 transparent;
+    scrollbar-color: rgb(var(--c-edge)) transparent;
   }
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #2b3048;
+    background: rgb(var(--c-edge));
     border: 3px solid transparent;
     border-radius: 9999px;
     background-clip: content-box;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #3a4061;
   }
 }
 
 @layer components {
   .card {
-    @apply rounded-2xl border border-white/[0.06] bg-ink-800/70 backdrop-blur-xl;
+    @apply rounded-2xl border border-edge bg-surface/70 backdrop-blur-xl;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-br from-white via-white to-brand-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-fg via-fg to-brand-300 bg-clip-text text-transparent;
   }
 }
