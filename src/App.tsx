@@ -44,10 +44,10 @@ export default function App() {
         {status === 'error' && (
           <div className="grid place-items-center py-24 text-center">
             <AlertTriangle className="h-9 w-9 text-bear" />
-            <p className="mt-4 text-sm text-slate-300">Couldn’t load dashboard data.</p>
+            <p className="mt-4 text-sm text-muted">Couldn’t load dashboard data.</p>
             <button
               onClick={load}
-              className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-white/[0.08]"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg border border-edge bg-overlay/[0.04] px-4 py-2 text-sm font-medium text-fg transition-colors hover:bg-overlay/[0.08]"
             >
               <RefreshCw className="h-4 w-4" />
               Retry
@@ -72,8 +72,8 @@ export default function App() {
         )}
       </main>
 
-      <footer className="border-t border-white/[0.05] py-6">
-        <div className="mx-auto w-full max-w-6xl px-4 text-center text-xs text-slate-600 sm:px-6">
+      <footer className="border-t border-edge py-6">
+        <div className="mx-auto w-full max-w-6xl px-4 text-center text-xs text-faint sm:px-6">
           SentimentDash · Live sentiment from the ValuePickr &amp; TradingQnA forums and Google News.
         </div>
       </footer>

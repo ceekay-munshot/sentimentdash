@@ -38,7 +38,7 @@ export default function PostCard({ post, highlightTerms, index = 0 }: Props) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ delay: Math.min(index, 12) * 0.035, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="card p-4 transition-colors hover:border-white/[0.1] sm:p-5"
+      className="card p-4 transition-colors hover:border-edge sm:p-5"
     >
       <div className="flex items-start gap-3">
         <span
@@ -53,10 +53,10 @@ export default function PostCard({ post, highlightTerms, index = 0 }: Props) {
 
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5">
-            <span className="truncate text-sm font-semibold text-white">{post.author}</span>
-            <span className="hidden truncate text-xs text-slate-500 sm:inline">{post.handle}</span>
+            <span className="truncate text-sm font-semibold text-fg">{post.author}</span>
+            <span className="hidden truncate text-xs text-faint sm:inline">{post.handle}</span>
           </div>
-          <div className="mt-0.5 flex items-center gap-1.5 text-xs text-slate-500">
+          <div className="mt-0.5 flex items-center gap-1.5 text-xs text-faint">
             <span className={cn('font-medium', src.color)}>{src.label}</span>
             <span aria-hidden>·</span>
             <span className="truncate">{post.community}</span>
@@ -77,11 +77,11 @@ export default function PostCard({ post, highlightTerms, index = 0 }: Props) {
         </span>
       </div>
 
-      <p className="mt-3 text-[15px] leading-relaxed text-slate-200">
+      <p className="mt-3 text-[15px] leading-relaxed text-fg">
         {highlightText(post.text, highlightTerms)}
       </p>
 
-      <div className="mt-4 flex items-center gap-5 text-xs text-slate-500">
+      <div className="mt-4 flex items-center gap-5 text-xs text-faint">
         <span className="inline-flex items-center gap-1.5">
           <Heart className="h-3.5 w-3.5" />
           {compactNumber(post.likes)}
@@ -94,7 +94,7 @@ export default function PostCard({ post, highlightTerms, index = 0 }: Props) {
           href={post.url}
           target="_blank"
           rel="noreferrer noopener"
-          className="ml-auto inline-flex items-center gap-1.5 font-medium text-slate-400 transition-colors hover:text-brand-300"
+          className="ml-auto inline-flex items-center gap-1.5 font-medium text-muted transition-colors hover:text-brand-300"
         >
           <ExternalLink className="h-3.5 w-3.5" />
           View

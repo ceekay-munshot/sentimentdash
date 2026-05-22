@@ -71,7 +71,7 @@ export default function StockDetail({ ticker, stock, window, onBack }: Props) {
     >
       <button
         onClick={onBack}
-        className="mb-5 inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 transition-colors hover:text-white"
+        className="mb-5 inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-fg"
       >
         <ArrowLeft className="h-4 w-4" />
         All stocks
@@ -83,11 +83,11 @@ export default function StockDetail({ ticker, stock, window, onBack }: Props) {
         <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
             <MessagesSquare className="h-4 w-4 text-brand-300" />
-            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-300">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-muted">
               The conversation
             </h2>
             {status === 'ready' && (
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-faint">
                 {filtered.length} of {posts.length}
               </span>
             )}
@@ -118,13 +118,13 @@ export default function StockDetail({ ticker, stock, window, onBack }: Props) {
 
         {status === 'error' && (
           <div className="card grid place-items-center py-14 text-center">
-            <p className="text-sm text-slate-400">Couldn’t load posts for {name}.</p>
+            <p className="text-sm text-muted">Couldn’t load posts for {name}.</p>
           </div>
         )}
 
         {status === 'ready' && filtered.length === 0 && (
           <div className="card grid place-items-center py-14 text-center">
-            <p className="text-sm text-slate-400">No posts match these filters.</p>
+            <p className="text-sm text-muted">No posts match these filters.</p>
           </div>
         )}
 
@@ -185,7 +185,7 @@ function StockHeader({
       <div className="grid gap-5 p-5 sm:p-6 lg:grid-cols-[1.05fr_1fr] lg:gap-7">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+            <span className="text-2xl font-extrabold tracking-tight text-fg sm:text-3xl">
               {name}
             </span>
             {stock && (
@@ -200,10 +200,10 @@ function StockHeader({
 
           <div className="mt-6 flex items-end gap-3">
             <div>
-              <div className="font-mono text-4xl font-extrabold leading-none text-white">
+              <div className="font-mono text-4xl font-extrabold leading-none text-fg">
                 <CountUp value={mentions} />
               </div>
-              <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+              <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-wider text-faint">
                 mentions · last {window}
               </div>
             </div>
@@ -233,10 +233,10 @@ function StockHeader({
           )}
         </div>
 
-        <div className="flex flex-col gap-4 rounded-xl border border-white/[0.05] bg-ink-850/70 p-4 sm:p-5">
+        <div className="flex flex-col gap-4 rounded-xl border border-edge bg-base/70 p-4 sm:p-5">
           <div>
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-faint">
                 Sentiment
               </span>
               <span className={cn('text-sm font-bold', sentMeta.text)}>{sentMeta.label}</span>
@@ -255,10 +255,10 @@ function StockHeader({
             </div>
           </div>
 
-          <div className="h-px bg-white/[0.05]" />
+          <div className="h-px bg-overlay/[0.05]" />
 
           <div>
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-faint">
               Where it’s discussed
             </span>
             <div className="mt-3 space-y-2.5">
@@ -269,9 +269,9 @@ function StockHeader({
                   <div key={s} className="flex items-center gap-3">
                     <span className="flex w-[88px] shrink-0 items-center gap-1.5">
                       <span className={cn('h-2 w-2 rounded-full', meta.dot)} />
-                      <span className="text-xs font-medium text-slate-400">{meta.label}</span>
+                      <span className="text-xs font-medium text-muted">{meta.label}</span>
                     </span>
-                    <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-ink-700">
+                    <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-3">
                       <motion.div
                         className={cn('h-full', meta.dot)}
                         initial={{ width: 0 }}
@@ -279,7 +279,7 @@ function StockHeader({
                         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                       />
                     </div>
-                    <span className="w-7 shrink-0 text-right font-mono text-xs font-semibold text-slate-300">
+                    <span className="w-7 shrink-0 text-right font-mono text-xs font-semibold text-muted">
                       {count}
                     </span>
                   </div>
@@ -295,7 +295,7 @@ function StockHeader({
 
 function Chip({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-md border border-white/[0.06] bg-white/[0.03] px-2 py-0.5 text-xs font-medium text-slate-400">
+    <span className="inline-flex items-center rounded-md border border-edge bg-overlay/[0.03] px-2 py-0.5 text-xs font-medium text-muted">
       {children}
     </span>
   );
@@ -311,14 +311,14 @@ function FilterGroup({
   onChange: (key: string) => void;
 }) {
   return (
-    <div className="flex gap-1 rounded-lg border border-white/[0.06] bg-ink-800/50 p-1">
+    <div className="flex gap-1 rounded-lg border border-edge bg-surface/50 p-1">
       {options.map((o) => (
         <button
           key={o.key}
           onClick={() => onChange(o.key)}
           className={cn(
             'rounded-md px-2.5 py-1 text-xs font-medium transition-colors',
-            active === o.key ? 'bg-brand/20 text-brand-300' : 'text-slate-500 hover:text-slate-300',
+            active === o.key ? 'bg-brand/20 text-brand-300' : 'text-faint hover:text-muted',
           )}
         >
           {o.label}

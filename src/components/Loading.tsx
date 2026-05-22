@@ -1,7 +1,7 @@
 import { cn } from '../lib/format';
 
 function Shimmer({ className }: { className?: string }) {
-  return <div className={cn('animate-pulse rounded-md bg-white/[0.05]', className)} />;
+  return <div className={cn('animate-pulse rounded-md bg-overlay/[0.05]', className)} />;
 }
 
 export function DashboardSkeleton() {

@@ -35,20 +35,20 @@ export default function StockRow({ stock, index, onSelect }: Props) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: Math.min(index, 20) * 0.03, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -2 }}
-      className="card group flex w-full items-center gap-3 p-3 text-left transition-colors hover:border-brand/30 hover:bg-ink-750/70 sm:gap-4 sm:p-4"
+      className="card group flex w-full items-center gap-3 p-3 text-left transition-colors hover:border-brand/30 hover:bg-surface-2/70 sm:gap-4 sm:p-4"
     >
       <span
         className={cn(
           'grid h-8 w-8 shrink-0 place-items-center rounded-lg font-mono text-sm font-bold',
-          RANK_STYLES[stock.rank] ?? 'bg-white/[0.04] text-slate-400',
+          RANK_STYLES[stock.rank] ?? 'bg-overlay/[0.04] text-muted',
         )}
       >
         {stock.rank}
       </span>
 
       <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-        <span className="truncate text-sm font-bold text-white">{stock.name}</span>
-        <span className="truncate text-xs text-slate-500">{sourceLabel}</span>
+        <span className="truncate text-sm font-bold text-fg">{stock.name}</span>
+        <span className="truncate text-xs text-faint">{sourceLabel}</span>
       </div>
 
       <div className="hidden w-[150px] shrink-0 flex-col gap-1.5 md:flex">
@@ -69,7 +69,7 @@ export default function StockRow({ stock, index, onSelect }: Props) {
       </div>
 
       <div className="flex w-[78px] shrink-0 flex-col items-end gap-0.5">
-        <span className="font-mono text-lg font-bold leading-none text-white">
+        <span className="font-mono text-lg font-bold leading-none text-fg">
           {compactNumber(stock.mentions)}
         </span>
         <span
@@ -83,7 +83,7 @@ export default function StockRow({ stock, index, onSelect }: Props) {
         </span>
       </div>
 
-      <ChevronRight className="h-4 w-4 shrink-0 text-slate-600 transition-colors group-hover:text-brand-300" />
+      <ChevronRight className="h-4 w-4 shrink-0 text-faint transition-colors group-hover:text-brand-300" />
     </motion.button>
   );
 }

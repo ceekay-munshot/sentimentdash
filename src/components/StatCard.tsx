@@ -20,15 +20,15 @@ export default function StatCard({ icon, label, value, sub, accent = 'text-brand
       className="card p-4 sm:p-5"
     >
       <div className="flex items-center gap-2.5">
-        <span className={cn('grid h-8 w-8 place-items-center rounded-lg bg-white/[0.04]', accent)}>
+        <span className={cn('grid h-8 w-8 place-items-center rounded-lg bg-overlay/[0.04]', accent)}>
           {icon}
         </span>
-        <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+        <span className="text-[11px] font-semibold uppercase tracking-wider text-faint">
           {label}
         </span>
       </div>
-      <div className="mt-3 text-2xl font-bold text-white sm:text-[1.7rem]">{value}</div>
-      {sub && <div className="mt-1 text-sm text-slate-400">{sub}</div>}
+      <div className="mt-3 text-2xl font-bold text-fg sm:text-[1.7rem]">{value}</div>
+      {sub && <div className="mt-1 text-sm text-muted">{sub}</div>}
     </motion.div>
   );
 }
