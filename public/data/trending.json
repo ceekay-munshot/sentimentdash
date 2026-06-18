@@ -1,17 +1,54 @@
 {
-  "generatedAt": "2026-06-18T06:17:12.258Z",
+  "generatedAt": "2026-06-18T16:44:40.745Z",
   "window": "30d",
-  "totalPosts": 610,
-  "totalStocks": 197,
+  "totalPosts": 688,
+  "totalStocks": 214,
   "marketMood": {
-    "bullish": 85,
-    "bearish": 51,
-    "neutral": 474,
+    "bullish": 99,
+    "bearish": 55,
+    "neutral": 534,
     "score": 0.06
   },
   "stocks": [
     {
       "rank": 1,
+      "ticker": "spacex",
+      "name": "SpaceX",
+      "exchange": "",
+      "sector": "",
+      "mentions": 24,
+      "mentionsPrev": 18,
+      "changePct": 33.3,
+      "sentiment": {
+        "score": 0.13,
+        "label": "bullish",
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 21
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 20,
+        "tradingqna": 4
+      },
+      "sparkline": [
+        41,
+        42,
+        30,
+        33,
+        26,
+        24,
+        22,
+        31,
+        25,
+        23,
+        18,
+        24
+      ]
+    },
+    {
+      "rank": 2,
       "ticker": "itc",
       "name": "ITC",
       "exchange": "",
@@ -34,7 +71,6 @@
       },
       "sparkline": [
         19,
-        19,
         20,
         20,
         20,
@@ -42,46 +78,10 @@
         20,
         20,
         20,
+        19,
         19,
         19,
         19
-      ]
-    },
-    {
-      "rank": 2,
-      "ticker": "spacex",
-      "name": "SpaceX",
-      "exchange": "",
-      "sector": "",
-      "mentions": 18,
-      "mentionsPrev": 23,
-      "changePct": -21.7,
-      "sentiment": {
-        "score": 0.17,
-        "label": "bullish",
-        "bullish": 3,
-        "bearish": 0,
-        "neutral": 15
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 14,
-        "tradingqna": 4
-      },
-      "sparkline": [
-        39,
-        41,
-        42,
-        30,
-        33,
-        26,
-        24,
-        22,
-        31,
-        25,
-        23,
-        18
       ]
     },
     {
@@ -108,12 +108,12 @@
       },
       "sparkline": [
         15,
-        15,
         17,
         18,
         18,
         18,
         19,
+        17,
         17,
         17,
         17,
@@ -182,8 +182,8 @@
       },
       "sparkline": [
         14,
-        14,
         15,
+        14,
         14,
         14,
         14,
@@ -197,19 +197,19 @@
     },
     {
       "rank": 6,
-      "ticker": "p-n-gadgil-jewellers",
-      "name": "P N Gadgil Jewellers",
+      "ticker": "3b-blackbio-dx",
+      "name": "3B Blackbio DX",
       "exchange": "",
       "sector": "",
       "mentions": 14,
-      "mentionsPrev": 16,
-      "changePct": -12.5,
+      "mentionsPrev": 13,
+      "changePct": 7.7,
       "sentiment": {
-        "score": -0.07,
-        "label": "neutral",
+        "score": -0.14,
+        "label": "bearish",
         "bullish": 0,
-        "bearish": 1,
-        "neutral": 13
+        "bearish": 2,
+        "neutral": 12
       },
       "sources": {
         "reddit": 0,
@@ -222,74 +222,37 @@
         17,
         17,
         17,
-        14,
-        14,
-        14,
-        14,
-        16,
-        16,
-        16,
-        14
-      ]
-    },
-    {
-      "rank": 7,
-      "ticker": "3b-blackbio-dx",
-      "name": "3B Blackbio DX",
-      "exchange": "",
-      "sector": "",
-      "mentions": 13,
-      "mentionsPrev": 13,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.15,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 2,
-        "neutral": 11
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 13,
-        "news": 0,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        17,
-        17,
-        17,
-        17,
-        17,
         17,
         17,
         17,
         17,
         16,
         13,
-        13
+        13,
+        14
       ]
     },
     {
-      "rank": 8,
-      "ticker": "hfcl",
-      "name": "HFCL",
+      "rank": 7,
+      "ticker": "accenture",
+      "name": "Accenture",
       "exchange": "",
       "sector": "",
-      "mentions": 12,
-      "mentionsPrev": 8,
-      "changePct": 50,
+      "mentions": 13,
+      "mentionsPrev": 0,
+      "changePct": 0,
       "sentiment": {
-        "score": 0.67,
-        "label": "bullish",
-        "bullish": 8,
-        "bearish": 0,
-        "neutral": 4
+        "score": -0.23,
+        "label": "bearish",
+        "bullish": 0,
+        "bearish": 3,
+        "neutral": 10
       },
       "sources": {
         "reddit": 0,
         "valuepickr": 0,
-        "news": 6,
-        "tradingqna": 6
+        "news": 13,
+        "tradingqna": 0
       },
       "sparkline": [
         0,
@@ -302,12 +265,12 @@
         0,
         0,
         0,
-        8,
-        12
+        0,
+        13
       ]
     },
     {
-      "rank": 9,
+      "rank": 8,
       "ticker": "modison",
       "name": "Modison",
       "exchange": "",
@@ -334,9 +297,9 @@
         5,
         5,
         5,
-        5,
         13,
         13,
+        12,
         12,
         12,
         12,
@@ -344,7 +307,155 @@
       ]
     },
     {
+      "rank": 9,
+      "ticker": "reasons",
+      "name": "Reasons",
+      "exchange": "",
+      "sector": "",
+      "mentions": 12,
+      "mentionsPrev": 9,
+      "changePct": 33.3,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 12
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 12,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        5,
+        3,
+        0,
+        2,
+        0,
+        0,
+        9,
+        10,
+        10,
+        15,
+        9,
+        12
+      ]
+    },
+    {
       "rank": 10,
+      "ticker": "p-n-gadgil-jewellers",
+      "name": "P N Gadgil Jewellers",
+      "exchange": "",
+      "sector": "",
+      "mentions": 12,
+      "mentionsPrev": 14,
+      "changePct": -14.3,
+      "sentiment": {
+        "score": -0.08,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 1,
+        "neutral": 11
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 12,
+        "news": 0,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        17,
+        17,
+        17,
+        14,
+        14,
+        14,
+        14,
+        16,
+        16,
+        16,
+        14,
+        12
+      ]
+    },
+    {
+      "rank": 11,
+      "ticker": "intel",
+      "name": "Intel",
+      "exchange": "",
+      "sector": "",
+      "mentions": 11,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0.27,
+        "label": "bullish",
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 8
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 11,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        2,
+        4,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        11
+      ]
+    },
+    {
+      "rank": 12,
+      "ticker": "hfcl",
+      "name": "HFCL",
+      "exchange": "",
+      "sector": "",
+      "mentions": 10,
+      "mentionsPrev": 12,
+      "changePct": -16.7,
+      "sentiment": {
+        "score": 0.8,
+        "label": "bullish",
+        "bullish": 8,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 4,
+        "tradingqna": 6
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        12,
+        10
+      ]
+    },
+    {
+      "rank": 13,
       "ticker": "hdfc-life-insurance-company",
       "name": "HDFC Life Insurance Company",
       "exchange": "",
@@ -381,7 +492,7 @@
       ]
     },
     {
-      "rank": 11,
+      "rank": 14,
       "ticker": "dishman-carbogen-amcis",
       "name": "Dishman Carbogen Amcis",
       "exchange": "",
@@ -418,44 +529,7 @@
       ]
     },
     {
-      "rank": 12,
-      "ticker": "reasons",
-      "name": "Reasons",
-      "exchange": "",
-      "sector": "",
-      "mentions": 9,
-      "mentionsPrev": 15,
-      "changePct": -40,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 9
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 9,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        6,
-        5,
-        3,
-        0,
-        2,
-        0,
-        0,
-        9,
-        10,
-        10,
-        15,
-        9
-      ]
-    },
-    {
-      "rank": 13,
+      "rank": 15,
       "ticker": "arman-financial-services",
       "name": "Arman Financial Services",
       "exchange": "",
@@ -492,50 +566,124 @@
       ]
     },
     {
-      "rank": 14,
-      "ticker": "time",
-      "name": "Time",
+      "rank": 16,
+      "ticker": "yash-high-voltage",
+      "name": "Yash High Voltage Ltd",
       "exchange": "",
       "sector": "",
-      "mentions": 8,
-      "mentionsPrev": 0,
-      "changePct": 0,
+      "mentions": 9,
+      "mentionsPrev": 5,
+      "changePct": 80,
       "sentiment": {
-        "score": 0.13,
-        "label": "bullish",
-        "bullish": 2,
-        "bearish": 1,
+        "score": -0.22,
+        "label": "bearish",
+        "bullish": 1,
+        "bearish": 3,
         "neutral": 5
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 6
+        "valuepickr": 9,
+        "news": 0,
+        "tradingqna": 0
       },
       "sparkline": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        9
+      ]
+    },
+    {
+      "rank": 17,
+      "ticker": "nuclear-energy",
+      "name": "Nuclear Energy",
+      "exchange": "",
+      "sector": "",
+      "mentions": 8,
+      "mentionsPrev": 6,
+      "changePct": 33.3,
+      "sentiment": {
+        "score": 0.38,
+        "label": "bullish",
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 5
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 6,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        1,
+        1,
+        1,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        4,
+        5,
+        5,
+        6,
+        6,
         8
       ]
     },
     {
-      "rank": 15,
+      "rank": 18,
+      "ticker": "veefin-solutions",
+      "name": "Veefin Solutions",
+      "exchange": "",
+      "sector": "",
+      "mentions": 8,
+      "mentionsPrev": 7,
+      "changePct": 14.3,
+      "sentiment": {
+        "score": 0.13,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 7
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 8,
+        "news": 0,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        11,
+        10,
+        10,
+        10,
+        10,
+        9,
+        8,
+        6,
+        7,
+        7,
+        7,
+        8
+      ]
+    },
+    {
+      "rank": 19,
       "ticker": "smith",
       "name": "Smith",
       "exchange": "",
       "sector": "",
       "mentions": 8,
-      "mentionsPrev": 0,
+      "mentionsPrev": 8,
       "changePct": 0,
       "sentiment": {
         "score": 0,
@@ -561,12 +709,12 @@
         0,
         0,
         0,
-        0,
+        8,
         8
       ]
     },
     {
-      "rank": 16,
+      "rank": 20,
       "ticker": "transrail-lighting",
       "name": "Transrail Lighting",
       "exchange": "",
@@ -588,7 +736,6 @@
         "tradingqna": 0
       },
       "sparkline": [
-        5,
         7,
         7,
         8,
@@ -599,85 +746,49 @@
         8,
         8,
         8,
+        8,
         8
       ]
     },
     {
-      "rank": 17,
-      "ticker": "ceinsys-tech-engineering-geospatial-and-it-solutions-company",
-      "name": "Ceinsys Tech-Engineering, Geospatial & IT solutions Company",
+      "rank": 21,
+      "ticker": "afcom-holdings",
+      "name": "Afcom Holdings",
       "exchange": "",
       "sector": "",
-      "mentions": 7,
+      "mentions": 8,
       "mentionsPrev": 7,
-      "changePct": 0,
+      "changePct": 14.3,
       "sentiment": {
-        "score": 0,
-        "label": "neutral",
+        "score": -0.13,
+        "label": "bearish",
         "bullish": 0,
-        "bearish": 0,
+        "bearish": 1,
         "neutral": 7
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 7,
+        "valuepickr": 8,
         "news": 0,
         "tradingqna": 0
       },
       "sparkline": [
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
         7,
         7,
-        7,
-        8,
-        6,
-        6,
-        8,
-        7,
-        7,
-        7,
-        7,
-        7
+        8
       ]
     },
     {
-      "rank": 18,
-      "ticker": "rain-industries",
-      "name": "Rain Industries",
-      "exchange": "",
-      "sector": "",
-      "mentions": 7,
-      "mentionsPrev": 7,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 7
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 7,
-        "news": 0,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        7,
-        7,
-        7,
-        7
-      ]
-    },
-    {
-      "rank": 19,
+      "rank": 22,
       "ticker": "raymond",
       "name": "Raymond",
       "exchange": "",
@@ -714,7 +825,7 @@
       ]
     },
     {
-      "rank": 20,
+      "rank": 23,
       "ticker": "sacheerome",
       "name": "Sacheerome",
       "exchange": "",
@@ -751,14 +862,14 @@
       ]
     },
     {
-      "rank": 21,
-      "ticker": "veefin-solutions",
-      "name": "Veefin Solutions",
+      "rank": 24,
+      "ticker": "united-heat-transfer",
+      "name": "United Heat Transfer",
       "exchange": "",
       "sector": "",
       "mentions": 7,
-      "mentionsPrev": 7,
-      "changePct": 0,
+      "mentionsPrev": 5,
+      "changePct": 40,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -773,59 +884,22 @@
         "tradingqna": 0
       },
       "sparkline": [
-        11,
-        11,
-        10,
-        10,
-        10,
-        10,
-        9,
-        8,
-        6,
-        7,
-        7,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        5,
         7
       ]
     },
     {
-      "rank": 22,
-      "ticker": "afcom-holdings",
-      "name": "Afcom Holdings",
-      "exchange": "",
-      "sector": "",
-      "mentions": 7,
-      "mentionsPrev": 7,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.29,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 2,
-        "neutral": 5
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 7,
-        "news": 0,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        2,
-        2,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        7,
-        7
-      ]
-    },
-    {
-      "rank": 23,
+      "rank": 25,
       "ticker": "techno-electric-engg",
       "name": "Techno electric engg",
       "exchange": "",
@@ -862,20 +936,20 @@
       ]
     },
     {
-      "rank": 24,
-      "ticker": "nuclear-energy",
-      "name": "Nuclear Energy",
+      "rank": 26,
+      "ticker": "ceinsys-tech-engineering-geospatial-and-it-solutions-company",
+      "name": "Ceinsys Tech-Engineering, Geospatial & IT solutions Company",
       "exchange": "",
       "sector": "",
       "mentions": 6,
-      "mentionsPrev": 6,
-      "changePct": 0,
+      "mentionsPrev": 7,
+      "changePct": -14.3,
       "sentiment": {
-        "score": 0.17,
-        "label": "bullish",
-        "bullish": 1,
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
         "bearish": 0,
-        "neutral": 5
+        "neutral": 6
       },
       "sources": {
         "reddit": 0,
@@ -884,22 +958,22 @@
         "tradingqna": 0
       },
       "sparkline": [
-        1,
-        1,
-        1,
-        1,
-        0,
-        1,
-        1,
-        4,
-        5,
-        5,
+        7,
+        7,
+        8,
         6,
+        6,
+        8,
+        7,
+        7,
+        7,
+        7,
+        7,
         6
       ]
     },
     {
-      "rank": 25,
+      "rank": 27,
       "ticker": "chambal-fertilisers-and-chemicals",
       "name": "Chambal Fertilisers and Chemicals",
       "exchange": "",
@@ -923,11 +997,11 @@
       "sparkline": [
         5,
         5,
-        5,
         4,
         4,
         4,
         5,
+        6,
         6,
         6,
         6,
@@ -936,7 +1010,7 @@
       ]
     },
     {
-      "rank": 26,
+      "rank": 28,
       "ticker": "envirotech-systems-acoustics",
       "name": "Envirotech Systems Limited- Acoustics",
       "exchange": "",
@@ -973,7 +1047,44 @@
       ]
     },
     {
-      "rank": 27,
+      "rank": 29,
+      "ticker": "nvidia",
+      "name": "Nvidia",
+      "exchange": "",
+      "sector": "",
+      "mentions": 6,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 6
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 3
+      },
+      "sparkline": [
+        0,
+        0,
+        5,
+        5,
+        0,
+        6,
+        7,
+        6,
+        7,
+        8,
+        0,
+        6
+      ]
+    },
+    {
+      "rank": 30,
       "ticker": "oriana-power",
       "name": "Oriana Power",
       "exchange": "",
@@ -1001,7 +1112,7 @@
         5,
         5,
         5,
-        5,
+        6,
         6,
         6,
         6,
@@ -1010,7 +1121,44 @@
       ]
     },
     {
-      "rank": 28,
+      "rank": 31,
+      "ticker": "rain-industries",
+      "name": "Rain Industries",
+      "exchange": "",
+      "sector": "",
+      "mentions": 6,
+      "mentionsPrev": 7,
+      "changePct": -14.3,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 6
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 6,
+        "news": 0,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        7,
+        7,
+        7,
+        7,
+        6
+      ]
+    },
+    {
+      "rank": 32,
       "ticker": "bse",
       "name": "BSE",
       "exchange": "",
@@ -1034,9 +1182,9 @@
       "sparkline": [
         0,
         0,
-        0,
         1,
         4,
+        5,
         5,
         5,
         5,
@@ -1047,7 +1195,44 @@
       ]
     },
     {
-      "rank": 29,
+      "rank": 33,
+      "ticker": "fed",
+      "name": "Fed",
+      "exchange": "",
+      "sector": "",
+      "mentions": 5,
+      "mentionsPrev": 4,
+      "changePct": 25,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 5
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 5,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "rank": 34,
       "ticker": "l-t-elevators",
       "name": "L. T. Elevators",
       "exchange": "",
@@ -1078,13 +1263,13 @@
         6,
         6,
         6,
-        6,
+        5,
         5,
         5
       ]
     },
     {
-      "rank": 30,
+      "rank": 35,
       "ticker": "mstc",
       "name": "MSTC",
       "exchange": "",
@@ -1121,14 +1306,14 @@
       ]
     },
     {
-      "rank": 31,
-      "ticker": "united-heat-transfer",
-      "name": "United Heat Transfer",
+      "rank": 36,
+      "ticker": "stifel",
+      "name": "Stifel",
       "exchange": "",
       "sector": "",
       "mentions": 5,
-      "mentionsPrev": 4,
-      "changePct": 25,
+      "mentionsPrev": 3,
+      "changePct": 66.7,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -1138,27 +1323,27 @@
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 5,
-        "news": 0,
+        "valuepickr": 0,
+        "news": 5,
         "tradingqna": 0
       },
       "sparkline": [
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4,
         3,
         3,
         3,
         4,
+        3,
         5
       ]
     },
     {
-      "rank": 32,
+      "rank": 37,
       "ticker": "v2-retail",
       "name": "V2 Retail",
       "exchange": "",
@@ -1195,7 +1380,7 @@
       ]
     },
     {
-      "rank": 33,
+      "rank": 38,
       "ticker": "nrb-bearings",
       "name": "NRB Bearings",
       "exchange": "",
@@ -1217,49 +1402,12 @@
         "tradingqna": 0
       },
       "sparkline": [
-        4,
         5,
         5,
         4,
         4,
         4,
         4,
-        5,
-        5,
-        5,
-        5,
-        5
-      ]
-    },
-    {
-      "rank": 34,
-      "ticker": "yash-high-voltage",
-      "name": "Yash High Voltage Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 5,
-      "mentionsPrev": 5,
-      "changePct": 0,
-      "sentiment": {
-        "score": -0.2,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 1,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 5,
-        "news": 0,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        6,
-        4,
-        5,
-        5,
-        5,
-        5,
         5,
         5,
         5,
@@ -1269,20 +1417,20 @@
       ]
     },
     {
-      "rank": 35,
-      "ticker": "growth",
-      "name": "Growth",
+      "rank": 39,
+      "ticker": "jefferies",
+      "name": "Jefferies",
       "exchange": "",
       "sector": "",
       "mentions": 4,
-      "mentionsPrev": 5,
-      "changePct": -20,
+      "mentionsPrev": 0,
+      "changePct": 0,
       "sentiment": {
-        "score": 1,
+        "score": 0.75,
         "label": "bullish",
-        "bullish": 4,
+        "bullish": 3,
         "bearish": 0,
-        "neutral": 0
+        "neutral": 1
       },
       "sources": {
         "reddit": 0,
@@ -1292,58 +1440,21 @@
       },
       "sparkline": [
         2,
+        3,
+        3,
+        3,
         0,
+        2,
         0,
+        2,
+        2,
+        3,
         0,
-        0,
-        0,
-        0,
-        0,
-        6,
-        4,
-        5,
         4
       ]
     },
     {
-      "rank": 36,
-      "ticker": "yes-bank",
-      "name": "Yes Bank",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.5,
-        "label": "bullish",
-        "bullish": 2,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 4,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        4,
-        4
-      ]
-    },
-    {
-      "rank": 37,
+      "rank": 40,
       "ticker": "deep-industries",
       "name": "Deep Industries",
       "exchange": "",
@@ -1367,11 +1478,11 @@
       "sparkline": [
         6,
         6,
-        6,
         4,
         3,
         3,
         3,
+        4,
         4,
         4,
         4,
@@ -1380,7 +1491,7 @@
       ]
     },
     {
-      "rank": 38,
+      "rank": 41,
       "ticker": "neetu-yoshi",
       "name": "Neetu Yoshi",
       "exchange": "",
@@ -1406,7 +1517,7 @@
         3,
         3,
         3,
-        3,
+        4,
         4,
         4,
         4,
@@ -1417,14 +1528,51 @@
       ]
     },
     {
-      "rank": 39,
+      "rank": 42,
+      "ticker": "nykaa",
+      "name": "Nykaa",
+      "exchange": "",
+      "sector": "",
+      "mentions": 4,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0.25,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 3
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 4,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "rank": 43,
       "ticker": "ola-electric",
       "name": "Ola Electric",
       "exchange": "",
       "sector": "",
       "mentions": 4,
-      "mentionsPrev": 2,
-      "changePct": 100,
+      "mentionsPrev": 4,
+      "changePct": 0,
       "sentiment": {
         "score": 0.25,
         "label": "bullish",
@@ -1441,7 +1589,6 @@
       "sparkline": [
         1,
         1,
-        1,
         0,
         0,
         0,
@@ -1450,11 +1597,12 @@
         2,
         2,
         2,
+        4,
         4
       ]
     },
     {
-      "rank": 40,
+      "rank": 44,
       "ticker": "security-and-intelligence-services",
       "name": "Security and Intelligence Services",
       "exchange": "",
@@ -1491,50 +1639,13 @@
       ]
     },
     {
-      "rank": 41,
-      "ticker": "fed",
-      "name": "Fed",
+      "rank": 45,
+      "ticker": "pm-modi",
+      "name": "PM Modi",
       "exchange": "",
       "sector": "",
       "mentions": 4,
-      "mentionsPrev": 2,
-      "changePct": 100,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 4,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        2,
-        2,
-        4
-      ]
-    },
-    {
-      "rank": 42,
-      "ticker": "market-today",
-      "name": "Market Today",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 4,
+      "mentionsPrev": 0,
       "changePct": 0,
       "sentiment": {
         "score": 0,
@@ -1550,59 +1661,22 @@
         "tradingqna": 0
       },
       "sparkline": [
+        0,
+        0,
+        0,
         2,
-        2,
-        2,
-        2,
-        3,
-        3,
-        3,
-        7,
-        6,
-        3,
-        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         4
       ]
     },
     {
-      "rank": 43,
-      "ticker": "truist",
-      "name": "Truist",
-      "exchange": "",
-      "sector": "",
-      "mentions": 4,
-      "mentionsPrev": 3,
-      "changePct": 33.3,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 4
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 4,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        4,
-        0,
-        4,
-        2,
-        3,
-        4
-      ]
-    },
-    {
-      "rank": 44,
+      "rank": 46,
       "ticker": "ubs",
       "name": "UBS",
       "exchange": "",
@@ -1625,7 +1699,6 @@
       },
       "sparkline": [
         8,
-        8,
         7,
         6,
         6,
@@ -1635,11 +1708,49 @@
         7,
         6,
         4,
+        4,
         4
       ]
     },
     {
-      "rank": 45,
+      "rank": 47,
+      "ticker": "us-iran",
+      "name": "US-Iran",
+      "exchange": "",
+      "sector": "",
+      "mentions": 4,
+      "mentionsPrev": 3,
+      "changePct": 33.3,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 4
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 4,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        2,
+        0,
+        3,
+        3,
+        6,
+        9,
+        7,
+        3,
+        7,
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "rank": 48,
       "ticker": "vasa-denticity-aka-dentalkart",
       "name": "Vasa Denticity aka Dentalkart",
       "exchange": "",
@@ -1665,7 +1776,7 @@
         5,
         5,
         5,
-        5,
+        4,
         4,
         4,
         4,
@@ -1676,9 +1787,9 @@
       ]
     },
     {
-      "rank": 46,
-      "ticker": "vedanta-aluminium",
-      "name": "Vedanta Aluminium",
+      "rank": 49,
+      "ticker": "skillsoft",
+      "name": "Skillsoft",
       "exchange": "",
       "sector": "",
       "mentions": 3,
@@ -1704,7 +1815,7 @@
         0,
         0,
         0,
-        2,
+        0,
         0,
         0,
         0,
@@ -1713,14 +1824,51 @@
       ]
     },
     {
-      "rank": 47,
-      "ticker": "jumps",
-      "name": "Jumps",
+      "rank": 50,
+      "ticker": "vedanta-aluminium",
+      "name": "Vedanta Aluminium",
       "exchange": "",
       "sector": "",
       "mentions": 3,
-      "mentionsPrev": 2,
-      "changePct": 50,
+      "mentionsPrev": 3,
+      "changePct": 0,
+      "sentiment": {
+        "score": 1,
+        "label": "bullish",
+        "bullish": 3,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        3,
+        3
+      ]
+    },
+    {
+      "rank": 51,
+      "ticker": "bitcoin-slumps",
+      "name": "Bitcoin Slumps",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 0,
+      "changePct": 0,
       "sentiment": {
         "score": 0.67,
         "label": "bullish",
@@ -1735,22 +1883,59 @@
         "tradingqna": 0
       },
       "sparkline": [
+        2,
+        2,
+        2,
+        2,
         0,
+        2,
+        2,
+        4,
+        4,
+        4,
         0,
-        2,
-        3,
-        3,
-        3,
-        3,
-        3,
-        2,
-        2,
-        2,
         3
       ]
     },
     {
-      "rank": 48,
+      "rank": 52,
+      "ticker": "bata-india",
+      "name": "Bata India",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0.33,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "rank": 53,
       "ticker": "hitachi-energy",
       "name": "Hitachi Energy",
       "exchange": "",
@@ -1772,7 +1957,7 @@
         "tradingqna": 0
       },
       "sparkline": [
-        5,
+        3,
         3,
         3,
         3,
@@ -1787,9 +1972,83 @@
       ]
     },
     {
-      "rank": 49,
-      "ticker": "asian",
-      "name": "Asian",
+      "rank": 54,
+      "ticker": "redington",
+      "name": "Redington",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 2,
+      "changePct": 50,
+      "sentiment": {
+        "score": 0.33,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "rank": 55,
+      "ticker": "yes-bank",
+      "name": "YES Bank",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 4,
+      "changePct": -25,
+      "sentiment": {
+        "score": 0.33,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        3
+      ]
+    },
+    {
+      "rank": 56,
+      "ticker": "bajaj-auto",
+      "name": "Bajaj Auto",
       "exchange": "",
       "sector": "",
       "mentions": 3,
@@ -1814,17 +2073,128 @@
         0,
         0,
         0,
-        3,
         0,
         0,
         0,
-        2,
+        0,
+        0,
         0,
         3
       ]
     },
     {
-      "rank": 50,
+      "rank": 57,
+      "ticker": "bmw",
+      "name": "BMW",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 3
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "rank": 58,
+      "ticker": "broadcom",
+      "name": "Broadcom",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 2,
+      "changePct": 50,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 1,
+        "bearish": 1,
+        "neutral": 1
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "rank": 59,
+      "ticker": "cervomed",
+      "name": "CervoMed",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 3
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "rank": 60,
       "ticker": "deepak-fertilizers-and-petrochemicals",
       "name": "Deepak Fertilizers and Petrochemicals",
       "exchange": "",
@@ -1846,7 +2216,7 @@
         "tradingqna": 0
       },
       "sparkline": [
-        9,
+        3,
         3,
         3,
         3,
@@ -1861,7 +2231,7 @@
       ]
     },
     {
-      "rank": 51,
+      "rank": 61,
       "ticker": "exicom-tele-services",
       "name": "Exicom Tele-Services",
       "exchange": "",
@@ -1898,7 +2268,44 @@
       ]
     },
     {
-      "rank": 52,
+      "rank": 62,
+      "ticker": "greaves-cotton",
+      "name": "Greaves Cotton",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 1,
+      "changePct": 200,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 3
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 3,
+        "news": 0,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "rank": 63,
       "ticker": "idfc-first-bank",
       "name": "IDFC First Bank",
       "exchange": "",
@@ -1935,7 +2342,7 @@
       ]
     },
     {
-      "rank": 53,
+      "rank": 64,
       "ticker": "jnk-india",
       "name": "JNK India",
       "exchange": "",
@@ -1972,46 +2379,9 @@
       ]
     },
     {
-      "rank": 54,
-      "ticker": "john-wiley",
-      "name": "John Wiley",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 4,
-      "changePct": -25,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 3,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
-        4,
-        3
-      ]
-    },
-    {
-      "rank": 55,
-      "ticker": "la-z-boy",
-      "name": "La-Z-Boy",
+      "rank": 65,
+      "ticker": "mizuho",
+      "name": "Mizuho",
       "exchange": "",
       "sector": "",
       "mentions": 3,
@@ -2036,24 +2406,24 @@
         0,
         0,
         0,
+        2,
+        2,
+        4,
+        5,
         0,
-        0,
-        0,
-        0,
-        3,
         2,
         3
       ]
     },
     {
-      "rank": 56,
-      "ticker": "man-industries",
-      "name": "Man Industries",
+      "rank": 66,
+      "ticker": "oracle",
+      "name": "Oracle",
       "exchange": "",
       "sector": "",
       "mentions": 3,
-      "mentionsPrev": 1,
-      "changePct": 200,
+      "mentionsPrev": 2,
+      "changePct": 50,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -2063,27 +2433,64 @@
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 1,
-        "news": 2,
+        "valuepickr": 0,
+        "news": 3,
         "tradingqna": 0
       },
       "sparkline": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        15,
+        12,
+        14,
+        14,
+        16,
+        9,
+        7,
+        0,
+        0,
+        2,
+        2,
         3
       ]
     },
     {
-      "rank": 57,
+      "rank": 67,
+      "ticker": "quantumscape",
+      "name": "Quantumscape",
+      "exchange": "",
+      "sector": "",
+      "mentions": 3,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 3
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 3,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "rank": 68,
       "ticker": "safe-enterprises-retail-fixtures",
       "name": "Safe Enterprises Retail Fixtures",
       "exchange": "",
@@ -2120,7 +2527,7 @@
       ]
     },
     {
-      "rank": 58,
+      "rank": 69,
       "ticker": "sanghvi-movers",
       "name": "Sanghvi Movers",
       "exchange": "",
@@ -2157,7 +2564,7 @@
       ]
     },
     {
-      "rank": 59,
+      "rank": 70,
       "ticker": "sasken",
       "name": "Sasken",
       "exchange": "",
@@ -2194,7 +2601,7 @@
       ]
     },
     {
-      "rank": 60,
+      "rank": 71,
       "ticker": "sbi-cards-and-payment-services",
       "name": "SBI Cards & Payment Services",
       "exchange": "",
@@ -2216,8 +2623,8 @@
         "tradingqna": 0
       },
       "sparkline": [
-        1,
         2,
+        3,
         3,
         3,
         3,
@@ -2231,46 +2638,9 @@
       ]
     },
     {
-      "rank": 61,
-      "ticker": "stifel",
-      "name": "Stifel",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 4,
-      "changePct": -25,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 3
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 3,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        3,
-        2,
-        2,
-        2,
-        2,
-        2,
-        4,
-        3,
-        3,
-        3,
-        4,
-        3
-      ]
-    },
-    {
-      "rank": 62,
-      "ticker": "us-iran",
-      "name": "US-Iran",
+      "rank": 72,
+      "ticker": "tcs",
+      "name": "TCS",
       "exchange": "",
       "sector": "",
       "mentions": 3,
@@ -2292,57 +2662,20 @@
       "sparkline": [
         2,
         2,
-        0,
         3,
         3,
-        6,
-        9,
-        7,
-        3,
-        7,
         0,
-        3
-      ]
-    },
-    {
-      "rank": 63,
-      "ticker": "brigade-enterprises",
-      "name": "Brigade Enterprises",
-      "exchange": "",
-      "sector": "",
-      "mentions": 3,
-      "mentionsPrev": 2,
-      "changePct": 50,
-      "sentiment": {
-        "score": -0.33,
-        "label": "bearish",
-        "bullish": 0,
-        "bearish": 1,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 3,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
         2,
+        3,
+        3,
+        4,
+        4,
+        0,
         3
       ]
     },
     {
-      "rank": 64,
+      "rank": 73,
       "ticker": "clean-science-and-technology",
       "name": "Clean Science and Technology",
       "exchange": "",
@@ -2379,7 +2712,7 @@
       ]
     },
     {
-      "rank": 65,
+      "rank": 74,
       "ticker": "curious-case-of-coal-india",
       "name": "Curious Case of Coal India",
       "exchange": "",
@@ -2416,7 +2749,7 @@
       ]
     },
     {
-      "rank": 66,
+      "rank": 75,
       "ticker": "hil",
       "name": "HIL",
       "exchange": "",
@@ -2453,7 +2786,7 @@
       ]
     },
     {
-      "rank": 67,
+      "rank": 76,
       "ticker": "jupiter-wagons",
       "name": "Jupiter Wagons",
       "exchange": "",
@@ -2476,7 +2809,6 @@
       },
       "sparkline": [
         4,
-        4,
         5,
         5,
         5,
@@ -2486,11 +2818,12 @@
         4,
         4,
         3,
+        3,
         3
       ]
     },
     {
-      "rank": 68,
+      "rank": 77,
       "ticker": "abs-marine-services",
       "name": "ABS Marine Services",
       "exchange": "",
@@ -2527,9 +2860,9 @@
       ]
     },
     {
-      "rank": 69,
-      "ticker": "defence",
-      "name": "Defence",
+      "rank": 78,
+      "ticker": "artificial-intelligence-ai",
+      "name": "Artificial Intelligence AI",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -2549,13 +2882,13 @@
         "tradingqna": 0
       },
       "sparkline": [
-        0,
         2,
         0,
         0,
+        0,
+        3,
         2,
-        2,
-        2,
+        0,
         0,
         0,
         0,
@@ -2564,12 +2897,86 @@
       ]
     },
     {
-      "rank": 70,
+      "rank": 79,
       "ticker": "five",
       "name": "Five",
       "exchange": "",
       "sector": "",
       "mentions": 2,
+      "mentionsPrev": 2,
+      "changePct": 0,
+      "sentiment": {
+        "score": 1,
+        "label": "bullish",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2,
+        2,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "rank": 80,
+      "ticker": "growth",
+      "name": "Growth",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 4,
+      "changePct": -50,
+      "sentiment": {
+        "score": 1,
+        "label": "bullish",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        4,
+        5,
+        4,
+        2
+      ]
+    },
+    {
+      "rank": 81,
+      "ticker": "high-growth-micro-cap",
+      "name": "High-Growth Micro-Cap",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
       "mentionsPrev": 0,
       "changePct": 0,
       "sentiment": {
@@ -2593,21 +3000,58 @@
         0,
         0,
         0,
-        3,
-        2,
-        2,
+        0,
+        0,
+        0,
         0,
         2
       ]
     },
     {
-      "rank": 71,
+      "rank": 82,
+      "ticker": "last",
+      "name": "Last",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 1,
+        "label": "bullish",
+        "bullish": 2,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 83,
       "ticker": "next-market-rotation",
       "name": "Next Market Rotation",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 0,
+      "mentionsPrev": 2,
       "changePct": 0,
       "sentiment": {
         "score": 1,
@@ -2629,22 +3073,22 @@
         0,
         0,
         0,
-        0,
         2,
         0,
         0,
         0,
+        2,
         2
       ]
     },
     {
-      "rank": 72,
+      "rank": 84,
       "ticker": "spacex-sank-today",
       "name": "SpaceX Sank Today",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 0,
+      "mentionsPrev": 2,
       "changePct": 0,
       "sentiment": {
         "score": 1,
@@ -2670,86 +3114,12 @@
         0,
         0,
         0,
-        0,
+        2,
         2
       ]
     },
     {
-      "rank": 73,
-      "ticker": "sumeet-bagadia",
-      "name": "Sumeet Bagadia",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 1,
-        "label": "bullish",
-        "bullish": 2,
-        "bearish": 0,
-        "neutral": 0
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        2,
-        3,
-        0,
-        0,
-        0,
-        2,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 74,
-      "ticker": "turning",
-      "name": "Turning",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 1,
-        "label": "bullish",
-        "bullish": 2,
-        "bearish": 0,
-        "neutral": 0
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        2,
-        0,
-        0,
-        0,
-        2,
-        0,
-        2,
-        2,
-        0,
-        2,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 75,
+      "rank": 85,
       "ticker": "annapurna-swadisht",
       "name": "Annapurna Swadisht",
       "exchange": "",
@@ -2786,7 +3156,7 @@
       ]
     },
     {
-      "rank": 76,
+      "rank": 86,
       "ticker": "crisil",
       "name": "Crisil",
       "exchange": "",
@@ -2810,8 +3180,8 @@
       "sparkline": [
         0,
         0,
-        0,
         1,
+        2,
         2,
         2,
         2,
@@ -2823,13 +3193,13 @@
       ]
     },
     {
-      "rank": 77,
-      "ticker": "figma",
-      "name": "Figma",
+      "rank": 87,
+      "ticker": "defence",
+      "name": "Defence",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 0,
+      "mentionsPrev": 2,
       "changePct": 0,
       "sentiment": {
         "score": 0.5,
@@ -2845,22 +3215,22 @@
         "tradingqna": 0
       },
       "sparkline": [
+        2,
+        0,
+        0,
+        2,
+        2,
+        2,
         0,
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        2,
         2
       ]
     },
     {
-      "rank": 78,
+      "rank": 88,
       "ticker": "filatex-india",
       "name": "Filatex India",
       "exchange": "",
@@ -2897,44 +3267,7 @@
       ]
     },
     {
-      "rank": 79,
-      "ticker": "flywire",
-      "name": "Flywire",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0.5,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 80,
+      "rank": 89,
       "ticker": "goel-construction-company",
       "name": "Goel Construction Company",
       "exchange": "",
@@ -2971,14 +3304,51 @@
       ]
     },
     {
-      "rank": 81,
+      "rank": 90,
+      "ticker": "goldman-sachs",
+      "name": "Goldman Sachs",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0.5,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 1
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 91,
       "ticker": "jm-financial",
       "name": "JM Financial",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 1,
-      "changePct": 100,
+      "mentionsPrev": 2,
+      "changePct": 0,
       "sentiment": {
         "score": 0.5,
         "label": "bullish",
@@ -2999,16 +3369,53 @@
         1,
         1,
         1,
-        1,
         2,
         2,
         1,
         1,
+        2,
         2
       ]
     },
     {
-      "rank": 82,
+      "rank": 92,
+      "ticker": "jumps",
+      "name": "Jumps",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 3,
+      "changePct": -33.3,
+      "sentiment": {
+        "score": 0.5,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 1
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "rank": 93,
       "ticker": "ksolves",
       "name": "Ksolves",
       "exchange": "",
@@ -3036,7 +3443,7 @@
         1,
         1,
         1,
-        1,
+        2,
         2,
         2,
         2,
@@ -3045,13 +3452,13 @@
       ]
     },
     {
-      "rank": 83,
-      "ticker": "lzb",
-      "name": "LZB",
+      "rank": 94,
+      "ticker": "max-healthcare",
+      "name": "Max Healthcare",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 2,
+      "mentionsPrev": 0,
       "changePct": 0,
       "sentiment": {
         "score": 0.5,
@@ -3077,12 +3484,12 @@
         0,
         0,
         0,
-        2,
+        0,
         2
       ]
     },
     {
-      "rank": 84,
+      "rank": 95,
       "ticker": "narmada-gelatine",
       "name": "Narmada Gelatine",
       "exchange": "",
@@ -3119,7 +3526,44 @@
       ]
     },
     {
-      "rank": 85,
+      "rank": 96,
+      "ticker": "record",
+      "name": "Record",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0.5,
+        "label": "bullish",
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 1
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 97,
       "ticker": "sinclairs-hotel",
       "name": "Sinclairs Hotel",
       "exchange": "",
@@ -3156,7 +3600,7 @@
       ]
     },
     {
-      "rank": 86,
+      "rank": 98,
       "ticker": "aimtron-electronics",
       "name": "Aimtron Electronics",
       "exchange": "",
@@ -3186,14 +3630,51 @@
         2,
         2,
         2,
-        2,
         3,
+        2,
         2,
         2
       ]
     },
     {
-      "rank": 87,
+      "rank": 99,
+      "ticker": "apple",
+      "name": "Apple",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 100,
       "ticker": "argus",
       "name": "Argus",
       "exchange": "",
@@ -3224,13 +3705,50 @@
         0,
         0,
         0,
-        0,
+        2,
         2,
         2
       ]
     },
     {
-      "rank": 88,
+      "rank": 101,
+      "ticker": "asian",
+      "name": "Asian",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 3,
+      "changePct": -33.3,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        2,
+        0,
+        3,
+        2
+      ]
+    },
+    {
+      "rank": 102,
       "ticker": "asian-oilfields",
       "name": "Asian oilfields",
       "exchange": "",
@@ -3267,9 +3785,9 @@
       ]
     },
     {
-      "rank": 89,
-      "ticker": "benchmark",
-      "name": "Benchmark",
+      "rank": 103,
+      "ticker": "barclays",
+      "name": "Barclays",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -3289,10 +3807,10 @@
         "tradingqna": 0
       },
       "sparkline": [
+        2,
         0,
-        0,
-        0,
-        0,
+        2,
+        2,
         0,
         0,
         0,
@@ -3304,9 +3822,46 @@
       ]
     },
     {
-      "rank": 90,
-      "ticker": "bernstein",
-      "name": "Bernstein",
+      "rank": 104,
+      "ticker": "bdtx",
+      "name": "BDTX",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        2,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 105,
+      "ticker": "benchmark",
+      "name": "Benchmark",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -3334,14 +3889,14 @@
         0,
         0,
         0,
-        2,
+        0,
         0,
         2,
         2
       ]
     },
     {
-      "rank": 91,
+      "rank": 106,
       "ticker": "bff-bank",
       "name": "BFF Bank",
       "exchange": "",
@@ -3372,52 +3927,15 @@
         0,
         0,
         0,
-        0,
+        2,
         2,
         2
       ]
     },
     {
-      "rank": 92,
-      "ticker": "bitgo",
-      "name": "BitGo",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 93,
-      "ticker": "citizens",
-      "name": "Citizens",
+      "rank": 107,
+      "ticker": "brigade-enterprises",
+      "name": "Brigade Enterprises",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -3443,8 +3961,8 @@
         0,
         0,
         0,
-        3,
-        3,
+        0,
+        0,
         3,
         2,
         3,
@@ -3452,9 +3970,9 @@
       ]
     },
     {
-      "rank": 94,
-      "ticker": "cmcsa",
-      "name": "CMCSA",
+      "rank": 108,
+      "ticker": "chip",
+      "name": "Chip",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -3483,13 +4001,50 @@
         0,
         0,
         0,
-        0,
+        2,
         0,
         2
       ]
     },
     {
-      "rank": 95,
+      "rank": 109,
+      "ticker": "cmcsa",
+      "name": "CMCSA",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 2,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "rank": 110,
       "ticker": "deutsche-bank",
       "name": "Deutsche Bank",
       "exchange": "",
@@ -3511,7 +4066,6 @@
         "tradingqna": 0
       },
       "sparkline": [
-        2,
         3,
         0,
         0,
@@ -3522,48 +4076,12 @@
         0,
         0,
         2,
+        2,
         2
       ]
     },
     {
-      "rank": 96,
-      "ticker": "drhp",
-      "name": "DRHP",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 97,
+      "rank": 111,
       "ticker": "grasim-industries",
       "name": "Grasim Industries",
       "exchange": "",
@@ -3586,7 +4104,6 @@
       },
       "sparkline": [
         2,
-        2,
         0,
         0,
         2,
@@ -3595,12 +4112,13 @@
         2,
         2,
         0,
+        2,
         2,
         2
       ]
     },
     {
-      "rank": 98,
+      "rank": 112,
       "ticker": "hcltech",
       "name": "HCLTech",
       "exchange": "",
@@ -3631,13 +4149,50 @@
         0,
         0,
         0,
-        0,
+        2,
         2,
         2
       ]
     },
     {
-      "rank": 99,
+      "rank": 113,
+      "ticker": "hdfc-bank",
+      "name": "HDFC Bank",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 114,
       "ticker": "hindalco-industries",
       "name": "Hindalco Industries",
       "exchange": "",
@@ -3674,7 +4229,7 @@
       ]
     },
     {
-      "rank": 100,
+      "rank": 115,
       "ticker": "hindubusinessline",
       "name": "HinduBusinessLine",
       "exchange": "",
@@ -3699,7 +4254,7 @@
         0,
         0,
         0,
-        0,
+        2,
         2,
         2,
         2,
@@ -3711,9 +4266,83 @@
       ]
     },
     {
-      "rank": 101,
+      "rank": 116,
+      "ticker": "ifci",
+      "name": "IFCI",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        2,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        0,
+        2,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 117,
       "ticker": "india-inc",
       "name": "India Inc",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 2,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "rank": 118,
+      "ticker": "indonesian",
+      "name": "Indonesian",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -3748,7 +4377,7 @@
       ]
     },
     {
-      "rank": 102,
+      "rank": 119,
       "ticker": "irfc",
       "name": "IRFC",
       "exchange": "",
@@ -3785,7 +4414,44 @@
       ]
     },
     {
-      "rank": 103,
+      "rank": 120,
+      "ticker": "john-wiley",
+      "name": "John Wiley",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 3,
+      "changePct": -33.3,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "rank": 121,
       "ticker": "kaka-industries",
       "name": "Kaka industries",
       "exchange": "",
@@ -3822,44 +4488,7 @@
       ]
     },
     {
-      "rank": 104,
-      "ticker": "keefe-bruyette",
-      "name": "Keefe Bruyette",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 105,
+      "rank": 122,
       "ticker": "krishna-defence-and-allied-industries",
       "name": "Krishna Defence & Allied Industries",
       "exchange": "",
@@ -3896,7 +4525,44 @@
       ]
     },
     {
-      "rank": 106,
+      "rank": 123,
+      "ticker": "kroger",
+      "name": "Kroger",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 124,
       "ticker": "lic-housing-finance",
       "name": "Lic housing finance",
       "exchange": "",
@@ -3922,7 +4588,7 @@
         6,
         6,
         6,
-        6,
+        2,
         2,
         2,
         2,
@@ -3933,13 +4599,13 @@
       ]
     },
     {
-      "rank": 107,
+      "rank": 125,
       "ticker": "meta",
       "name": "META",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 0,
+      "mentionsPrev": 2,
       "changePct": 0,
       "sentiment": {
         "score": 0,
@@ -3955,7 +4621,6 @@
         "tradingqna": 0
       },
       "sparkline": [
-        2,
         3,
         3,
         2,
@@ -3966,18 +4631,19 @@
         0,
         0,
         0,
+        2,
         2
       ]
     },
     {
-      "rank": 108,
+      "rank": 126,
       "ticker": "micron",
       "name": "Micron",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 4,
-      "changePct": -50,
+      "mentionsPrev": 2,
+      "changePct": 0,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -3992,7 +4658,6 @@
         "tradingqna": 0
       },
       "sparkline": [
-        2,
         4,
         3,
         3,
@@ -4003,17 +4668,18 @@
         2,
         4,
         4,
+        2,
         2
       ]
     },
     {
-      "rank": 109,
+      "rank": 127,
       "ticker": "microsoft",
       "name": "Microsoft",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 0,
+      "mentionsPrev": 2,
       "changePct": 0,
       "sentiment": {
         "score": 0,
@@ -4031,7 +4697,6 @@
       "sparkline": [
         2,
         2,
-        2,
         0,
         0,
         0,
@@ -4040,13 +4705,14 @@
         2,
         2,
         0,
+        2,
         2
       ]
     },
     {
-      "rank": 110,
-      "ticker": "mizuho",
-      "name": "Mizuho",
+      "rank": 128,
+      "ticker": "needham",
+      "name": "Needham",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -4067,58 +4733,21 @@
       },
       "sparkline": [
         2,
-        0,
-        0,
-        0,
-        0,
-        0,
         2,
         2,
-        4,
-        5,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
         0,
         2
       ]
     },
     {
-      "rank": 111,
-      "ticker": "mrna",
-      "name": "MRNA",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 112,
+      "rank": 129,
       "ticker": "obsc-perfection",
       "name": "OBSC Perfection",
       "exchange": "",
@@ -4142,7 +4771,7 @@
       "sparkline": [
         3,
         3,
-        3,
+        2,
         2,
         2,
         2,
@@ -4155,7 +4784,7 @@
       ]
     },
     {
-      "rank": 113,
+      "rank": 130,
       "ticker": "ongc",
       "name": "ONGC",
       "exchange": "",
@@ -4183,60 +4812,23 @@
         0,
         0,
         0,
-        0,
         2,
         0,
         0,
         2,
-        2
-      ]
-    },
-    {
-      "rank": 114,
-      "ticker": "oracle",
-      "name": "Oracle",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        14,
-        15,
-        12,
-        14,
-        14,
-        16,
-        9,
-        7,
-        0,
-        0,
         2,
         2
       ]
     },
     {
-      "rank": 115,
+      "rank": 131,
       "ticker": "piccadily-agro-industries",
       "name": "Piccadily Agro Industries",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 3,
-      "changePct": -33.3,
+      "mentionsPrev": 2,
+      "changePct": 0,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -4260,20 +4852,20 @@
         7,
         7,
         7,
-        7,
         3,
+        2,
         2
       ]
     },
     {
-      "rank": 116,
+      "rank": 132,
       "ticker": "pine-labs",
       "name": "Pine Labs",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 3,
-      "changePct": -33.3,
+      "mentionsPrev": 2,
+      "changePct": 0,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -4292,20 +4884,20 @@
         0,
         0,
         0,
-        0,
         2,
         0,
         0,
         2,
         2,
         3,
+        2,
         2
       ]
     },
     {
-      "rank": 117,
-      "ticker": "piper-sandler",
-      "name": "Piper Sandler",
+      "rank": 133,
+      "ticker": "quote",
+      "name": "Quote",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -4325,11 +4917,11 @@
         "tradingqna": 0
       },
       "sparkline": [
+        0,
         2,
-        2,
-        2,
-        3,
-        3,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -4340,9 +4932,9 @@
       ]
     },
     {
-      "rank": 118,
-      "ticker": "quote",
-      "name": "Quote",
+      "rank": 134,
+      "ticker": "rackspace-technology-rxt",
+      "name": "Rackspace Technology RXT",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -4351,83 +4943,9 @@
       "sentiment": {
         "score": 0,
         "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 119,
-      "ticker": "raymond-james",
-      "name": "Raymond James",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        3,
-        0,
-        2
-      ]
-    },
-    {
-      "rank": 120,
-      "ticker": "redington",
-      "name": "Redington",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
+        "bullish": 1,
+        "bearish": 1,
+        "neutral": 0
       },
       "sources": {
         "reddit": 0,
@@ -4451,7 +4969,7 @@
       ]
     },
     {
-      "rank": 121,
+      "rank": 135,
       "ticker": "rossell-techsys",
       "name": "Rossell Techsys",
       "exchange": "",
@@ -4480,7 +4998,7 @@
         1,
         1,
         1,
-        1,
+        2,
         2,
         2,
         2,
@@ -4488,9 +5006,9 @@
       ]
     },
     {
-      "rank": 122,
-      "ticker": "sanskrit-subhashitam",
-      "name": "Sanskrit Subhashitam",
+      "rank": 136,
+      "ticker": "rr-kabel",
+      "name": "RR Kabel",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -4525,7 +5043,118 @@
       ]
     },
     {
-      "rank": 123,
+      "rank": 137,
+      "ticker": "sailpoint",
+      "name": "SailPoint",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        4,
+        4,
+        4,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 138,
+      "ticker": "sanskrit-subhashitam",
+      "name": "Sanskrit Subhashitam",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 2,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "rank": 139,
+      "ticker": "sbi",
+      "name": "SBI",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 140,
       "ticker": "sheela-foam",
       "name": "Sheela Foam",
       "exchange": "",
@@ -4549,7 +5178,7 @@
       "sparkline": [
         4,
         4,
-        4,
+        2,
         2,
         2,
         2,
@@ -4562,7 +5191,7 @@
       ]
     },
     {
-      "rank": 124,
+      "rank": 141,
       "ticker": "shree-refrigerations",
       "name": "Shree Refrigerations",
       "exchange": "",
@@ -4599,9 +5228,9 @@
       ]
     },
     {
-      "rank": 125,
-      "ticker": "swbi-strong",
-      "name": "SWBI Strong",
+      "rank": 142,
+      "ticker": "spcx",
+      "name": "SPCX",
       "exchange": "",
       "sector": "",
       "mentions": 2,
@@ -4625,55 +5254,18 @@
         0,
         0,
         0,
+        2,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
+        2,
+        3,
+        2,
         0,
         2
       ]
     },
     {
-      "rank": 126,
-      "ticker": "td-cowen",
-      "name": "TD Cowen",
-      "exchange": "",
-      "sector": "",
-      "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 2
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 0,
-        "news": 2,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        2,
-        3,
-        3,
-        4,
-        4,
-        2,
-        2,
-        2,
-        3,
-        0,
-        2,
-        2
-      ]
-    },
-    {
-      "rank": 127,
+      "rank": 143,
       "ticker": "travel-food-services",
       "name": "Travel Food Services",
       "exchange": "",
@@ -4710,7 +5302,81 @@
       ]
     },
     {
-      "rank": 128,
+      "rank": 144,
+      "ticker": "tripadvisor",
+      "name": "Tripadvisor",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 145,
+      "ticker": "uber",
+      "name": "Uber",
+      "exchange": "",
+      "sector": "",
+      "mentions": 2,
+      "mentionsPrev": 0,
+      "changePct": 0,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 2
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 0,
+        "news": 2,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "rank": 146,
       "ticker": "venus-remedies",
       "name": "Venus Remedies",
       "exchange": "",
@@ -4747,7 +5413,7 @@
       ]
     },
     {
-      "rank": 129,
+      "rank": 147,
       "ticker": "viviana-power-tech",
       "name": "Viviana Power Tech",
       "exchange": "",
@@ -4784,7 +5450,7 @@
       ]
     },
     {
-      "rank": 130,
+      "rank": 148,
       "ticker": "western-digital",
       "name": "Western Digital",
       "exchange": "",
@@ -4811,9 +5477,9 @@
         0,
         0,
         0,
-        0,
         2,
         0,
+        2,
         2,
         2,
         2,
@@ -4821,20 +5487,20 @@
       ]
     },
     {
-      "rank": 131,
-      "ticker": "broadcom",
-      "name": "Broadcom",
+      "rank": 149,
+      "ticker": "zillow-group",
+      "name": "Zillow Group",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 3,
-      "changePct": -33.3,
+      "mentionsPrev": 0,
+      "changePct": 0,
       "sentiment": {
-        "score": -0.5,
-        "label": "bearish",
+        "score": 0,
+        "label": "neutral",
         "bullish": 0,
-        "bearish": 1,
-        "neutral": 1
+        "bearish": 0,
+        "neutral": 2
       },
       "sources": {
         "reddit": 0,
@@ -4853,12 +5519,12 @@
         0,
         0,
         0,
-        3,
+        0,
         2
       ]
     },
     {
-      "rank": 132,
+      "rank": 150,
       "ticker": "ems",
       "name": "EMS",
       "exchange": "",
@@ -4895,14 +5561,14 @@
       ]
     },
     {
-      "rank": 133,
-      "ticker": "scotiabank",
-      "name": "Scotiabank",
+      "rank": 151,
+      "ticker": "market-today",
+      "name": "Market Today",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 2,
-      "changePct": 0,
+      "mentionsPrev": 4,
+      "changePct": -50,
       "sentiment": {
         "score": -0.5,
         "label": "bearish",
@@ -4917,28 +5583,28 @@
         "tradingqna": 0
       },
       "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        7,
+        6,
+        3,
+        4,
+        4,
         2
       ]
     },
     {
-      "rank": 134,
-      "ticker": "yum-brands",
-      "name": "Yum Brands",
+      "rank": 152,
+      "ticker": "trade-desk",
+      "name": "Trade Desk",
       "exchange": "",
       "sector": "",
       "mentions": 2,
-      "mentionsPrev": 2,
+      "mentionsPrev": 0,
       "changePct": 0,
       "sentiment": {
         "score": -0.5,
@@ -4954,59 +5620,59 @@
         "tradingqna": 0
       },
       "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        3,
+        3,
+        3,
         3,
         2,
         2,
+        0,
+        2,
+        0,
+        0,
+        0,
         2
       ]
     },
     {
-      "rank": 135,
-      "ticker": "asarfi-hospital-sme-ipo",
-      "name": "Asarfi Hospital Limited SME IPO",
+      "rank": 153,
+      "ticker": "trent",
+      "name": "Trent",
       "exchange": "",
       "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
+      "mentions": 2,
+      "mentionsPrev": 0,
       "changePct": 0,
       "sentiment": {
-        "score": 1,
-        "label": "bullish",
-        "bullish": 1,
-        "bearish": 0,
-        "neutral": 0
+        "score": -0.5,
+        "label": "bearish",
+        "bullish": 0,
+        "bearish": 1,
+        "neutral": 1
       },
       "sources": {
         "reddit": 0,
-        "valuepickr": 1,
-        "news": 0,
+        "valuepickr": 0,
+        "news": 2,
         "tradingqna": 0
       },
       "sparkline": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2
       ]
     },
     {
-      "rank": 136,
+      "rank": 154,
       "ticker": "avenue-supermart",
       "name": "Avenue Supermart",
       "exchange": "",
@@ -5030,7 +5696,7 @@
       "sparkline": [
         2,
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -5043,7 +5709,7 @@
       ]
     },
     {
-      "rank": 137,
+      "rank": 155,
       "ticker": "bandhan-bank",
       "name": "Bandhan Bank",
       "exchange": "",
@@ -5066,8 +5732,8 @@
       },
       "sparkline": [
         1,
-        1,
         2,
+        1,
         1,
         1,
         1,
@@ -5080,7 +5746,7 @@
       ]
     },
     {
-      "rank": 138,
+      "rank": 156,
       "ticker": "cesc-demerger",
       "name": "CESC LTD Demerger",
       "exchange": "",
@@ -5117,7 +5783,7 @@
       ]
     },
     {
-      "rank": 139,
+      "rank": 157,
       "ticker": "irctc",
       "name": "IRCTC",
       "exchange": "",
@@ -5139,7 +5805,6 @@
         "tradingqna": 0
       },
       "sparkline": [
-        2,
         1,
         1,
         1,
@@ -5147,6 +5812,7 @@
         2,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -5154,7 +5820,7 @@
       ]
     },
     {
-      "rank": 140,
+      "rank": 158,
       "ticker": "jubilant-foodworks",
       "name": "Jubilant Foodworks",
       "exchange": "",
@@ -5191,7 +5857,7 @@
       ]
     },
     {
-      "rank": 141,
+      "rank": 159,
       "ticker": "piramal-pharma",
       "name": "Piramal Pharma",
       "exchange": "",
@@ -5228,7 +5894,7 @@
       ]
     },
     {
-      "rank": 142,
+      "rank": 160,
       "ticker": "renaissance-jewellery",
       "name": "Renaissance Jewellery",
       "exchange": "",
@@ -5259,13 +5925,13 @@
         0,
         0,
         0,
-        0,
+        1,
         1,
         1
       ]
     },
     {
-      "rank": 143,
+      "rank": 161,
       "ticker": "repono",
       "name": "Repono",
       "exchange": "",
@@ -5296,13 +5962,13 @@
         0,
         0,
         0,
-        0,
+        1,
         1,
         1
       ]
     },
     {
-      "rank": 144,
+      "rank": 162,
       "ticker": "alpex-solar",
       "name": "Alpex Solar",
       "exchange": "",
@@ -5325,7 +5991,6 @@
       },
       "sparkline": [
         5,
-        5,
         3,
         2,
         1,
@@ -5335,48 +6000,12 @@
         1,
         1,
         1,
-        1
-      ]
-    },
-    {
-      "rank": 145,
-      "ticker": "amanta-healthcare",
-      "name": "Amanta Healthcare Ltd",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 1,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1
       ]
     },
     {
-      "rank": 146,
+      "rank": 163,
       "ticker": "apl-apollo-tubes",
       "name": "APL Apollo Tubes",
       "exchange": "",
@@ -5413,7 +6042,7 @@
       ]
     },
     {
-      "rank": 147,
+      "rank": 164,
       "ticker": "banco-products",
       "name": "Banco Products",
       "exchange": "",
@@ -5450,7 +6079,7 @@
       ]
     },
     {
-      "rank": 148,
+      "rank": 165,
       "ticker": "beacon-trusteeship",
       "name": "Beacon Trusteeship",
       "exchange": "",
@@ -5481,13 +6110,13 @@
         0,
         0,
         0,
-        0,
+        1,
         1,
         1
       ]
     },
     {
-      "rank": 149,
+      "rank": 166,
       "ticker": "borosil",
       "name": "Borosil",
       "exchange": "",
@@ -5524,7 +6153,7 @@
       ]
     },
     {
-      "rank": 150,
+      "rank": 167,
       "ticker": "concord-control-systems",
       "name": "Concord Control Systems",
       "exchange": "",
@@ -5561,14 +6190,14 @@
       ]
     },
     {
-      "rank": 151,
+      "rank": 168,
       "ticker": "dixon-technologies",
       "name": "Dixon Technologies",
       "exchange": "",
       "sector": "",
       "mentions": 1,
-      "mentionsPrev": 2,
-      "changePct": -50,
+      "mentionsPrev": 1,
+      "changePct": 0,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -5591,14 +6220,14 @@
         1,
         1,
         1,
+        2,
+        2,
         1,
-        2,
-        2,
         1
       ]
     },
     {
-      "rank": 152,
+      "rank": 169,
       "ticker": "dreamfolks-services-dfs",
       "name": "Dreamfolks services limited( DFS)",
       "exchange": "",
@@ -5635,7 +6264,7 @@
       ]
     },
     {
-      "rank": 153,
+      "rank": 170,
       "ticker": "eco-recycling",
       "name": "Eco Recycling",
       "exchange": "",
@@ -5672,7 +6301,7 @@
       ]
     },
     {
-      "rank": 154,
+      "rank": 171,
       "ticker": "edelweiss-financial-services",
       "name": "Edelweiss Financial Services",
       "exchange": "",
@@ -5709,7 +6338,7 @@
       ]
     },
     {
-      "rank": 155,
+      "rank": 172,
       "ticker": "everest-kanto-cylinders",
       "name": "Everest Kanto Cylinders",
       "exchange": "",
@@ -5746,7 +6375,7 @@
       ]
     },
     {
-      "rank": 156,
+      "rank": 173,
       "ticker": "fluidomat",
       "name": "Fluidomat",
       "exchange": "",
@@ -5773,7 +6402,7 @@
         0,
         0,
         0,
-        0,
+        1,
         1,
         1,
         1,
@@ -5783,7 +6412,7 @@
       ]
     },
     {
-      "rank": 157,
+      "rank": 174,
       "ticker": "foseco-india",
       "name": "Foseco india",
       "exchange": "",
@@ -5820,7 +6449,7 @@
       ]
     },
     {
-      "rank": 158,
+      "rank": 175,
       "ticker": "freshara-agro-exports",
       "name": "Freshara Agro Exports",
       "exchange": "",
@@ -5857,7 +6486,7 @@
       ]
     },
     {
-      "rank": 159,
+      "rank": 176,
       "ticker": "gandhi-special-tubes",
       "name": "Gandhi Special Tubes",
       "exchange": "",
@@ -5879,7 +6508,7 @@
         "tradingqna": 0
       },
       "sparkline": [
-        0,
+        1,
         1,
         1,
         1,
@@ -5894,7 +6523,7 @@
       ]
     },
     {
-      "rank": 160,
+      "rank": 177,
       "ticker": "goldiam-international",
       "name": "Goldiam International",
       "exchange": "",
@@ -5931,44 +6560,7 @@
       ]
     },
     {
-      "rank": 161,
-      "ticker": "greaves-cotton",
-      "name": "Greaves Cotton",
-      "exchange": "",
-      "sector": "",
-      "mentions": 1,
-      "mentionsPrev": 0,
-      "changePct": 0,
-      "sentiment": {
-        "score": 0,
-        "label": "neutral",
-        "bullish": 0,
-        "bearish": 0,
-        "neutral": 1
-      },
-      "sources": {
-        "reddit": 0,
-        "valuepickr": 1,
-        "news": 0,
-        "tradingqna": 0
-      },
-      "sparkline": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "rank": 162,
+      "rank": 178,
       "ticker": "hi-green-carbon",
       "name": "Hi-Green Carbon",
       "exchange": "",
@@ -6005,7 +6597,7 @@
       ]
     },
     {
-      "rank": 163,
+      "rank": 179,
       "ticker": "hindustan-foods",
       "name": "Hindustan Foods",
       "exchange": "",
@@ -6042,7 +6634,7 @@
       ]
     },
     {
-      "rank": 164,
+      "rank": 180,
       "ticker": "indian-metals-and-ferro-alloys",
       "name": "Indian Metals & Ferro Alloys",
       "exchange": "",
@@ -6079,7 +6671,7 @@
       ]
     },
     {
-      "rank": 165,
+      "rank": 181,
       "ticker": "indo-amines",
       "name": "Indo Amines",
       "exchange": "",
@@ -6116,7 +6708,7 @@
       ]
     },
     {
-      "rank": 166,
+      "rank": 182,
       "ticker": "influx-healthtech",
       "name": "Influx HealthTech",
       "exchange": "",
@@ -6153,7 +6745,7 @@
       ]
     },
     {
-      "rank": 167,
+      "rank": 183,
       "ticker": "interarch",
       "name": "Interarch",
       "exchange": "",
@@ -6176,9 +6768,9 @@
       },
       "sparkline": [
         3,
-        3,
         2,
         2,
+        1,
         1,
         1,
         1,
@@ -6190,14 +6782,14 @@
       ]
     },
     {
-      "rank": 168,
+      "rank": 184,
       "ticker": "jain-resource-recycling",
       "name": "Jain Resource Recycling Ltd",
       "exchange": "",
       "sector": "",
       "mentions": 1,
-      "mentionsPrev": 3,
-      "changePct": -66.7,
+      "mentionsPrev": 1,
+      "changePct": 0,
       "sentiment": {
         "score": 0,
         "label": "neutral",
@@ -6221,13 +6813,13 @@
         5,
         5,
         5,
-        5,
         3,
+        1,
         1
       ]
     },
     {
-      "rank": 169,
+      "rank": 185,
       "ticker": "jsw-infrastructure",
       "name": "JSW Infrastructure",
       "exchange": "",
@@ -6264,7 +6856,7 @@
       ]
     },
     {
-      "rank": 170,
+      "rank": 186,
       "ticker": "kamat-hotels",
       "name": "Kamat Hotels",
       "exchange": "",
@@ -6288,20 +6880,20 @@
       "sparkline": [
         3,
         3,
-        3,
         2,
         2,
         2,
         2,
         2,
         2,
+        1,
         1,
         1,
         1
       ]
     },
     {
-      "rank": 171,
+      "rank": 187,
       "ticker": "krn-heat-exchanger-and-refrigeration",
       "name": "KRN Heat Exchanger and Refrigeration",
       "exchange": "",
@@ -6325,8 +6917,8 @@
       "sparkline": [
         3,
         3,
-        3,
         2,
+        1,
         1,
         1,
         1,
@@ -6338,7 +6930,7 @@
       ]
     },
     {
-      "rank": 172,
+      "rank": 188,
       "ticker": "krsnaa-diagnostics",
       "name": "Krsnaa Diagnostics",
       "exchange": "",
@@ -6375,7 +6967,7 @@
       ]
     },
     {
-      "rank": 173,
+      "rank": 189,
       "ticker": "mahindra-and-mahindra",
       "name": "Mahindra & Mahindra",
       "exchange": "",
@@ -6412,7 +7004,44 @@
       ]
     },
     {
-      "rank": 174,
+      "rank": 190,
+      "ticker": "man-industries",
+      "name": "Man Industries",
+      "exchange": "",
+      "sector": "",
+      "mentions": 1,
+      "mentionsPrev": 3,
+      "changePct": -66.7,
+      "sentiment": {
+        "score": 0,
+        "label": "neutral",
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 1
+      },
+      "sources": {
+        "reddit": 0,
+        "valuepickr": 1,
+        "news": 0,
+        "tradingqna": 0
+      },
+      "sparkline": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "rank": 191,
       "ticker": "manaksia-coated-metals-and-industries",
       "name": "Manaksia Coated Metals & Industries",
       "exchange": "",
@@ -6449,7 +7078,7 @@
       ]
     },
     {
-      "rank": 175,
+      "rank": 192,
       "ticker": "manappuram-finance",
       "name": "Manappuram Finance",
       "exchange": "",
@@ -6486,7 +7115,7 @@
       ]
     },
     {
-      "rank": 176,
+      "rank": 193,
       "ticker": "osel-devices",
       "name": "Osel Devices",
       "exchange": "",
@@ -6523,7 +7152,7 @@
       ]
     },
     {
-      "rank": 177,
+      "rank": 194,
       "ticker": "paramount-communication",
       "name": "Paramount Communication",
       "exchange": "",
@@ -6560,7 +7189,7 @@
       ]
     },
     {
-      "rank": 178,
+      "rank": 195,
       "ticker": "pennar-industries",
       "name": "Pennar Industries",
       "exchange": "",
@@ -6597,7 +7226,7 @@
       ]
     },
     {
-      "rank": 179,
+      "rank": 196,
       "ticker": "phantom-digital-effects",
       "name": "Phantom Digital Effects",
       "exchange": "",
@@ -6634,7 +7263,7 @@
       ]
     },
     {
-      "rank": 180,
+      "rank": 197,
       "ticker": "piramal-finance",
       "name": "Piramal Finance",
       "exchange": "",
@@ -6656,7 +7285,7 @@
         "tradingqna": 0
       },
       "sparkline": [
-        0,
+        1,
         1,
         1,
         1,
@@ -6671,7 +7300,7 @@
       ]
     },
     {
-      "rank": 181,
+      "rank": 198,
       "ticker": "prakash-industries",
       "name": "Prakash Industries",
       "exchange": "",
@@ -6694,7 +7323,7 @@
       },
       "sparkline": [
         0,
-        0,
+        1,
         1,
         1,
         1,
@@ -6708,7 +7337,7 @@
       ]
     },
     {
-      "rank": 182,
+      "rank": 199,
       "ticker": "praveg",
       "name": "Praveg",
       "exchange": "",
@@ -6745,7 +7374,7 @@
       ]
     },
     {
-      "rank": 183,
+      "rank": 200,
       "ticker": "protean-egov-technologies",
       "name": "Protean EGov Technologies",
       "exchange": "",
@@ -6782,7 +7411,7 @@
       ]
     },
     {
-      "rank": 184,
+      "rank": 201,
       "ticker": "sarda-energy-and-minerals",
       "name": "Sarda energy and minerals",
       "exchange": "",
@@ -6819,7 +7448,7 @@
       ]
     },
     {
-      "rank": 185,
+      "rank": 202,
       "ticker": "sequent-scientific",
       "name": "Sequent Scientific",
       "exchange": "",
@@ -6856,7 +7485,7 @@
       ]
     },
     {
-      "rank": 186,
+      "rank": 203,
       "ticker": "sigachi-industries",
       "name": "Sigachi Industries",
       "exchange": "",
@@ -6893,7 +7522,7 @@
       ]
     },
     {
-      "rank": 187,
+      "rank": 204,
       "ticker": "srm-contractors",
       "name": "SRM Contractors",
       "exchange": "",
@@ -6930,7 +7559,7 @@
       ]
     },
     {
-      "rank": 188,
+      "rank": 205,
       "ticker": "tarsons-products",
       "name": "TARSONS products",
       "exchange": "",
@@ -6959,7 +7588,7 @@
         0,
         0,
         0,
-        0,
+        1,
         1,
         1,
         1,
@@ -6967,7 +7596,7 @@
       ]
     },
     {
-      "rank": 189,
+      "rank": 206,
       "ticker": "tgv-sraac-erstwhile-sree-rayalseema-alkali",
       "name": "TGV SRAAC erstwhile Sree Rayalseema Alkali",
       "exchange": "",
@@ -6990,7 +7619,7 @@
       },
       "sparkline": [
         2,
-        2,
+        1,
         1,
         1,
         1,
@@ -7004,7 +7633,7 @@
       ]
     },
     {
-      "rank": 190,
+      "rank": 207,
       "ticker": "titan-company",
       "name": "Titan Company Ltd",
       "exchange": "",
@@ -7041,7 +7670,7 @@
       ]
     },
     {
-      "rank": 191,
+      "rank": 208,
       "ticker": "tribhovandas-bhimji-zaveri-tbz",
       "name": "Tribhovandas Bhimji Zaveri Ltd -- TBZ",
       "exchange": "",
@@ -7078,7 +7707,7 @@
       ]
     },
     {
-      "rank": 192,
+      "rank": 209,
       "ticker": "walchandnagar-industries",
       "name": "Walchandnagar Industries",
       "exchange": "",
@@ -7115,7 +7744,7 @@
       ]
     },
     {
-      "rank": 193,
+      "rank": 210,
       "ticker": "globus-spirits",
       "name": "Globus Spirits",
       "exchange": "",
@@ -7152,7 +7781,7 @@
       ]
     },
     {
-      "rank": 194,
+      "rank": 211,
       "ticker": "i-g-petrochemicals",
       "name": "I G Petrochemicals",
       "exchange": "",
@@ -7189,7 +7818,7 @@
       ]
     },
     {
-      "rank": 195,
+      "rank": 212,
       "ticker": "kirloskar-oil-engines",
       "name": "Kirloskar Oil Engines",
       "exchange": "",
@@ -7226,7 +7855,7 @@
       ]
     },
     {
-      "rank": 196,
+      "rank": 213,
       "ticker": "samhi-hotels",
       "name": "Samhi Hotels",
       "exchange": "",
@@ -7263,7 +7892,7 @@
       ]
     },
     {
-      "rank": 197,
+      "rank": 214,
       "ticker": "thomas-scott",
       "name": "Thomas Scott",
       "exchange": "",
