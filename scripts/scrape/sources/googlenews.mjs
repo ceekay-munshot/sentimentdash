@@ -44,7 +44,7 @@ const CAPS_STOP = new Set(
     'multibagger multibaggers penny smallcap midcap largecap bluechip ' +
     'bonus dividend watch watchlist focus gainers losers gainer loser ' +
     'breakout potential rally surge target alert pick picks momentum ' +
-    'outperformer outperformers ' +
+    'outperformer outperformers next upcoming ' +
     'zerodha kite console coin varsity smallcase sensibull streak demat ' +
     'kyc pan itr stt ltcg stcg otp nfo etf amc sip nri'
   ).split(' '),
