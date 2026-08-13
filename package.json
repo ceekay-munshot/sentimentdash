@@ -10,7 +10,10 @@
     "preview": "vite preview",
     "gen:data": "node scripts/generate-sample-data.mjs",
     "scrape": "node scripts/scrape/run.mjs",
-    "scrape:selftest": "node scripts/scrape/selftest.mjs"
+    "scrape:selftest": "node scripts/scrape/selftest.mjs",
+    "api:dev": "node api/server.js",
+    "api:selftest": "node api/selftest.mjs",
+    "api:deploy": "wrangler deploy -c wrangler.api.jsonc"
   },
   "dependencies": {
     "framer-motion": "^11.11.0",
