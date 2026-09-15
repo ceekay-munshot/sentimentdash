@@ -13,12 +13,15 @@ cooldown and stop that source. Other sources can still publish their successful 
 News records success/failure per discovery query; empty valid RSS is distinct from failure.
 
 Captured post IDs merge into monthly topic files under `public/data/archive/posts`.
+Sharded identity checkpoints track each ID across month and topic changes: a publisher correction
+moves the current record without double-counting, preserving its earliest observation. Older
+Git versions cannot reintroduce the previous location. Existing archives upgrade once.
 Date rollovers only change the 30-day summary. History is never deleted by a refresh or failed
 source. Previously observed timestamps remain intact, and older observations cannot overwrite
 newer source corrections. Corrupt saved state stops publication. A Git commit publishes the
 index, partitions and summary atomically. API readers reject mixed cached generations.
 
-Initial recovery pins a Git commit and examines up to 2000 historical post blobs per scheduled
+Initial recovery pins a Git commit and examines up to 50,000 historical post blobs, with a 30-second processing budget per scheduled
 run, resuming from the saved offset. It restores real source IDs only, excluding the original
 synthetic dashboard examples. Recovery progress and retention start/limits are public metadata.
 Aggregate sparklines retain 24 observations; this limit does not apply to captured posts.
