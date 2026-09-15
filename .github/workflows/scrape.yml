@@ -2,8 +2,10 @@ name: Scrape sentiment data
 
 on:
   schedule:
-    # Twice daily: 01:30 & 13:30 UTC (~07:00 & 19:00 IST — pre-open & post-close).
-    - cron: '30 1,13 * * *'
+    # Frequent opportunities reduce missed/delayed cron delivery. Durable checkpoints permit
+    # a source check only every two hours; intervening runs only resume captured Git history.
+    # GitHub scheduling remains best-effort, so readers independently evaluate source times.
+    - cron: '17,47 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -16,9 +18,12 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -26,7 +31,9 @@ jobs:
           node-version: '22'
 
       - name: Pipeline self-test
-        run: node scripts/scrape/selftest.mjs
+        run: |
+          node scripts/scrape/selftest.mjs
+          node scripts/scrape/reliability-selftest.mjs
 
       - name: Scrape sources
         run: node scripts/scrape/run.mjs
@@ -43,5 +50,20 @@ jobs:
             echo "No data changes to commit."
           else
             git commit -m "chore(data): refresh sentiment scrape"
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push; then break; fi
+              if [ "$attempt" = 3 ]; then exit 1; fi
+            done
           fi
+      - name: Report incomplete source checks
+        run: |
+          node --input-type=module - <<'JS'
+          import { readFileSync } from 'node:fs';
+          const capture = JSON.parse(readFileSync('public/data/collection.json', 'utf8'));
+          const failed = Object.entries(capture.sources).filter(([, source]) => source.error || source.state === 'cooldown');
+          if (failed.length) {
+            console.error('Retained data published; source checks need recovery:', failed.map(([name]) => name).join(', '));
+            process.exitCode = 1;
+          }
+          JS

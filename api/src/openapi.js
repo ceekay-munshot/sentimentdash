@@ -126,6 +126,16 @@ export function openapiDocument(serverUrl) {
           responses: { 200: jsonResponse('Merged post feed.'), ...errorResponses },
         },
       },
+      '/archive': {
+        get: { summary: 'Captured topic catalogue, monthly partitions and recovery progress.',
+          responses: { 200: jsonResponse('Retained coverage; available=false before the first publication.'), ...errorResponses } },
+      },
+      '/archive/{ticker}/{month}': {
+        get: { summary: 'Captured mentions for one topic and calendar month, newest first.',
+          parameters: [tickerParam, param('month', { type: 'string', pattern: '^\\d{4}-(0[1-9]|1[0-2])$' }, 'YYYY-MM.', 'path'),
+            ...postListParams.filter(parameter => ['limit', 'offset'].includes(parameter.name))],
+          responses: { 200: jsonResponse('Paginated retained posts plus archive coverage.'), ...errorResponses } },
+      },
       '/history': {
         get: {
           summary: 'Per-run totals and market mood over time.',

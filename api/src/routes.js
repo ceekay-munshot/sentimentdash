@@ -84,6 +84,8 @@ const handlers = {
       { method: 'GET', path: link('/posts'), summary: 'Cross-company post feed.' },
       { method: 'GET', path: link('/history'), summary: 'Per-run totals and market mood over time.' },
       { method: 'GET', path: link('/history/{ticker}'), summary: 'Mention series behind one sparkline.' },
+      { method: 'GET', path: link('/archive'), summary: 'Retained company/topic catalogue and historical coverage.' },
+      { method: 'GET', path: link('/archive/{ticker}/{month}'), summary: 'Paginated captured mentions for one topic and month.' },
       { method: 'GET', path: link('/openapi.json'), summary: 'OpenAPI 3.1 description.' },
     ],
   }),
@@ -105,6 +107,7 @@ const handlers = {
         window: trending.window ?? null,
         totalPosts: trending.totalPosts ?? 0,
         totalStocks: trending.totalStocks ?? 0,
+        collection: trending.collection ?? null,
       },
       upstreamLatencyMs: Date.now() - startedAt,
     };
@@ -147,6 +150,7 @@ const handlers = {
       generatedAt: trending.generatedAt,
       window: trending.window,
       overview: buildOverview(trending),
+      collection: trending.collection ?? null,
       filters: query,
       pagination,
       stocks: page.map((s) => enrichStock(s, link)),
@@ -372,6 +376,28 @@ const handlers = {
   },
 
   openapi: async ({ link }) => openapiDocument(link('')),
+
+  archive: async ({ store }) => {
+    const archive = await store.archive();
+    return archive ? { ...archive, available: true, topics: Object.values(archive.topics) }
+      : { available: false, topics: [], limitation: 'Captured history has not been published yet.' };
+  },
+
+  archivePosts: async ({ store, url, params }) => {
+    const ticker = assertTicker(params.ticker);
+    const archive = await store.archive();
+    const topic = archive?.topics?.[ticker];
+    if (!topic?.months?.[params.month]) throw notFound('No captured mentions for this topic and month.', 'unknown_archive_month');
+    const file = await store.archiveMonth(ticker, params.month, topic.months[params.month].revision);
+    // Reject mixed index/partition generations instead of silently skipping a changed page.
+    if (file.posts.length !== topic.months[params.month].count || file.generatedAt !== topic.months[params.month].revision) throw new Error('Captured history is updating; retry the index.');
+    const { page, pagination } = paginate(file.posts,
+      intParam(url, 'limit', 200, { min: 1, max: 1000 }), intParam(url, 'offset', 0, { min: 0, max: 1_000_000 }));
+    return { ticker, name: topic.name, month: params.month, generatedAt: file.generatedAt,
+      counts: { total: file.posts.length, filtered: file.posts.length }, pagination,
+      archive: { startedAt: archive.startedAt, limitation: archive.limitation, recovery: archive.recovery },
+      posts: page.map(post => enrichPost(post, ticker)) };
+  },
 };
 
 /** Per-handler `Cache-Control: max-age`. Health should never be cached. */
@@ -425,6 +451,10 @@ export function resolve(pathname) {
       break;
     case 'dashboard':
       if (rest.length === 0) return match(handlers.dashboard);
+      break;
+    case 'archive':
+      if (rest.length === 0) return match(handlers.archive);
+      if (rest.length === 2) return match(handlers.archivePosts, { ticker: safeDecode(rest[0]), month: safeDecode(rest[1]) });
       break;
     case 'stocks':
       if (rest.length === 0) return match(handlers.stocks);

@@ -13,34 +13,8 @@
  */
 import { extractCompany } from './googlenews.mjs';
 
-const UA =
-  'sentimentdash/0.1 (Indian stock sentiment dashboard; +https://github.com/ceekay-munshot/sentimentdash)';
-
+import { collectForum } from './transport.mjs';
 const BASE = 'https://tradingqna.com';
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-/** GET JSON with retry + exponential backoff on rate-limit / transient errors. */
-async function fetchJSON(url) {
-  let lastErr;
-  for (let attempt = 1; attempt <= 4; attempt++) {
-    try {
-      const res = await fetch(url, {
-        headers: { 'User-Agent': UA, Accept: 'application/json' },
-      });
-      if (res.ok) return await res.json();
-      if (res.status === 429 || res.status >= 500) {
-        lastErr = new Error(`HTTP ${res.status}`);
-      } else {
-        throw new Error(`HTTP ${res.status}`);
-      }
-    } catch (err) {
-      lastErr = err;
-    }
-    if (attempt < 4) await sleep(2 ** attempt * 1000);
-  }
-  throw lastErr;
-}
 
 const ENTITIES = {
   '&quot;': '"',
@@ -60,36 +34,6 @@ function stripHtml(html) {
     .replace(/&quot;|&#39;|&amp;|&lt;|&gt;|&nbsp;|&hellip;/g, (m) => ENTITIES[m])
     .replace(/\s+/g, ' ')
     .trim();
-}
-
-/** Pages through the site-wide post stream until the time window is covered. */
-async function fetchRecentPosts(windowMs, maxPages) {
-  const cutoff = Date.now() - windowMs;
-  const posts = [];
-  let before = null;
-
-  for (let page = 0; page < maxPages; page++) {
-    const data = await fetchJSON(`${BASE}/posts.json${before ? `?before=${before}` : ''}`);
-    const batch = data?.latest_posts || [];
-    if (batch.length === 0) break;
-
-    let reachedOlder = false;
-    for (const p of batch) {
-      if (p.post_type !== 1 || p.hidden || p.deleted_at || p.username === 'system') continue;
-      const ts = new Date(p.created_at).getTime();
-      if (!Number.isFinite(ts)) continue;
-      if (ts < cutoff) {
-        reachedOlder = true;
-        continue;
-      }
-      posts.push(p);
-    }
-
-    before = batch[batch.length - 1]?.id;
-    if (!before || reachedOlder) break;
-    await sleep(1500);
-  }
-  return posts;
 }
 
 function normalize(post) {
@@ -122,18 +66,10 @@ function normalize(post) {
   };
 }
 
-/**
- * Fetches recent TradingQnA posts whose question title names a company.
- * Returns [] on failure rather than throwing.
- */
-export async function fetchTradingQnaPosts({ windowHours = 720, maxPages = 30 } = {}) {
-  const windowMs = windowHours * 3600 * 1000;
-
-  const raw = await fetchRecentPosts(windowMs, maxPages);
-  const posts = raw.map(normalize).filter(Boolean);
-
-  const seen = new Set();
-  const deduped = posts.filter((p) => !seen.has(p.id) && seen.add(p.id));
-  console.log(`[tradingqna] ${deduped.length} posts with a company (from ${raw.length} fetched)`);
-  return deduped;
+export async function collectTradingQna(options = {}) {
+  const result = await collectForum({ ...options, base: BASE });
+  return { ...result, posts: result.posts.map(normalize).filter(Boolean) };
+}
+export async function fetchTradingQnaPosts(options = {}) {
+  return (await collectTradingQna(options)).posts;
 }
