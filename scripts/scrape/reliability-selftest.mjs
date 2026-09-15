@@ -102,3 +102,25 @@ try {
   assert.equal(archive.save().totalPosts, 1, 'historical demo data cannot return as evidence');
 } finally { rmSync(gitDir, { recursive: true, force: true }); }
 console.log('PASS batch Git recovery, durable cursor and exclusion of synthetic history');
+
+const moves = mkdtempSync(join(tmpdir(), 'chatter-identity-fixture-'));
+try {
+  const old = { ticker: 'alpha', name: 'Alpha', generatedAt: '2026-08-20T12:00:00Z', posts: [
+    { id: 'news-gn-123', source: 'news', timestamp: '2026-08-19T12:00:00Z', text: 'Earlier title' }] };
+  let archive = openArchive(moves, now); archive.merge(old); archive.save();
+  const corrected = { ticker: 'beta', name: 'Beta', generatedAt: now.toISOString(), posts: [
+    { ...old.posts[0], timestamp: now.toISOString(), text: 'Publisher corrected title and date' }] };
+  archive = openArchive(moves, now); archive.merge(corrected); archive.save();
+  archive = openArchive(moves, now); archive.merge(old);
+  const index = archive.save();
+  assert.equal(index.totalPosts, 1); assert(!index.topics.alpha); assert.equal(index.topics.beta.count, 1);
+  const saved = readJson(join(moves, 'archive/posts/beta/2026-09.json')).posts[0];
+  assert.equal(saved.text, corrected.posts[0].text); assert.equal(saved.firstSeenAt, old.generatedAt);
+  // Upgrade an earlier archive containing both copies, in newest-first index order.
+  writeJson(join(moves, 'archive/index.json'), { ...index, identityVersion: null, topics: {
+    beta: index.topics.beta, alpha: { ticker: 'alpha', name: 'Alpha', count: 1, months: { '2026-08': { count: 1 } } } } });
+  writeJson(join(moves, 'archive/posts/alpha/2026-08.json'), { ...old, month: '2026-08' });
+  rmSync(join(moves, 'archive/identities'), { recursive: true, force: true });
+  assert.equal(openArchive(moves, now).save().totalPosts, 1, 'bootstrap also reconciles older cross-month copies');
+} finally { rmSync(moves, { recursive: true, force: true }); }
+console.log('PASS stable post identity across month/topic corrections, older replay and existing archive upgrade');

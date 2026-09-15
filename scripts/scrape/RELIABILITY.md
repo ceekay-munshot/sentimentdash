@@ -13,6 +13,9 @@ cooldown and stop that source. Other sources can still publish their successful 
 News records success/failure per discovery query; empty valid RSS is distinct from failure.
 
 Captured post IDs merge into monthly topic files under `public/data/archive/posts`.
+Sharded identity checkpoints track each ID across month and topic changes: a publisher correction
+moves the current record without double-counting, preserving its earliest observation. Older
+Git versions cannot reintroduce the previous location. Existing archives upgrade once.
 Date rollovers only change the 30-day summary. History is never deleted by a refresh or failed
 source. Previously observed timestamps remain intact, and older observations cannot overwrite
 newer source corrections. Corrupt saved state stops publication. A Git commit publishes the
