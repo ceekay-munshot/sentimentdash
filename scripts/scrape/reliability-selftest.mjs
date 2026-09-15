@@ -95,7 +95,9 @@ try {
   writeJson(target, file([{ id: 'valuepickr-123', source: 'valuepickr', timestamp: now.toISOString(), text: 'Real-format fixture' }]));
   git('add', '.'); git('commit', '-m', 'Capture fixture');
   const archive = openArchive(join(gitDir, 'retained'), now);
-  const first = recoverGitHistory(archive, gitDir, {}, { maxBlobs: 1 });
+  const paused = recoverGitHistory(archive, gitDir, {}, { maxDurationMs: 0 });
+  assert.equal(paused.offset, 0); assert.equal(paused.complete, false);
+  const first = recoverGitHistory(archive, gitDir, paused, { maxBlobs: 1 });
   assert.equal(first.complete, false);
   const second = recoverGitHistory(archive, gitDir, first, { maxBlobs: 1 });
   assert.equal(second.complete, true); assert.equal(second.offset, 2);

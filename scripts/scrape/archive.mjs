@@ -136,7 +136,7 @@ export function openArchive(dataDir, now = new Date()) {
 
 // Recover retained Git blobs in bounded batches. The pinned commit and offset survive later
 // collector runs; old observations cannot overwrite a newer source correction.
-export function recoverGitHistory(archive, root, previous = {}, { maxBlobs = 2000 } = {}) {
+export function recoverGitHistory(archive, root, previous = {}, { maxBlobs = 50000, maxDurationMs = 30000 } = {}) {
   if (previous.complete) return previous;
   const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 });
   const head = previous.head || git(['rev-parse', 'HEAD']).trim();
@@ -144,8 +144,9 @@ export function recoverGitHistory(archive, root, previous = {}, { maxBlobs = 200
     .filter(line => /^[a-f0-9]{40} public\/data\/posts\/[^/]+\.json$/.test(line));
   let offset = previous.offset || 0;
   const selected = objects.slice(offset, offset + maxBlobs);
+  const deadline = Date.now() + maxDurationMs;
   // One Git process per 100 blobs, rather than thousands of process launches per run.
-  for (let start = 0; start < selected.length; start += 100) {
+  for (let start = 0; start < selected.length && Date.now() < deadline; start += 100) {
     const hashes = selected.slice(start, start + 100).map(line => line.split(' ')[0]);
     const data = execFileSync('git', ['cat-file', '--batch'], { cwd: root,
       input: hashes.join('\n') + '\n', maxBuffer: 128 * 1024 * 1024 });

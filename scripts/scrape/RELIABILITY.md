@@ -21,7 +21,7 @@ source. Previously observed timestamps remain intact, and older observations can
 newer source corrections. Corrupt saved state stops publication. A Git commit publishes the
 index, partitions and summary atomically. API readers reject mixed cached generations.
 
-Initial recovery pins a Git commit and examines up to 2000 historical post blobs per scheduled
+Initial recovery pins a Git commit and examines up to 50,000 historical post blobs, with a 30-second processing budget per scheduled
 run, resuming from the saved offset. It restores real source IDs only, excluding the original
 synthetic dashboard examples. Recovery progress and retention start/limits are public metadata.
 Aggregate sparklines retain 24 observations; this limit does not apply to captured posts.
