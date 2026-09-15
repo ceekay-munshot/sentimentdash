@@ -12,9 +12,7 @@
  * the company. Posts carry that as `companyName`; companies.mjs keys them.
  */
 
-const UA =
-  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) ' +
-  'Chrome/124.0.0.0 Safari/537.36';
+import { readSource } from './transport.mjs';
 
 // Broad searches — the goal is volume of company-led headlines, not precision.
 const DISCOVERY_QUERIES = [
@@ -112,31 +110,6 @@ export function extractCompany(headline) {
   return null;
 }
 
-/** GET text with retry + exponential backoff on rate-limit / transient errors. */
-async function fetchText(url) {
-  let lastErr;
-  for (let attempt = 1; attempt <= 4; attempt++) {
-    try {
-      const res = await fetch(url, {
-        headers: {
-          'User-Agent': UA,
-          Accept: 'application/rss+xml, application/xml, text/xml, */*',
-        },
-      });
-      if (res.ok) return await res.text();
-      if (res.status === 429 || res.status === 403 || res.status >= 500) {
-        lastErr = new Error(`HTTP ${res.status}`);
-      } else {
-        throw new Error(`HTTP ${res.status}`);
-      }
-    } catch (err) {
-      lastErr = err;
-    }
-    if (attempt < 4) await sleep(2 ** attempt * 1000);
-  }
-  throw lastErr;
-}
-
 /** Decodes the XML/HTML entities and CDATA wrappers found in RSS feeds. */
 function decodeEntities(s) {
   return String(s || '')
@@ -170,8 +143,9 @@ function stripHtml(html) {
 }
 
 /** Parses a Google News RSS document into posts that name an extractable company. */
-function parseFeed(xml, windowMs) {
-  const cutoff = Date.now() - windowMs;
+function parseFeed(xml, windowMs, nowMs = Date.now()) {
+  if (!/<rss[\s>]/i.test(xml) || !/<channel[\s>]/i.test(xml)) throw new Error('News search returned invalid RSS');
+  const cutoff = nowMs - windowMs;
   const posts = [];
 
   for (const item of xml.match(/<item\b[\s\S]*?<\/item>/gi) || []) {
@@ -215,32 +189,27 @@ function parseFeed(xml, windowMs) {
  * the company name extracted from its headline. A failing search is logged
  * and skipped rather than aborting the run.
  */
-export async function fetchGoogleNewsPosts({ queries = DISCOVERY_QUERIES, windowHours = 720 } = {}) {
-  const windowMs = windowHours * 3600 * 1000;
-
-  const all = [];
-  const seen = new Set();
+export async function collectGoogleNews({ queries = DISCOVERY_QUERIES, windowHours = 720, previous = {}, now = new Date(), read = readSource, pause = sleep } = {}) {
+  if (Date.parse(previous.retryAt || '') > now.getTime()) return { posts: [], state: { ...previous, state: 'cooldown' } };
+  const all = new Map(), checks = [];
+  let retryAt = null;
   for (const query of queries) {
-    const url =
-      'https://news.google.com/rss/search?q=' +
-      encodeURIComponent(query) +
-      '&hl=en-IN&gl=IN&ceid=IN:en';
     try {
-      const posts = parseFeed(await fetchText(url), windowMs);
-      let added = 0;
-      for (const post of posts) {
-        if (seen.has(post.id)) continue;
-        seen.add(post.id);
-        all.push(post);
-        added++;
-      }
-      console.log(`[news] "${query}": ${posts.length} headlines with a company (${added} new)`);
-    } catch (err) {
-      console.error(`[news] "${query}" failed: ${err.message}`);
+      const url = 'https://news.google.com/rss/search?q=' + encodeURIComponent(query) + '&hl=en-IN&gl=IN&ceid=IN:en';
+      const posts = parseFeed(await read(url, { type: 'text' }), windowHours * 3600000, now.getTime());
+      for (const post of posts) all.set(post.id, post);
+      checks.push({ query, ok: true, posts: posts.length });
+    } catch (error) {
+      checks.push({ query, ok: false, error: error.message });
+      if (error.retryAt) { retryAt = error.retryAt; break; }
     }
-    await sleep(800);
+    await pause(800);
   }
-
-  console.log(`[news] ${all.length} unique company headlines`);
-  return all;
+  const complete = checks.length === queries.length && checks.every(check => check.ok);
+  return { posts: [...all.values()], state: { state: complete ? 'ok' : 'partial',
+    lastAttemptAt: now.toISOString(), lastSuccessAt: complete ? now.toISOString() : previous.lastSuccessAt || null,
+    retryAt, queries: checks, queriesExpected: queries.length, discoveryOnly: true,
+    error: complete ? null : 'Some news searches were not checked',
+    limitation: 'Broad RSS discovery searches are bounded by the provider; they do not verify every company or every headline.' } };
 }
+export async function fetchGoogleNewsPosts(options = {}) { return (await collectGoogleNews(options)).posts; }

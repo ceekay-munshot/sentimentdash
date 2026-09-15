@@ -45,7 +45,7 @@ function intraWindowSparkline(timestampsMs, nowMs) {
  * @param {Date} now
  * @returns {{ trending: object, postsFiles: object[], history: object }}
  */
-export function buildData(rawPosts, prevHistory = { runs: [] }, now = new Date()) {
+export function buildData(rawPosts, prevHistory = { runs: [] }, now = new Date(), { retainAll = false } = {}) {
   const nowMs = now.getTime();
   const iso = now.toISOString();
   const windowMs = WINDOW_HOURS * HOUR_MS;
@@ -56,7 +56,7 @@ export function buildData(rawPosts, prevHistory = { runs: [] }, now = new Date()
     if (!raw.topicId) continue;
     const tsMs = new Date(raw.timestamp).getTime();
     if (!Number.isFinite(tsMs)) continue;
-    if (nowMs - tsMs > windowMs) continue; // outside the window
+    if (!retainAll && nowMs - tsMs > windowMs) continue; // display window, never a deletion policy
     if (tsMs > nowMs + HOUR_MS) continue; // future timestamp / clock skew
 
     const post = {
@@ -71,6 +71,8 @@ export function buildData(rawPosts, prevHistory = { runs: [] }, now = new Date()
       sentiment: scorePost(raw.text),
       likes: raw.likes ?? 0,
       comments: raw.comments ?? 0,
+      firstSeenAt: raw.firstSeenAt || iso,
+      lastSeenAt: raw.lastSeenAt || iso,
     };
     if (!byTopic.has(raw.topicId)) {
       byTopic.set(raw.topicId, { name: raw.topicTitle || raw.topicId, posts: [] });

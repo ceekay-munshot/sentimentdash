@@ -5,19 +5,16 @@
  * makes mentionsPrev, changePct and the sparkline real numbers rather than
  * guesses — they are derived from previous runs.
  */
-import { readFileSync } from 'node:fs';
+import { readJson } from './archive.mjs';
 
-/** How many runs to retain (~12 days at twice-daily). */
+/** Rolling aggregate observations; post history is retained separately without this limit. */
 export const MAX_RUNS = 24;
 
-/** Loads history.json, tolerating a missing or malformed file. */
+/** A missing initial history is empty; corrupt saved history must stop publication. */
 export function loadHistory(path) {
-  try {
-    const parsed = JSON.parse(readFileSync(path, 'utf8'));
-    return Array.isArray(parsed?.runs) ? parsed : { runs: [] };
-  } catch {
-    return { runs: [] };
-  }
+  const parsed = readJson(path, { runs: [] });
+  if (!Array.isArray(parsed?.runs)) throw new Error('Invalid aggregate run history');
+  return parsed;
 }
 
 /** Mention count for `ticker` in the most recent prior run (0 if none). */

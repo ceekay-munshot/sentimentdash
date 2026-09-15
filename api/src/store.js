@@ -2,7 +2,7 @@
  * Data access for the API.
  *
  * The dashboard reads its JSON straight from the repo on GitHub's raw CDN so
- * the twice-daily scrape shows up without a rebuild; the API reads the exact
+ * the scheduled capture shows up without a rebuild; the API reads the exact
  * same files, which keeps the two in lockstep and means the API can be
  * deployed anywhere without a copy of the data.
  *
@@ -42,19 +42,23 @@ export function createStore({ baseUrl = DEFAULT_DATA_BASE, ttlMs = 300_000, read
 
   async function load(path) {
     if (readLocal) {
-      const text = await readLocal(path);
+      const text = await readLocal(path.split('?')[0]);
       if (text === null) return null;
       return JSON.parse(text);
     }
     const res = await fetch(`${base}${path}`, {
       headers: { accept: 'application/json' },
+      signal: AbortSignal.timeout(10000),
       cf: { cacheTtl: Math.round(ttlMs / 1000), cacheEverything: true },
     });
     if (res.status === 404) return null;
     if (!res.ok) {
       throw new HttpError(502, 'upstream_error', `Upstream returned ${res.status} for ${path}.`);
     }
-    return res.json();
+    if (Number(res.headers.get('content-length')) > 8 * 1024 * 1024) throw new HttpError(502, 'upstream_error', 'Upstream partition exceeds the supported size.');
+    const text = await res.text();
+    if (text.length > 8 * 1024 * 1024) throw new HttpError(502, 'upstream_error', 'Upstream partition exceeds the supported size.');
+    return JSON.parse(text);
   }
 
   /** @param {string} path @returns {Promise<any|null>} */
@@ -101,6 +105,21 @@ export function createStore({ baseUrl = DEFAULT_DATA_BASE, ttlMs = 300_000, read
     async postsOrThrow(ticker) {
       const data = await this.posts(ticker);
       if (!data) throw notFound(`No posts found for \`${ticker}\`.`, 'unknown_ticker');
+      return data;
+    },
+
+    async archive() {
+      const data = await get('archive/index.json');
+      if (!data) return null; // Explicitly unavailable until the first retained capture is published.
+      if (data.version !== 1 || !data.topics || !Number.isFinite(data.totalPosts)) throw new HttpError(502, 'upstream_error', 'Invalid archive index.');
+      return data;
+    },
+
+    async archiveMonth(ticker, month, revision) {
+      assertTicker(ticker);
+      if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)) throw new HttpError(400, 'invalid_month', 'Use YYYY-MM.');
+      const data = await get(`archive/posts/${encodeURIComponent(ticker)}/${month}.json?revision=${encodeURIComponent(revision || '')}`);
+      if (!data || data.ticker !== ticker || data.month !== month || !Array.isArray(data.posts)) throw new HttpError(502, 'upstream_error', 'Retained mention partition is unavailable.');
       return data;
     },
 

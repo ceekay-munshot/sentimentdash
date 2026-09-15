@@ -6,8 +6,7 @@ trending companies, market mood, per-company sentiment and source breakdowns,
 the posts behind each company, and the run history behind the sparklines.
 
 It reads the same files the dashboard reads — `public/data/*.json` served from
-this repo via GitHub's raw CDN — so it always reflects the latest twice-daily
-scrape, and it stays in lockstep with the site. **Nothing in the dashboard was
+this repo via GitHub's raw CDN — with a five-minute upstream cache. Publication time and source-check health are separate facts. **Nothing in the dashboard was
 changed to add this**: the API is a separate entry point (`api/`) with its own
 Wrangler config.
 
@@ -230,3 +229,21 @@ wrangler.api.jsonc
 
 `meta.js` mirrors the labels and colours in `src/lib/meta.ts`; if those ever
 change on the dashboard, update it to match.
+
+## Retained capture and source health
+
+`GET /v1/dashboard` includes `collection`; `GET /v1/health` exposes it under `data`.
+Health `status: ok` means the API can read its snapshot. It does not certify source freshness.
+`collection.sources` records each source's latest attempt, successful recent-head check,
+errors/cooldowns and resumable forum-history progress. Missing metadata is unconfirmed.
+`generatedAt` is snapshot assembly time, including history recovery, not a source check.
+
+`GET /v1/archive` lists captured topics, including companies outside the rolling 30-day list.
+Each topic has `months` with count/revision, earliest/latest post dates and total count.
+`GET /v1/archive/{ticker}/{YYYY-MM}?limit=1000&offset=0` reads one month, newest first.
+Follow `pagination.hasMore` and `offset`; 1000 is a page size, never the archive limit.
+Missing indexed partitions or mixed generations fail rather than pretend to be complete.
+Before the first retained capture, the catalogue reports `available: false`.
+
+The archive preserves observed public excerpts and original links, not full source documents.
+See [capture operations](../scripts/scrape/RELIABILITY.md) for cadence, recovery and limits.

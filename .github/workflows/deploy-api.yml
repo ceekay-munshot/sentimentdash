@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    # Only when the API itself changes — not on the twice-daily data commits.
+    # Only when the API itself changes — not on the scheduled data commits.
     paths:
       - 'api/**'
       - 'wrangler.api.jsonc'
@@ -37,7 +37,7 @@ jobs:
           node-version: '22'
 
       - name: API self-test
-        run: node api/selftest.mjs
+        run: node api/selftest.mjs && node api/reliability-selftest.mjs
 
       - name: Deploy to Cloudflare
         run: npx --yes wrangler@latest deploy -c wrangler.api.jsonc

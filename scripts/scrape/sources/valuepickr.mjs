@@ -10,8 +10,7 @@
  * trending list is companies rather than macro/strategy/lounge threads.
  */
 
-const UA =
-  'sentimentdash/0.1 (Indian stock sentiment dashboard; +https://github.com/ceekay-munshot/sentimentdash)';
+import { readSource, collectForum } from './transport.mjs';
 
 const BASE = 'https://forum.valuepickr.com';
 
@@ -22,30 +21,6 @@ const BASE = 'https://forum.valuepickr.com';
 const STOCK_CATEGORY_PATTERN = /stock|sme|business analysis|investment/i;
 const NON_COMPANY_PATTERN =
   /learning|screen|conference|webinar|tracking|lounge|feedback|wiki|portfolio management/i;
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-/** GET JSON with retry + exponential backoff on rate-limit / transient errors. */
-async function fetchJSON(url) {
-  let lastErr;
-  for (let attempt = 1; attempt <= 4; attempt++) {
-    try {
-      const res = await fetch(url, {
-        headers: { 'User-Agent': UA, Accept: 'application/json' },
-      });
-      if (res.ok) return await res.json();
-      if (res.status === 429 || res.status >= 500) {
-        lastErr = new Error(`HTTP ${res.status}`);
-      } else {
-        throw new Error(`HTTP ${res.status}`);
-      }
-    } catch (err) {
-      lastErr = err;
-    }
-    if (attempt < 4) await sleep(2 ** attempt * 1000);
-  }
-  throw lastErr;
-}
 
 const ENTITIES = {
   '&quot;': '"',
@@ -68,8 +43,8 @@ function stripHtml(html) {
 }
 
 /** Discovers the ids of ValuePickr's company-discussion categories. */
-async function fetchStockCategoryIds() {
-  const data = await fetchJSON(`${BASE}/categories.json?include_subcategories=true`);
+async function fetchStockCategoryIds(read = readSource) {
+  const data = await read(`${BASE}/categories.json?include_subcategories=true`);
   const top = data?.category_list?.categories || [];
   const flat = [];
   for (const c of top) {
@@ -114,72 +89,20 @@ function normalize(post) {
   };
 }
 
-/** Pages through the site-wide post stream until the time window is covered. */
-async function fetchRecentPosts(windowMs, maxPages) {
-  const cutoff = Date.now() - windowMs;
-  const posts = [];
-  let before = null;
-
-  for (let page = 0; page < maxPages; page++) {
-    const data = await fetchJSON(`${BASE}/posts.json${before ? `?before=${before}` : ''}`);
-    const batch = data?.latest_posts || [];
-    if (batch.length === 0) break;
-
-    let reachedOlder = false;
-    for (const p of batch) {
-      if (p.post_type !== 1 || p.hidden || p.deleted_at || p.username === 'system') continue;
-      const ts = new Date(p.created_at).getTime();
-      if (!Number.isFinite(ts)) continue;
-      if (ts < cutoff) {
-        reachedOlder = true;
-        continue;
-      }
-      posts.push(normalize(p));
-    }
-
-    before = batch[batch.length - 1]?.id;
-    if (!before || reachedOlder) break;
-    await sleep(1500);
+export async function collectValuePickr(options = {}) {
+  const previous = options.previous || {};
+  if (Date.parse(previous.retryAt || '') > (options.now || new Date()).getTime()) return { posts: [], state: { ...previous, state: 'cooldown' } };
+  let categories;
+  try {
+    categories = await fetchStockCategoryIds(options.read);
+    if (!categories.size) throw new Error('No company categories were identified');
+  } catch (error) {
+    return { posts: [], state: { ...previous, state: 'failed', lastAttemptAt: (options.now || new Date()).toISOString(), error: error.message, retryAt: error.retryAt || null } };
   }
-  return posts;
+  const result = await collectForum({ ...options, base: BASE });
+  return { ...result, posts: result.posts.filter(post => categories.has(post.category_id)).map(normalize) };
 }
 
-/**
- * Fetches recent ValuePickr posts within the time window, restricted to the
- * company-discussion categories. If the category filter would drop everything
- * (e.g. category lookup failed), it degrades to returning all posts.
- */
-export async function fetchValuePickrPosts({ windowHours = 720, maxPages = 45 } = {}) {
-  const windowMs = windowHours * 3600 * 1000;
-
-  let categoryIds = new Set();
-  try {
-    categoryIds = await fetchStockCategoryIds();
-  } catch (err) {
-    console.error(`[valuepickr] category lookup failed: ${err.message}`);
-  }
-
-  let posts = [];
-  try {
-    posts = await fetchRecentPosts(windowMs, maxPages);
-  } catch (err) {
-    console.error(`[valuepickr] post fetch failed: ${err.message}`);
-  }
-
-  let scoped = posts;
-  if (categoryIds.size > 0) {
-    const filtered = posts.filter((p) => categoryIds.has(p.categoryId));
-    if (filtered.length > 0) {
-      scoped = filtered;
-    } else if (posts.length > 0) {
-      console.warn('[valuepickr] category filter matched no posts — keeping all topics');
-    }
-  } else {
-    console.warn('[valuepickr] no stock categories identified — keeping all topics');
-  }
-
-  const seen = new Set();
-  const deduped = scoped.filter((p) => !seen.has(p.id) && seen.add(p.id));
-  console.log(`[valuepickr] ${deduped.length} posts in window (from ${posts.length} fetched)`);
-  return deduped;
+export async function fetchValuePickrPosts(options = {}) {
+  return (await collectValuePickr(options)).posts;
 }
