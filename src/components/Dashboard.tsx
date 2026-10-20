@@ -12,6 +12,10 @@ import CountUp from './CountUp';
 type SortKey = 'trending' | 'bullish' | 'bearish' | 'movers';
 type SourceKey = 'all' | Source;
 
+// "Most bullish" / "Top mover" only consider companies with enough mentions —
+// a 1-post company scoring 1.00 is noise, not a signal.
+const MIN_FEATURE_MENTIONS = 10;
+
 const SORTS: { key: SortKey; label: string }[] = [
   { key: 'trending', label: 'Trending' },
   { key: 'bullish', label: 'Bullish' },
@@ -36,14 +40,18 @@ export default function Dashboard({ data, onSelect }: Props) {
   const [sort, setSort] = useState<SortKey>('trending');
   const [source, setSource] = useState<SourceKey>('all');
 
-  const topMover = useMemo(
-    () => [...data.stocks].sort((a, b) => b.changePct - a.changePct)[0],
-    [data.stocks],
-  );
-  const mostBullish = useMemo(
-    () => [...data.stocks].sort((a, b) => b.sentiment.score - a.sentiment.score)[0],
-    [data.stocks],
-  );
+  const { mostBullish, topMover } = useMemo(() => {
+    const eligible = data.stocks.filter((s) => s.mentions >= MIN_FEATURE_MENTIONS);
+    const pool = eligible.length ? eligible : data.stocks;
+    return {
+      mostBullish: [...pool].sort(
+        (a, b) => b.sentiment.score - a.sentiment.score || b.mentions - a.mentions,
+      )[0],
+      topMover: [...pool].sort(
+        (a, b) => b.changePct - a.changePct || b.mentions - a.mentions,
+      )[0],
+    };
+  }, [data.stocks]);
 
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
